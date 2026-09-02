@@ -3,6 +3,8 @@
 Glosario vivo para el puesto de **Especialista en Inteligencia Comercial (Tottus)**.
 Se construye por acumulación: cada capacitación, reunión o documento que aporte terminología se registra como **fuente** y sus términos se incorporan aquí.
 
+> **Para mantener este documento** (incorporar una fuente nueva, convenciones de marcado, reglas de calidad y validación): ver [`CLAUDE.md`](CLAUDE.md). Antes de commitear, correr `python3 scripts/validar-glosario.py`.
+
 **Convenciones:**
 - Cada entrada indica `[F1]`, `[F2]`, … según la fuente donde apareció. Si un término aparece en varias, se listan todas.
 - Los términos marcados `[base]` son de uso estándar en retail y se incluyen como complemento de contexto, no provienen de una fuente registrada.
