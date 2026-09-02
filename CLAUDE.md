@@ -97,7 +97,7 @@ Estas reglas existen porque el valor de esta base depende de que se pueda confia
 
 7. **No inflar.** Si una fuente no aporta terminología nueva, se registra y se dice que no aportó. Repetir con otras palabras lo que ya está no es alimentar la base.
 
-8. **Conservar la discrepancia, no taparla.** Cuando el usuario corrige algo que un documento decía distinto, se aplica su versión **y** se anota la forma que usan los reportes. Quien lea un comité viejo tiene que poder reconocer el término. Ejemplo vivo: la sigla de Same Store es `SSM` según el usuario y `SSS` en los reportes revisados — el glosario registra ambas.
+8. **Conservar la discrepancia, no taparla.** Cuando el usuario corrige algo que un documento decía distinto, se aplica su versión **y** se anota la forma que usan los reportes. Quien lea un comité viejo tiene que poder reconocer el término. Ejemplo vivo: la división se escribe `J8` en la casa y `J08` en los reportes del Comité — el glosario registra la forma canónica y anota la variante.
 
 ---
 

@@ -155,12 +155,11 @@ Venta expresada en unidades (piezas). "Q" por *quantity*. Es el contrapeso oblig
 **Venta total** `[F1]`
 Venta de todas las tiendas, incluidas aperturas nuevas y cierres.
 
-**SSM / SSS** — *Same Store* `[F1]` `[F3]` `[F4]` `[F5]`
+**SSS** — *Same Store Sales* `[F1]` `[F3]` `[F4]`
 Venta considerando únicamente las tiendas que existían en ambos períodos comparados. Aísla el crecimiento **orgánico** del que viene por expansión de la red. En F4 se reporta además como **"solo piso"**, es decir excluyendo el canal online.
 *Sinónimo:* Venta Same Store, venta mismas tiendas.
-⚠️ **Notación:** la sigla correcta según el usuario `[F5]` es **SSM**; los reportes revisados (F3, F4) la escriben **SSS**. Mismo concepto. Al leer un documento, usar la forma que traiga ese documento.
 
-**TSS** — *Total Store* `[F3]` `[F4]` `[F5]`
+**TSS** — *Total Store Sales* `[F3]` `[F4]`
 Venta total de la operación: **piso + online**, sin el filtro de mismas tiendas.
 ⚠️ **SSS y TSS pueden contar historias opuestas.** En el Comité S36, en la semana 34 Tottus ganaba 1.2 p.p. de share en SSS y perdía 0.5 p.p. en TSS — la diferencia apunta al canal online. Nunca leer una sin la otra.
 
@@ -941,7 +940,6 @@ Espacio de trabajo para el próximo aporte:
 
 - [ ] Definiciones oficiales Tottus de cada J (mapeo completo J1–J12, más J99 y JSJ)
 - [ ] Ejemplos de **Departamento** (nivel 3) por división — el nivel está confirmado, faltan casos concretos
-- [ ] Confirmar si la sigla canónica de Same Store es **SSM** o **SSS** (los reportes usan SSS)
 - [ ] Expansión confirmada de siglas: **MV** (arriendo prioritario), **FQ** (quiebre), **MDV** y **RT** (POP), **Fcom**, **KVC**, **H-E-L** (semaforización IPC), **LW** (logística de proveedor), **L&A** (fuente de mercado)
 - [ ] Definición formal de **Básico 1 / Básico 2** y de **surtido troncal**
 - [ ] Criterio de selección de **Focals**
@@ -954,4 +952,4 @@ Espacio de trabajo para el próximo aporte:
 
 ---
 
-*Última actualización: fuentes F1–F5 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles con Departamento y Clase como niveles propios, la notación de las divisiones sin cero a la izquierda, y las siglas SSM/TSS.*
+*Última actualización: fuentes F1–F5 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda.*
