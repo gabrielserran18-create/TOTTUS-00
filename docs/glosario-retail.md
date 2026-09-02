@@ -24,11 +24,11 @@ Se construye por acumulación: cada capacitación, reunión o documento que apor
 Jerarquía con la que un retailer clasifica todo su surtido, de lo más agregado a lo más granular. En Tottus tiene 5 niveles operativos: **Negocio → Mundo → División (J) → Subdepartamento → Subclase**, y por debajo el **SKU**. Es la columna vertebral de cualquier análisis: define a qué nivel se compara, se agrega y se atribuye un resultado.
 *Sinónimo:* estructura mercadológica, jerarquía de productos.
 
-**Negocio** `[F1]`
-Nivel más alto del árbol. Agrupa la operación completa (ej. Hipermercados Tottus).
+**Bandera** `[F1]`
+Nivel más alto del árbol. Tottus, Precio uno, Tottus Online Agrupa la operación completa (ej. Hipermercados Tottus).
 
-**Mundo** `[F1]`
-Segundo nivel. En Tottus: **Non-Food**, **Perecibles**, **PGC**, **FLC**.
+**Mundo de categoría** `[F1]`
+Segundo nivel. En Tottus: **Non-Food (j18-j9-j10-j11)**, **Perecibles (J3-j4-j6-j7)**, **PGC (producto de gran consumo)** y **FLC (fiambres lacteos y congelados) (j1-j2-j5)**, **Institucional (j12) (Venta por volumne, focal en tienda que jalan venta)**.
 
 **División (J)** `[F1]`
 Tercer nivel; en Tottus se codifica como "J" + número (J1, J2, J6, J11…). Cada J agrupa un conjunto de subdepartamentos bajo una misma gestión comercial. Las divisiones de Perecibles son **J3, J4, J6 y J7**. Ejemplos citados: J5 (lácteos/FLC), J6 (Panadería y Pastelería).
