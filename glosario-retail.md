@@ -18,11 +18,11 @@ Se construye por acumulación: cada capacitación, reunión o documento que apor
 
 | ID | Fuente | Tipo | Fecha | Nota |
 |---|---|---|---|---|
-| **F1** | Capacitación Comercial Scanntech — "Nueva plataforma tecnológica en retail" (Paolo Gaspar, KAM Scanntech) | Capacitación grabada, ~1h30 | Sep 2026 | 6ª sesión de la ronda al equipo comercial Tottus. Ver `scanntech-scanview-guia.md` |
+| **F1** | Capacitación Comercial Scanntech — "Nueva plataforma tecnológica en retail" (Paolo Gaspar, KAM Scanntech) | Capacitación grabada, ~1h30 | Sep 2026 | 6ª sesión de la ronda al equipo comercial Tottus. Su contenido operativo está consolidado en la sección 16 |
 | **F2** | *Impulso+: Análisis y Estrategia de HS* | Presentación de trabajo, 110 slides | Oct–Nov 2025 | Acumulado de 5 sesiones de diseño de la política promocional de Hardsell. Portada fechada Oct-2025; el contenido llega al 13-Nov. Incluye anexo regional (PE/CL) |
 | **F3** | *Chapa Tu Yapa II — Julio* | Presentación de resultados, 9 slides | Jul 2026 | Cierre de la 2ª edición de la campaña en Precio Uno (29-Jun al 15-Jul 2026) |
 | **F4** | *Comité Comercial S36-2026* | Comité de ventas, 60 págs | 01-Set-2026 | Cierre Agosto 2026. Bloques: Planificación Comercial, Logística, Marketing, Loyalty, plan de acción Colchones, y pre-read (competitividad, ruta crítica, CDA) |
-| **F5** | Correcciones y precisiones de Gabriel Serrano | Conocimiento del puesto — fuente continua | Desde Set 2026 | Correcciones directas del usuario sobre lo extraído de las fuentes documentales. **Tiene prioridad sobre F1–F4 cuando hay conflicto** |
+| **F5** | Correcciones y precisiones de Gabriel Serrano | Conocimiento del puesto — fuente continua | Desde Set 2026 | Correcciones directas del usuario sobre lo extraído de las fuentes documentales: árbol mercadológico de 6 niveles, mapeo de mundos a divisiones J, notación de las divisiones. **Tiene prioridad sobre F1–F4 cuando hay conflicto** |
 
 ---
 
@@ -40,7 +40,16 @@ Es la columna vertebral de cualquier análisis: define a qué nivel se compara, 
 La operación completa (ej. Hipermercados Tottus). Está por encima del árbol mercadológico, no es uno de sus niveles.
 
 **Mundo** `[F1]` `[F5]`
-Nivel 1, el más alto del árbol. En Tottus: **Non-Food**, **Perecibles**, **PGC**, **FLC**.
+Nivel 1, el más alto del árbol. Mapeo a divisiones:
+
+| Mundo | Divisiones |
+|---|---|
+| **PGC** (Productos de Gran Consumo) y **FLC** (Fiambres, Lácteos y Congelados) | J1, J2, J5 |
+| **Perecibles** | J3, J4, J6, J7 |
+| **Non-Food** | J8, J9, J10, J11 |
+| **Institucional** | J12 — venta por volumen; focos en tienda que jalan venta |
+
+*Sinónimo:* mundo de categoría.
 
 **División (J)** `[F1]` `[F3]` `[F4]` `[F5]`
 Nivel 2; se codifica como "J" + número (J1, J2, … J12). Cada J agrupa un conjunto de departamentos bajo una misma gestión comercial.
@@ -865,6 +874,95 @@ Macro = compañía / mundo / división. Micro = subclase / SKU / tienda. La reco
 
 ---
 
+## 16. ScanView — manual operativo `[F1]`
+
+Todo lo procedimental de la plataforma. El resto del glosario define los términos; esta sección dice **dónde hacer clic y en qué orden**.
+
+### 16.1 El modelo Scanntech
+
+Tres pasos: **(1) Ingesta** — Tottus envía su data transaccional por API. **(2) Procesamiento** — Scanntech la devuelve convertida en KPIs y drivers ya calculados. **(3) Monetización** — Scanntech comparte data con proveedores; **Tottus decide con quién, por cuánto tiempo y qué información**, y eso trae inversión del proveedor a la cadena.
+
+Tottus es la **primera conexión de Perú** y el primer supermercado del país en incorporar Scanntech. El roadmap declarado (~6 meses desde Set-2026) es conectar otros retailers peruanos; al ocurrir se habilitan las vistas de **mercado**: share vs. competencia, price index real y cobertura de surtido comparada.
+
+Scanntech tiene **6 soluciones**; Tottus usa hoy una: **ScanView** (también llamada *Cambio Retail*).
+
+### 16.2 Acceso y soporte
+
+```
+Scanntech → Perú → Desarrollo → Red Tottus → "Tottus Dashboard Grupos 9.1"
+```
+
+Los usuarios del equipo comercial ya están creados. Soporte presencial del KAM en oficinas Tottus **martes y jueves, 9:00–18:00**; también por WhatsApp o correo para agendar revisiones por categoría.
+
+### 16.3 Las 5 hojas
+
+| # | Hoja | Pregunta que responde | Granularidad | Nivel |
+|---|---|---|---|---|
+| 1 | **Categoría** | ¿Cómo performa mi surtido dentro del árbol? | Mes cerrado | Mundo → División → Subdepartamento → Clase → Subclase → SKU |
+| 2 | **Negociación** | ¿Cómo performan mis proveedores y marcas? | Mes cerrado | Fabricante → Marca → Jerarquía → SKU |
+| 3 | **Tabla de Precios** | ¿Cómo se comporta el precio? | **Semanal** | SKU |
+| 4 | **Ejecutivo** | ¿Cómo va la compañía a nivel macro? | Mes cerrado + histórico | Compañía / Bandera |
+| 5 | **Operacional** | ¿Cómo performa cada tienda? | Mes cerrado + histórico | Tienda |
+
+### 16.4 Panel de filtros
+
+Casi todos se repiten hoja a hoja.
+
+| Filtro | Opciones |
+|---|---|
+| **Tipo de venta** | Venta total · Venta Same Store |
+| **Ponderación** | Ventas totales · no ponderadas |
+| **Métrica** | Valor (soles) · Unidades |
+| **Fechas** | Personalizado · último mes cerrado · mes vs. mismo mes AP. Admite **multiselección de meses** para estacionalidades móviles (Semana Santa) |
+| **Estructura mercadológica** | El árbol interno de Tottus (ver sección 1) |
+| **Fabricante / Proveedor** | Búsqueda y selección. Se **desmarca el check** para bajar a nivel marca |
+| **Marca** | Búsqueda y selección |
+| **Códigos de barras** | Se pega una lista de **EAN** y toda la data se acota a esos SKUs |
+| **Ordenar por** | Alfabético · **Representatividad** |
+| **Bandera** | Tottus · Precio Uno · Ecommerce (o total) |
+| **Zonas** | Lima (Norte, Moderna, Sur) · Provincia · Oriente/Iquitos |
+| **Top fabricantes** | Solo en Negociación; por defecto top 10 |
+| **Mercado** | Aún no disponible en Perú |
+
+⚠️ **Trampa:** si el surtido está repartido por bandera (ej. pastelería va con marca Tottus en Tottus y con marca propia en Precio Uno), hay que **quitar el filtro de la bandera que no corresponde** o el `% PDV` sale sucio: cuenta locales donde ese SKU nunca se comercializó.
+
+**Funciones transversales:** guardar **vista personalizada** con nombre y fijarla como predeterminada · volver a la **vista original** · descarga a Excel por **tabulación cruzada** · botón de retroceso para subir de nivel sin rehacer filtros.
+
+### 16.5 Qué se ve en cada hoja
+
+**Categoría.** Por nivel de jerarquía: facturación, % de representatividad y % de variación vs. período base. Drill-down por clic hasta el botón de detalle SKU. La **vista SKU** trae: share dentro de su subclase, rotación unitaria, % var. de rotación por tienda, precio medio y su variación, **% PDV**, % var. de puntos de venta y share del proveedor. La gráfica lateral muestra el evolutivo de **venta media por tienda** del nivel seleccionado — es donde se lee tendencia y estacionalidad.
+
+**Negociación.** Ranking de fabricantes por representatividad dentro de las divisiones seleccionadas (el top 10 concentra ~60% del negocio). Al seleccionar un proveedor: su performance por J / subdepartamento / clase / subclase, su **share y la variación de ese share**, su histórico de venta media por tienda y el ranking de sus productos. Es la hoja para preparar una negociación con datos.
+
+**Tabla de Precios.** La única con corte **semanal**. Por SKU: proveedor, marca, ubicación en el árbol, **precio mínimo / medio / moda / máximo**, curva ABC como ordenamiento, rotación unitaria y % PDV. Sirve para detectar dispersión o desfase de precio y escalarlo a Pricing.
+
+**Ejecutivo.** Venta total en soles y unidades, con variación vs. mes anterior y vs. AP; apertura por bandera con la contribución de cada una; KPIs de compañía (flujo en tienda, ticket medio, unidades por ticket, venta media, price index); evolutivo de venta media por tienda.
+
+**Operacional.** Listado de tiendas catalogadas por bandera — solo puntos de venta, sin almacenes ni centros que no venden. Cajas por tienda como proxy de tamaño, mapa de calor de aperturas y cierres, y el cuadro de performance por tienda (variación en valor y unidades, importancia para el grupo, tickets, venta media por ticket, unidades por ticket). Ordenable por representatividad o por tamaño.
+
+### 16.6 Rutina de trabajo recomendada
+
+1. **Ejecutivo** → contexto: ¿la compañía crece o se contrae? ¿por bandera? ¿el driver fue tráfico, ticket o unidades por ticket?
+2. **Categoría** → ¿mi mundo/división pasa la valla de la compañía? Bajar hasta el subdepartamento o subclase que la rompe.
+3. **SKU** → los que caen en rotación y los que tienen `% PDV < 100%`. Cuantificar la **venta perdida**.
+4. **Negociación** → atribuir: ¿la caída es de un proveedor o marca concreta? ¿su share cae? Llevar el número a la mesa.
+5. **Tabla de Precios** → ¿hay dispersión o desfase detrás de la caída de rotación? Escalar a Pricing.
+6. **Operacional** → ¿es transversal o de un cluster de tiendas / estacionalidad?
+7. Guardar cada análisis recurrente como **vista personalizada** con nombre.
+
+### 16.7 Limitaciones declaradas
+
+| Tema | Estado |
+|---|---|
+| **Quiebres** | **No hay data directa.** El `% PDV` es el proxy: dice dónde el SKU facturó, no si estaba activo, ni en qué tienda falló. Contrastar con la data interna de productos activos |
+| **Pesables / a granel** | Sin marca ni proveedor; aparecen como **genéricos**. En desarrollo |
+| **Marca propia** | Agrupada como fabricante "Hipermercados Tottus" |
+| **Data de mercado** | No disponible en Perú hasta que se conecten otros retailers |
+| **Mes en curso** | Llega incompleta: analizar sobre el último **mes cerrado** |
+| **Envío automático por correo** | **No existe.** La alternativa es la vista personalizada guardada como predeterminada |
+
+---
+
 ## Anexo A — Cifras de referencia
 
 Valores puntuales recogidos de las fuentes. **Sirven como orden de magnitud, no como dato vigente**: cada uno lleva su corte temporal.
@@ -904,6 +1002,17 @@ Crecimiento por canal: Tottus +7.8% · Precio Uno +11.7% · Online +20.3%.
 | Arriendos en la cadena | 11,272 (194/tienda) | — |
 
 Crecimiento Ene→Set 2025: SKUs **+53%** · Llamados **+68%** · Cartelería **+150%**.
+
+### Red de tiendas y concentración — Jul 2026 `[F1]`
+
+| Métrica | Valor |
+|---|---|
+| Tiendas en la red | ~103–105 puntos de venta |
+| Cajas por tienda (promedio) | ~16 |
+| Concentración de proveedores | El **top 10 concentra ~60%** del negocio |
+| Tienda más representativa | Trujillo 1 — 1.37% del negocio, ~228 K tickets, ticket medio ~S/88 |
+
+⚠️ Más tráfico no es más venta: Megaplaza hacía ~60 K tickets más que Trujillo 1 con ticket medio de S/66.4 y caía −4.8%.
 
 ### Competitividad de precio — S34 2026 `[F4]`
 
@@ -952,4 +1061,4 @@ Espacio de trabajo para el próximo aporte:
 
 ---
 
-*Última actualización: fuentes F1–F5 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda.*
+*Última actualización: fuentes F1–F5 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView, que antes vivía en un documento aparte.*

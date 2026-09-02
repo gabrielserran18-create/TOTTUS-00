@@ -52,7 +52,7 @@ Fuentes actuales:
 
 ### Estructura
 
-- **Secciones 1–15**, numeradas y temáticas (surtido, venta, ticket, precio, margen, promociones, ejecución, abastecimiento, tiendas, resultados, calendario, loyalty, procesos, actores, analítica).
+- **Secciones 1–16**, numeradas y temáticas (surtido, venta, ticket, precio, margen, promociones, ejecución, abastecimiento, tiendas, resultados, calendario, loyalty, procesos, actores, analítica, y el manual operativo de ScanView).
 - **Anexo A — Cifras de referencia:** valores puntuales, **cada bloque con su corte temporal explícito**.
 - **Anexo B — Trampas de lectura:** checklist de errores metodológicos detectados en las fuentes.
 - **Términos por incorporar:** lista viva de lo que falta.

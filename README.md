@@ -8,7 +8,7 @@ Repositorio vivo: se alimenta de capacitaciones, comités, presentaciones de cam
 
 📘 **[`glosario-retail.md`](glosario-retail.md)** — glosario de terminología de retail y de Tottus.
 
-- 15 secciones temáticas: surtido, venta, ticket, precio, margen, promociones, ejecución en tienda, abastecimiento, red de tiendas, lectura de resultados, calendario, loyalty, procesos, actores y analítica.
+- 16 secciones temáticas: surtido, venta, ticket, precio, margen, promociones, ejecución en tienda, abastecimiento, red de tiendas, lectura de resultados, calendario, loyalty, procesos, actores, analítica y el manual operativo de ScanView.
 - **Anexo A** — cifras de referencia, cada bloque con su corte temporal.
 - **Anexo B** — trampas de lectura: errores metodológicos frecuentes al interpretar los reportes.
 - Cada término indica de qué fuente proviene (`[F1]`, `[F2]`, …), registradas en la tabla que encabeza el documento.
