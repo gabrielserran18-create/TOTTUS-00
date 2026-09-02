@@ -34,7 +34,7 @@ Segundo nivel. En Tottus:
 
 | Mundo | Divisiones |
 |---|---|
-| **Non-Food** | J18, J9, J10, J11 |
+| **Non-Food** | J8, J9, J10, J11 |
 | **Perecibles** | J3, J4, J6, J7 |
 | **PGC** (productos de gran consumo) y **FLC** (fiambres, lácteos y congelados) | J1, J2, J5 |
 | **Institucional** | J12 — venta por volumen; focos en tienda que jalan venta |
