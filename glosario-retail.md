@@ -141,6 +141,7 @@ Venta de todas las tiendas, incluidas aperturas nuevas y cierres.
 
 **SSS** — *Same Store Sales* `[F1]` `[F3]` `[F4]`
 Venta considerando únicamente las tiendas que existían en ambos períodos comparados. Aísla el crecimiento **orgánico** del que viene por expansión de la red. En F4 se reporta además como **"solo piso"**, es decir excluyendo el canal online.
+*Sinónimo:* Venta Same Store, venta mismas tiendas.
 
 **TSS** — *Total Store Sales* `[F3]` `[F4]`
 Venta total de la operación: **piso + online**, sin el filtro de mismas tiendas.
