@@ -9,6 +9,7 @@ Se construye por acumulación: cada capacitación, reunión o documento que apor
 - Cada entrada indica `[F1]`, `[F2]`, … según la fuente donde apareció. Si un término aparece en varias, se listan todas.
 - Los términos marcados `[base]` son de uso estándar en retail y se incluyen como complemento de contexto, no provienen de una fuente registrada.
 - Los términos marcados `⚠️ por confirmar` aparecieron en una fuente sin definición explícita; el significado anotado es una lectura del contexto y **debe validarse con el área dueña** antes de usarse en un entregable.
+- `[F5]` marca una **corrección directa del usuario**. Prevalece sobre lo extraído de las fuentes documentales cuando hay conflicto.
 - Cuando un término tiene un significado **específico dentro de una herramienta**, se anota bajo *"En ScanView"* o similar.
 
 ---
@@ -21,38 +22,51 @@ Se construye por acumulación: cada capacitación, reunión o documento que apor
 | **F2** | *Impulso+: Análisis y Estrategia de HS* | Presentación de trabajo, 110 slides | Oct–Nov 2025 | Acumulado de 5 sesiones de diseño de la política promocional de Hardsell. Portada fechada Oct-2025; el contenido llega al 13-Nov. Incluye anexo regional (PE/CL) |
 | **F3** | *Chapa Tu Yapa II — Julio* | Presentación de resultados, 9 slides | Jul 2026 | Cierre de la 2ª edición de la campaña en Precio Uno (29-Jun al 15-Jul 2026) |
 | **F4** | *Comité Comercial S36-2026* | Comité de ventas, 60 págs | 01-Set-2026 | Cierre Agosto 2026. Bloques: Planificación Comercial, Logística, Marketing, Loyalty, plan de acción Colchones, y pre-read (competitividad, ruta crítica, CDA) |
+| **F5** | Correcciones y precisiones de Gabriel Serrano | Conocimiento del puesto — fuente continua | Desde Set 2026 | Correcciones directas del usuario sobre lo extraído de las fuentes documentales. **Tiene prioridad sobre F1–F4 cuando hay conflicto** |
 
 ---
 
 ## 1. Estructura mercadológica y surtido
 
-**Árbol mercadológico** `[F1]`
-Jerarquía con la que un retailer clasifica todo su surtido, de lo más agregado a lo más granular. En Tottus tiene 5 niveles operativos: **Negocio → Mundo → División (J) → Subdepartamento → Subclase**, y por debajo el **SKU**. Es la columna vertebral de cualquier análisis: define a qué nivel se compara, se agrega y se atribuye un resultado.
+**Árbol mercadológico** `[F1]` `[F5]`
+Jerarquía con la que se clasifica todo el surtido, de lo más agregado a lo más granular. En Tottus tiene **6 niveles**:
+
+> **Mundo → División (J) → Departamento → Subdepartamento → Clase → Subclase**, y por debajo el **SKU**.
+
+Es la columna vertebral de cualquier análisis: define a qué nivel se compara, se agrega y se atribuye un resultado.
 *Sinónimo:* estructura mercadológica, jerarquía de productos.
 
 **Negocio** `[F1]`
-Nivel más alto del árbol. Agrupa la operación completa (ej. Hipermercados Tottus).
+La operación completa (ej. Hipermercados Tottus). Está por encima del árbol mercadológico, no es uno de sus niveles.
 
-**Mundo** `[F1]`
-Segundo nivel. En Tottus: **Non-Food**, **Perecibles**, **PGC**, **FLC**.
+**Mundo** `[F1]` `[F5]`
+Nivel 1, el más alto del árbol. En Tottus: **Non-Food**, **Perecibles**, **PGC**, **FLC**.
 
-**División (J)** `[F1]` `[F3]` `[F4]`
-Tercer nivel; en Tottus se codifica como "J" + número. Cada J agrupa un conjunto de subdepartamentos bajo una misma gestión comercial.
+**División (J)** `[F1]` `[F3]` `[F4]` `[F5]`
+Nivel 2; se codifica como "J" + número (J1, J2, … J12). Cada J agrupa un conjunto de departamentos bajo una misma gestión comercial.
 Agrupaciones de reporte observadas en el Comité `[F4]`:
-- **Food PGC/FLC:** J01, J02, J05
-- **Perecibles:** J03, J04, J06, J07
-- **Non-Food:** J08, J09, J10, J11
+- **Food PGC/FLC:** J1, J2, J5
+- **Perecibles:** J3, J4, J6, J7
+- **Non-Food:** J8, J9, J10, J11
 - **Excluidos de la lectura comercial estándar:** **J12**, **J99**, **JSJ** (ver *Venta institucional*)
 
-Referencias sueltas de categoría por J recogidas de F4 y F2: J01 (abarrotes, aceites, galletas, bebidas alcohólicas, confitería, desayunos), J02 (belleza, limpieza), J05 (lácteos/FLC), J06 (panadería y pastelería), J08 (vestuario), J09 (dormitorio, colchones), J11 (electromenor).
-⚠️ El mapeo oficial y completo J01–J12 sigue pendiente de fuente.
+Referencias sueltas de categoría por J recogidas de F4 y F2: J1 (abarrotes, aceites, galletas, bebidas alcohólicas, confitería, desayunos), J2 (belleza, limpieza), J5 (lácteos/FLC), J6 (panadería y pastelería), J8 (vestuario), J9 (dormitorio, colchones), J11 (electromenor).
+⚠️ **Notación:** la forma canónica es **sin cero a la izquierda** (J1, J8). Los reportes del Comité y los códigos de clase la escriben rellenada a dos dígitos (`J01`, `J08`); son la misma división.
+⚠️ El mapeo oficial y completo J1–J12 sigue pendiente de fuente.
+
+**Departamento** `[F5]`
+Nivel 3, entre la División y el Subdepartamento.
+⚠️ *por confirmar:* ejemplos concretos por división — no aparecen en las fuentes documentales registradas.
 
 **Subdepartamento** `[F1]`
-Cuarto nivel. Ejemplos: dentro de J6 → Pastelería Fresca, Panadería a Granel, Pastelería Seca. Dentro de J5 → Yogur, Mantecas y Mantequillas, Leches y Cremas, Quesos.
+Nivel 4. Ejemplos: dentro de J6 → Pastelería Fresca, Panadería a Granel, Pastelería Seca. Dentro de J5 → Yogur, Mantecas y Mantequillas, Leches y Cremas, Quesos.
 
-**Clase / Subclase** `[F1]`
-Niveles más finos antes del SKU. Ejemplo: Pastelería Seca → Queques → Queques Rectangulares. Es el nivel donde normalmente se toman decisiones de surtido.
-La clase se codifica concatenando la jerarquía: `J09050104 – COLCHONES` `[F4]`.
+**Clase** `[F1]` `[F4]` `[F5]`
+Nivel 5. Ejemplo: dentro de Pastelería Seca → Queques.
+Se codifica concatenando la jerarquía: `J09050104 – COLCHONES` `[F4]`.
+
+**Subclase** `[F1]` `[F5]`
+Nivel 6, el más fino antes del SKU. Ejemplo: Queques → Queques Rectangulares. Es el nivel donde normalmente se toman decisiones de surtido.
 
 **SKU** (*Stock Keeping Unit*) `[F1]`
 Unidad mínima de gestión: el producto individual con su código propio. Ejemplo: "Queque Marmoleado Rectangular Tottus". Es el nivel al que se mide rotación, precio medio y presencia en tienda.
@@ -141,11 +155,12 @@ Venta expresada en unidades (piezas). "Q" por *quantity*. Es el contrapeso oblig
 **Venta total** `[F1]`
 Venta de todas las tiendas, incluidas aperturas nuevas y cierres.
 
-**SSS** — *Same Store Sales* `[F1]` `[F3]` `[F4]`
+**SSM / SSS** — *Same Store* `[F1]` `[F3]` `[F4]` `[F5]`
 Venta considerando únicamente las tiendas que existían en ambos períodos comparados. Aísla el crecimiento **orgánico** del que viene por expansión de la red. En F4 se reporta además como **"solo piso"**, es decir excluyendo el canal online.
 *Sinónimo:* Venta Same Store, venta mismas tiendas.
+⚠️ **Notación:** la sigla correcta según el usuario `[F5]` es **SSM**; los reportes revisados (F3, F4) la escriben **SSS**. Mismo concepto. Al leer un documento, usar la forma que traiga ese documento.
 
-**TSS** — *Total Store Sales* `[F3]` `[F4]`
+**TSS** — *Total Store* `[F3]` `[F4]` `[F5]`
 Venta total de la operación: **piso + online**, sin el filtro de mismas tiendas.
 ⚠️ **SSS y TSS pueden contar historias opuestas.** En el Comité S36, en la semana 34 Tottus ganaba 1.2 p.p. de share en SSS y perdía 0.5 p.p. en TSS — la diferencia apunta al canal online. Nunca leer una sin la otra.
 
@@ -308,7 +323,7 @@ Margen en soles (no en porcentaje) que genera una promoción. Junto con el volum
 
 **Rentabilidad promocional** `[F2]`
 Definida en F2 como **`GPE + Sellout`**: el margen bruto más el ingreso por acuerdos comerciales asociados a la promoción.
-Referencia F2 (Ago-2025, J01/J02/J05): **16.6%** de las combinaciones SKU-promoción tenían rentabilidad negativa.
+Referencia F2 (Ago-2025, J1/J2/J5): **16.6%** de las combinaciones SKU-promoción tenían rentabilidad negativa.
 
 **Rebate / Sellout** `[F2]`
 Ingreso que el proveedor paga al retailer, vinculado a la venta efectiva del producto en promoción. En el proyecto regional se trabajó la "disponibilización de rebate sell out por SKU" para poder calcular rentabilidad promocional a nivel producto.
@@ -924,7 +939,9 @@ Errores recurrentes detectados al revisar F2, F3 y F4. Checklist antes de firmar
 
 Espacio de trabajo para el próximo aporte:
 
-- [ ] Definiciones oficiales Tottus de cada J (mapeo completo J01–J12, más J99 y JSJ)
+- [ ] Definiciones oficiales Tottus de cada J (mapeo completo J1–J12, más J99 y JSJ)
+- [ ] Ejemplos de **Departamento** (nivel 3) por división — el nivel está confirmado, faltan casos concretos
+- [ ] Confirmar si la sigla canónica de Same Store es **SSM** o **SSS** (los reportes usan SSS)
 - [ ] Expansión confirmada de siglas: **MV** (arriendo prioritario), **FQ** (quiebre), **MDV** y **RT** (POP), **Fcom**, **KVC**, **H-E-L** (semaforización IPC), **LW** (logística de proveedor), **L&A** (fuente de mercado)
 - [ ] Definición formal de **Básico 1 / Básico 2** y de **surtido troncal**
 - [ ] Criterio de selección de **Focals**
@@ -937,4 +954,4 @@ Espacio de trabajo para el próximo aporte:
 
 ---
 
-*Última actualización: fuentes F1–F4 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11.*
+*Última actualización: fuentes F1–F5 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles con Departamento y Clase como niveles propios, la notación de las divisiones sin cero a la izquierda, y las siglas SSM/TSS.*

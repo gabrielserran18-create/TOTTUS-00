@@ -36,6 +36,9 @@ Fuentes actuales:
 | F2 | *Impulso+: Análisis y Estrategia de HS* | Oct–Nov 2025 |
 | F3 | *Chapa Tu Yapa II — Julio* | Jul 2026 |
 | F4 | *Comité Comercial S36-2026* | Set 2026 |
+| F5 | Correcciones directas de Gabriel Serrano (fuente continua) | desde Set 2026 |
+
+**`[F5]` tiene prioridad sobre F1–F4.** Cuando el usuario corrige algo extraído de un documento, gana su corrección: él conoce la operación, los documentos tienen erratas. Aplicar el cambio, etiquetarlo `[F5]` y — si el documento decía otra cosa — dejar constancia de la discrepancia en vez de borrarla (ver regla 8).
 
 ### Convenciones de marcado
 
@@ -94,6 +97,8 @@ Estas reglas existen porque el valor de esta base depende de que se pueda confia
 
 7. **No inflar.** Si una fuente no aporta terminología nueva, se registra y se dice que no aportó. Repetir con otras palabras lo que ya está no es alimentar la base.
 
+8. **Conservar la discrepancia, no taparla.** Cuando el usuario corrige algo que un documento decía distinto, se aplica su versión **y** se anota la forma que usan los reportes. Quien lea un comité viejo tiene que poder reconocer el término. Ejemplo vivo: la sigla de Same Store es `SSM` según el usuario y `SSS` en los reportes revisados — el glosario registra ambas.
+
 ---
 
 ## 5. Validación antes de commitear
@@ -110,10 +115,12 @@ Cuando el usuario pregunte "¿está bien el archivo?", correr esto y reportar el
 
 ## 6. Git
 
-- Rama de trabajo: crear una nueva por tanda de cambios (`claude/<descripción-corta>`); **nunca commitear directo a `main`**.
+Esta es una base de conocimientos personal, no un proyecto de código con revisores. **El flujo normal es commitear directo a `main` y pushear** — sin rama ni PR.
+
 - Commit en español, explicando **qué fuente se incorporó y qué secciones cambiaron**.
-- Push y abrir PR en draft. **No mergear ni aprobar** — esa decisión es del usuario.
-- El documento maestro vive en `main`. Si `main` no lo tiene todavía, es que hay un PR pendiente de mergear.
+- Validar (§5) antes de cada commit. Ese es el control de calidad; sustituye a la revisión.
+- Rama + PR solo si el usuario lo pide, o para un cambio grande que quiera revisar antes de consolidar.
+- Nunca mergear ni aprobar un PR: esa decisión es del usuario.
 
 ---
 
