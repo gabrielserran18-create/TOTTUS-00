@@ -15,23 +15,32 @@ Se construye por acumulación: cada capacitación, reunión o documento que apor
 | ID | Fuente | Tipo | Fecha | Nota |
 |---|---|---|---|---|
 | **F1** | Capacitación Comercial Scanntech — "Nueva plataforma tecnológica en retail" (Paolo Gaspar, KAM Scanntech) | Capacitación grabada, ~1h30 | Sep 2026 | 6ª sesión de la ronda al equipo comercial Tottus. Ver `scanntech-scanview-guia.md` |
+| **F2** | Conocimiento interno Tottus — Gabriel Serrano (Inteligencia Comercial) | Corrección directa sobre el documento | Sep 2026 | Estructura real del árbol mercadológico: bandera como nivel superior y mapeo de mundos a divisiones J |
 
 ---
 
 ## 1. Estructura mercadológica y surtido
 
-**Árbol mercadológico** `[F1]`
-Jerarquía con la que un retailer clasifica todo su surtido, de lo más agregado a lo más granular. En Tottus tiene 5 niveles operativos: **Negocio → Mundo → División (J) → Subdepartamento → Subclase**, y por debajo el **SKU**. Es la columna vertebral de cualquier análisis: define a qué nivel se compara, se agrega y se atribuye un resultado.
+**Árbol mercadológico** `[F1·F2]`
+Jerarquía con la que un retailer clasifica todo su surtido, de lo más agregado a lo más granular. En Tottus tiene 5 niveles operativos: **Bandera → Mundo de categoría → División (J) → Subdepartamento → Subclase**, y por debajo el **SKU**. Es la columna vertebral de cualquier análisis: define a qué nivel se compara, se agrega y se atribuye un resultado.
 *Sinónimo:* estructura mercadológica, jerarquía de productos.
 
-**Bandera** `[F1]`
-Nivel más alto del árbol. Tottus, Precio uno, Tottus Online Agrupa la operación completa (ej. Hipermercados Tottus).
+**Bandera** `[F2]`
+Nivel más alto del árbol: **Tottus**, **Precio Uno** y **Tottus Online**. Agrupa la operación completa de cada formato.
+*En ScanView:* aparece como **filtro independiente** (etiquetado Tottus / Precio Uno / Ecommerce), separado del selector de estructura mercadológica. Ver también la entrada de la sección 5, sobre su efecto en el `% PDV`.
 
-**Mundo de categoría** `[F1]`
-Segundo nivel. En Tottus: **Non-Food (j18-j9-j10-j11)**, **Perecibles (J3-j4-j6-j7)**, **PGC (producto de gran consumo)** y **FLC (fiambres lacteos y congelados) (j1-j2-j5)**, **Institucional (j12) (Venta por volumne, focal en tienda que jalan venta)**.
+**Mundo de categoría** `[F1·F2]`
+Segundo nivel. En Tottus:
 
-**División (J)** `[F1]`
-Tercer nivel; en Tottus se codifica como "J" + número (J1, J2, J6, J11…). Cada J agrupa un conjunto de subdepartamentos bajo una misma gestión comercial. Las divisiones de Perecibles son **J3, J4, J6 y J7**. Ejemplos citados: J5 (lácteos/FLC), J6 (Panadería y Pastelería).
+| Mundo | Divisiones |
+|---|---|
+| **Non-Food** | J18, J9, J10, J11 |
+| **Perecibles** | J3, J4, J6, J7 |
+| **PGC** (productos de gran consumo) y **FLC** (fiambres, lácteos y congelados) | J1, J2, J5 |
+| **Institucional** | J12 — venta por volumen; focos en tienda que jalan venta |
+
+**División (J)** `[F1·F2]`
+Tercer nivel; en Tottus se codifica como "J" + número. Cada J agrupa un conjunto de subdepartamentos bajo una misma gestión comercial. Ver el mapeo completo a mundo en la entrada anterior. Ejemplos citados en la capacitación: J5 (lácteos/FLC), J6 (Panadería y Pastelería).
 
 **Subdepartamento** `[F1]`
 Cuarto nivel. Ejemplos: dentro de J6 → Pastelería Fresca, Panadería a Granel, Pastelería Seca. Dentro de J5 → Yogur, Mantecas y Mantequillas, Leches y Cremas, Quesos.
@@ -63,17 +72,20 @@ Etiqueta que recibe un producto sin marca/proveedor identificado en la data. No 
 **Marca propia** `[F1]`
 Marca del propio retailer. En Tottus: Marca Tottus, Precio Uno. En la data de Scanntech aparece a nivel **fabricante** agrupada como "Hipermercados Tottus".
 
-**PGC** — Productos de Gran Consumo `[F1]`
-Mundo de productos de consumo masivo no perecible (abarrotes, cuidado personal, limpieza).
+**PGC** — Productos de Gran Consumo `[F1·F2]`
+Productos de consumo masivo no perecible (abarrotes, cuidado personal, limpieza). Divisiones J1, J2, J5 junto con FLC.
 
-**FLC** — Fiambres, Lácteos y Congelados `[F1]`
-Mundo que agrupa esas tres familias. Trabaja mayormente con productos unitarios (no pesables), por lo que la lectura de proveedor y marca es más limpia que en el resto de Perecibles.
+**FLC** — Fiambres, Lácteos y Congelados `[F1·F2]`
+Agrupa esas tres familias. Divisiones J1, J2, J5 junto con PGC. Trabaja mayormente con productos unitarios (no pesables), por lo que la lectura de proveedor y marca es más limpia que en Perecibles.
 
-**Perecibles** `[F1]`
-Mundo de productos de vida útil corta: carnes y pescados, frutas y verduras, panadería y pastelería, platos preparados.
+**Perecibles** `[F1·F2]`
+Mundo de productos de vida útil corta: carnes y pescados, frutas y verduras, panadería y pastelería, platos preparados. Divisiones **J3, J4, J6 y J7**.
 
-**Non-Food** `[F1]`
-Mundo de productos no alimentarios.
+**Non-Food** `[F1·F2]`
+Mundo de productos no alimentarios. Divisiones J18, J9, J10, J11.
+
+**Institucional** `[F2]`
+Mundo de venta por volumen (J12). Funciona como foco en tienda que jala venta.
 
 ---
 
@@ -175,8 +187,8 @@ Cambio en la cantidad de locales entre los dos períodos comparados. Explica var
 Ausencia del producto en góndola pese a estar activo en el surtido.
 En ScanView **no hay data directa de quiebre**; el `% PDV` es el proxy y debe contrastarse con la data interna de productos activos. Tampoco identifica **qué tienda** específica falló.
 
-**Bandera** `[F1]`
-Formato o marca comercial dentro del mismo grupo. En Tottus: **Tottus**, **Precio Uno**, **Ecommerce**. Filtrar mal la bandera contamina el `% PDV` y el share, porque cuenta locales donde ese surtido nunca se comercializa.
+**Bandera** (uso operativo) `[F1]`
+Definición en la sección 1. En ScanView es un filtro: **Tottus · Precio Uno · Ecommerce** (= Tottus Online). Filtrar mal la bandera contamina el `% PDV` y el share, porque cuenta locales donde ese surtido nunca se comercializa.
 
 **Zona / cluster** `[F1]`
 Agrupación geográfica o comercial de tiendas. En Tottus: Lima Norte, Lima Moderna, Lima Sur, Provincia, Oriente/Iquitos. Sirve tanto para lectura logística como para *cluster de mercado* (tiendas con perfil de demanda similar).
@@ -295,7 +307,8 @@ Macro = compañía / mundo / división. Micro = subclase / SKU / tienda. La reco
 
 Espacio de trabajo para el próximo aporte:
 
-- [ ] Definiciones oficiales Tottus de cada J (mapeo completo J1–J11)
+- [x] ~~Mapeo de mundos a divisiones J~~ — incorporado en F2
+- [ ] Nombre oficial de cada J individual (hoy solo se conocen J5 y J6 por la capacitación)
 - [ ] Métricas de margen y rentabilidad (margen bruto, margen de contribución, GMROI)
 - [ ] Terminología de trade marketing y espacio (planograma, facing, share de góndola)
 - [ ] Terminología de abastecimiento (fill rate, lead time, nivel de servicio, forecast)
@@ -303,4 +316,4 @@ Espacio de trabajo para el próximo aporte:
 
 ---
 
-*Última actualización: fuente F1 incorporada.*
+*Última actualización: fuentes F1 y F2 incorporadas.*

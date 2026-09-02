@@ -69,7 +69,7 @@ Casi todos los filtros se repiten hoja a hoja. Conocerlos una vez sirve para las
 | **Ponderación** | Ventas totales · Ventas **no ponderadas** |
 | **Métrica** | **Valor** (soles) · **Unidades** |
 | **Fechas de comparación** | Períodos personalizados · último mes cerrado · mes vs. mismo mes del año anterior (comparación estándar del equipo). Permite **multiselección de meses** para estacionalidades móviles (ej. Semana Santa/Pascua que cambia de mes entre años) |
-| **Estructura mercadológica** | Árbol de **5 niveles**, fijado al árbol interno de Tottus: **Negocio → Mundo → División (J) → Subdepartamento → Subclase**. Mundos: Non-Food, Perecibles, PGC, FLC |
+| **Estructura mercadológica** | Árbol de **5 niveles**, fijado al árbol interno de Tottus: **Bandera → Mundo de categoría → División (J) → Subdepartamento → Subclase**. Mundos: Non-Food (J18, J9, J10, J11), Perecibles (J3, J4, J6, J7), PGC y FLC (J1, J2, J5), Institucional (J12). Ver el glosario para el mapeo completo |
 | **Fabricante / Proveedor** | Búsqueda y selección (ej. Alicorp). Se desmarca el check para pasar a nivel marca |
 | **Marca** | Búsqueda y selección (ej. Marca Tottus) |
 | **Códigos de barras** | Se pega una **lista de EAN** y toda la data se acota a esos SKUs |
