@@ -54,6 +54,16 @@ Unidad mínima de gestión: el producto individual con su código propio. Ejempl
 **EAN / Código de barras** `[F1]`
 Identificador único del producto. En ScanView se puede pegar una **lista de EAN** para acotar todo el análisis a un conjunto específico de productos.
 
+**GPE**:
+Margen de venta versus el costo
+
+**GP / profit:**
+GPE + MERMA CONOCIDA + RIVAL + APORTE
+*las Marcas propias no suman aporte al GP
+
+**VENTA SI:**
+Venta sin impuesto
+
 **Surtido** `[F1]`
 Conjunto de productos que un retailer ofrece en una categoría, tienda o bandera. La *estrategia de surtido* define qué SKUs se comercializan en qué banderas o formatos (ej. tortas y pastelería repartidos entre marca Tottus en Tottus y marca propia de Precio Uno en Precio Uno).
 
