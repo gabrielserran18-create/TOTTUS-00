@@ -23,6 +23,15 @@ Se construye por acumulación: cada capacitación, reunión o documento que apor
 | **F3** | *Chapa Tu Yapa II — Julio* | Presentación de resultados, 9 slides | Jul 2026 | Cierre de la 2ª edición de la campaña en Precio Uno (29-Jun al 15-Jul 2026) |
 | **F4** | *Comité Comercial S36-2026* | Comité de ventas, 60 págs | 01-Set-2026 | Cierre Agosto 2026. Bloques: Planificación Comercial, Logística, Marketing, Loyalty, plan de acción Colchones, y pre-read (competitividad, ruta crítica, CDA) |
 | **F5** | Correcciones y precisiones de Gabriel Serrano | Conocimiento del puesto — fuente continua | Desde Set 2026 | Correcciones directas del usuario sobre lo extraído de las fuentes documentales: árbol mercadológico de 6 niveles, mapeo de mundos a divisiones J, notación de las divisiones. **Tiene prioridad sobre F1–F4 cuando hay conflicto** |
+| **F6** | Traspaso de Mirella Gómez Montufar | Grabación de traspaso + conocimiento operativo heredado | Set 2026 | Predecesora del puesto, de vacaciones. Cubre personas del área, archivos fuente, carpetas compartidas y el procedimiento heredado de los dos entregables recurrentes |
+| **F7** | `Data_Resultados (Categorías) Marcas Propias.xlsx` + 6 láminas de `Presentación MMPP - Sep'26.pptx` | Bases de datos + deck mensual | Bases Ene–Jul 2026, deck Ene–Ago 2026 | El bloque más grande de esta ronda: titular de marca propia por división, share y contribución de lanzamientos, efecto panetón, economía del margen (GPE vs GP) y cinco casos (huevos frescos, higiene personal, panetón, Xplend, papas fritas) |
+| **F8** | `LANZAMIENTOS_2024_2025.xlsx`, `Lanzamientos_Dic_Ene_Feb.xlsx`, `Lanzamientos_MMPP_31_08.xlsx` + deck `Lanzamientos MMPP - 2026` (77 láminas) | Bases + deck de lanzamientos | 2024 a 31-Ago-2026 | Histórico, ejecución del trimestre y pipeline vigente (167 SKU, 56 proyectos) de lanzamientos de marca propia |
+| **F9** | *Estrategia de MMPP - Directorio* | Deck regional, origen Chile, 66 láminas | s/f | Marco "one-pager de resultado de lanzamiento" (ejemplo observado: Craanch, dic-2025). Complementa, no reemplaza, el marco de Etapas propio de Tottus |
+| **F10** | Consolidados de campaña HS18-A, HS18-B, T36 adelantado y T36 clásico | 4 archivos, detalle SKU × llamado | Set 2026 | HS18-A: 8,770 filas, 117 columnas, 6,340 SKU, 2,646 llamados. Es el nivel de detalle más fino revisado sobre una campaña real |
+| **F11** | `RUTA CRITICA 2025.xlsx`, hoja `HS CONCEPTUAL` | Cronograma de campaña | 2025 | ⚠️ Antecede al rediseño de F2 — sus hitos y plazos no coinciden con los de la ruta crítica que reporta el Comité S36-2026 (F4); ver *Ruta Crítica*, sección 13 |
+| **F12** | Plantillas de los entregables recurrentes: `Especial de Marcas Propias - HS##.pptx` y `Boletín MKT [Mes] - Campañas Especiales.xlsx` | Plantillas + procedimiento | Vigentes Set 2026 | Las dos piezas que produce Inteligencia Comercial cada campaña / cada mes |
+| **F13** | *Campañas Core '25.xlsx* | Histórico de campañas core | 2025 | Las cinco campañas estacionales del año, calendario y mapeo de categorías campañeras |
+| **F14** | *Campaña Navideña.xlsx* | Detalle de Navidad | 2025 | Venta por categoría y por marca dentro de la campaña navideña de 2025 |
 
 ---
 
@@ -125,8 +134,42 @@ Producto que se vende por peso y no por unidad empaquetada (carnes, frutas, pana
 **Genérico** `[F1]`
 Etiqueta que recibe un producto sin marca/proveedor identificado en la data. No confundir con "marca blanca".
 
-**Marca propia / MMPP** `[F1]` `[F2]` `[F4]`
-Marca del propio retailer. En Tottus: **Marca Tottus**, **Precio Uno**. En la data de Scanntech aparece a nivel **fabricante** agrupada como "Hipermercados Tottus". En los decks internos se abrevia **MMPP** y se reporta como corte propio (ej. "¿cuántos SKUs de MMPP tenemos en arriendo?" `[F2]`; "Especial MMPP 03/09–16/09" `[F4]`).
+**Marca propia / MMPP** `[F1]` `[F2]` `[F4]` `[F7]`
+Marca del propio retailer. En Tottus: **Marca Tottus** (con sub-marcas **Bebé, Kids, Life, Orígenes, Premium, Soft, Xplend**), **Precio Uno** y **Murana**. En la data de Scanntech aparece a nivel **fabricante** agrupada como "Hipermercados Tottus". En los decks internos se abrevia **MMPP** y se reporta como corte propio (ej. "¿cuántos SKUs de MMPP tenemos en arriendo?" `[F2]`; "Especial MMPP 03/09–16/09" `[F4]`).
+
+*Filtro correcto* `[F7]`: por **prefijo** (`TOTTUS*`, `PRECIO UNO`, `MURANA`), no por lista cerrada de tres marcas — una lista cerrada no captura las sub-marcas. La forma más robusta es no filtrar por marca sino usar el campo `FLAG_MMPP` de la base de venta, que ya viene resuelto.
+
+⚠️ **Trampa — `FRESH`** `[F10]`: entre 19 y 31 SKU de gaseosas (el conteo varía según el corte revisado) cuya `Descripcion` dice "COLA AMARILLA FRESH **TOTTUS** 500ML" pero cuyo campo `Marca` dice solo `FRESH` (proveedor: Inversiones y Representaciones La Fábrica). Ningún filtro por marca ni por prefijo lo captura. ⚠️ *por confirmar* si es marca propia.
+
+El universo de medición de MMPP en el deck mensual y en el Especial MMPP son las divisiones **J1, J2 y J5** — el mundo **PGC y FLC** completo (ver *Mundo*, arriba). Hay SKU de MMPP participando también en **J6 y J7** (Panadería, Comidas Preparadas) que ese universo no mide: en la campaña HS18-A eran 65 de 693 SKU MMPP en campaña `[F10]`. Decidir si entran y ser consistente en todos los cortes.
+
+**MMTT** `[F7]`
+Marcas Terceras: la contraparte de MMPP, marca de proveedor. Es el corte contra el que se mide participación y margen de la marca propia — ver *GPE / GPE%* y *Rebate / Sellout*, sección 5.
+
+### Lanzamientos de marca propia
+
+**Proyecto** `[F8]`
+La unidad de gestión real de un lanzamiento de marca propia: agrupa los SKU que salen y se miden juntos (ej. "Mejora Detergente Líquido Tottus Xplend – Botella" agrupa 4 SKU). Analizar por SKU suelto rompe esa unidad. Pipeline vigente (corte 31-Ago-2026): 56 proyectos, 167 SKU.
+
+**Tipo de SKU (lanzamiento)** `[F8]`
+`NUEVO` · `REEMPLAZO FÓRMULA` · `REEMPLAZO OTROS`. El resumen operativo los colapsa en **Nuevos** y **Reformulación**. En el pipeline vigente: 78 Nuevo, 55 Reemplazo Fórmula, 34 Reemplazo Otros, sobre 167 SKU.
+⚠️ *por confirmar:* qué distingue exactamente Reemplazo Fórmula de Reemplazo Otros.
+
+**Cump. Branding** `[F8]`
+`SI / (SI + NO)` sobre el campo `Diseño es nuevo Tottus`, **excluyendo `NO APLICA` del denominador**.
+⚠️ **Trampa:** del bloque de Productos Nuevos (34 SKU), 15 caen en `NO APLICA` y salen del cálculo. El 89.5% de cumplimiento reportado se calcula sobre 19 SKU, no sobre 34. Declarar siempre la base — el mismo tipo de trampa que la de *Efectividad promocional*, sección 6.
+
+**Etapas Pre-Lanzamiento / Lanzamiento / Post** `[F8]`
+Plantilla propia de Tottus para medir el share de un producto nuevo, partiendo la serie alrededor de la fecha de entrada: **Pre-Lanzamiento** (línea base, antes de que entre el producto) → **Lanzamiento** (ventana de entrada) → **Post** (share estabilizado). Cada etapa lleva su par **SOV TSS** / **SOV SSS**.
+Resuelve el problema de comparabilidad de un producto nuevo: **comparar contra el año anterior no dice nada cuando el producto no existía; comparar la categoría contra sí misma antes y después, sí.**
+⚠️ *por confirmar:* cuántas semanas definen cada etapa y si el criterio es fijo o varía por categoría.
+
+**One-pager de resultado de lanzamiento** `[F9]`
+Marco de medición del Directorio regional (Chile), complementario al de Etapas. Combina titulares (crecimiento, share con variación en p.p.), serie de ventas, **ejecución en punto de venta** (% surtido activo por bandera, % con POP de lanzamiento, quiebre, share of shelf vs. líder), rentabilidad (precio y margen vs. referencia interna) y el bloque de clientes.
+
+**Migración vs. Nuevo real** `[F9]`
+Dentro del bloque de clientes del one-pager: separa al comprador que solo cambió de SKU (**migración**) del que representa demanda incremental (**nuevo real**). Es el corte que responde si el lanzamiento sumó o solo movió al comprador existente. Ejemplo observado (Craanch, dic-2025): migración 41% vs. nuevo real 4%.
+⚠️ Sin data de ejecución en punto de venta, el análisis de un lanzamiento queda cojo: un producto que no llegó a góndola no es un lanzamiento que falló comercialmente.
 
 **PGC** — Productos de Gran Consumo `[F1]`
 Mundo de productos de consumo masivo no perecible (abarrotes, cuidado personal, limpieza).
@@ -151,9 +194,11 @@ Venta registrada en dinero para un período y un corte determinado. Es la base s
 **Venta SI** (sin impuestos) `[F4]`
 Venta neta de IGV. Es la base sobre la que se reporta la venta en el Comité y sobre la que se calcula el GPE.
 ⚠️ **Trampa habitual:** el ticket promedio y el precio medio suelen venir **con** impuesto. Multiplicar `TRX × Ticket Promedio` no reproduce la Venta SI del mismo slide. Declarar siempre la base.
+Reincidencia observada `[F12]`: en la plantilla del Especial MMPP, `TRX × Ticket Promedio` da 70.6 contra los 81.7 que muestra la lámina — mismo desfase, otro documento. Confirmar y declarar al pie cada vez.
 
 **Venta institucional** `[F4]`
 Venta a clientes institucionales (no shopper de tienda). Se **excluye** de la lectura comercial estándar junto con las divisiones **910, 936 y J12**.
+*Código* `[F10]`: **910** = venta institucional propiamente dicha; **936** = Repsol. Ambos se filtran por el campo `TIPO_VENTA`.
 
 **Venta en valor vs. venta en unidades** `[F1]`
 Dos lecturas de la misma venta: en soles y en piezas. Divergen cuando cambia el precio o el mix. Que la venta en valor crezca y la de unidades caiga significa que se está vendiendo **más caro, no más**.
@@ -316,8 +361,16 @@ Precio o condición que impide que una apuesta salga como estaba definida y obli
 ## 5. Margen y rentabilidad
 
 **GPE / GPE%** `[F3]` `[F4]`
-Ganancia bruta de explotación: el margen bruto del negocio, en soles (**GPE MM**) y como porcentaje de la venta (**GPE%**). Es el indicador de margen estándar de los reportes de Tottus.
+Ganancia bruta de explotación: el margen bruto del negocio, **antes de aportes comerciales**, en soles (**GPE MM**) y como porcentaje de la venta (**GPE%**). Es el indicador de margen estándar de los reportes de Tottus. Verificado F7: `GPE = VENTA_SI − COSTO_VENTA`.
 Referencia F4 (Agosto 2026, Tottus): GPE S/62.0 MM sobre venta S/369.0 MM = **16.8%**, +0.8 p.p. vs AP.
+
+**GP%** `[F7]`
+Margen porcentual **después** de aportes comerciales y de merma — a diferencia del GPE%, que es antes. Se calcula desde la columna `PROFIT` (ver abajo).
+Referencia F7 (Ene–Jul 2026, `BD_Profit`): Marca Propia GPE 16.5% → **GP% 15.7%** (−0.8 p.p.); Marca Proveedor (MMTT) GPE 9.4% → **GP% 27.9%** (+18.5 p.p.). La marca propia gana el margen frontal y lo pierde todo al pasar a GP% — ver *Rebate / Sellout*.
+
+**PROFIT** `[F7]`
+Columna de `BD_Profit` que alimenta el GP%. Convive con `COSTO_RECIBO` y `MERMA_CONOCIDA`; no es el GPE más un delta simple.
+⚠️ **Fórmula exacta sin confirmar — es la pregunta de mayor consecuencia de este material.** Si MMPP no recibe rebates, su GP% debería igualar su GPE%, y aun así cae 0.8 p.p. Esa diferencia tiene que ser merma u otro cargo, y es la única parte de la brecha de margen de marca propia que es gestionable. ⚠️ *por confirmar.*
 
 **GM%** (*Gross Margin*) `[F4]`
 Margen bruto porcentual, usado en los reportes de categoría de Non-Food. Se reporta **GM% Act** (actual) contra **GM% AP** (año pasado).
@@ -333,8 +386,9 @@ Margen en soles (no en porcentaje) que genera una promoción. Junto con el volum
 Definida en F2 como **`GPE + Sellout`**: el margen bruto más el ingreso por acuerdos comerciales asociados a la promoción.
 Referencia F2 (Ago-2025, J1/J2/J5): **16.6%** de las combinaciones SKU-promoción tenían rentabilidad negativa.
 
-**Rebate / Sellout** `[F2]`
+**Rebate / Sellout** `[F2]` `[F7]`
 Ingreso que el proveedor paga al retailer, vinculado a la venta efectiva del producto en promoción. En el proyecto regional se trabajó la "disponibilización de rebate sell out por SKU" para poder calcular rentabilidad promocional a nivel producto.
+**La marca propia no lo recibe** `[F7]`: es el origen estructural de la brecha entre su GPE% y su GP% (ver *GP%*, arriba) — no es una brecha de negociación, es estructural al modelo. Pregunta abierta de alto valor: ¿cuánto aporte comercial se deja de cobrar por cada punto de share que gana la marca propia? Decide si la estrategia de MMPP crea o destruye valor a nivel compañía.
 
 **Fondos promocionales** `[F2]`
 Inversión aportada por el proveedor para financiar una promoción. En la política de HS se contrapone a los **arriendos** como dos formas distintas de monetizar el espacio y la comunicación.
@@ -375,8 +429,36 @@ Campaña de menor escala y ciclo propio, numerada en paralelo al HS (T35, T36, T
 **Campaña conceptual / Especial** `[F2]` `[F4]`
 Campaña temática que se monta sobre o en paralelo al calendario regular (ej. *Especial MMPP*, *Especial Bucal*, *Especial Limpieza*, *Feria Abarrotera*). Queda **fuera** de los máximos de cambio definidos en la política de HS, y por eso es la excepción que hay que gobernar aparte.
 
-**Campaña Core** `[F2]`
-Campaña estructural del calendario comercial. Es una de las cuatro fuentes de cartelería junto con Especiales, Mecánicas y Top Deals.
+**Campaña Core** `[F2]` `[F13]`
+Campaña estructural del calendario comercial. Es una de las cuatro fuentes de cartelería junto con Especiales, Mecánicas y Top Deals. Las cinco campañas core del año `[F13]`, con su ventana 2025:
+
+| Campaña | Qué es | Ventana 2025 | Días |
+|---|---|---|---|
+| **DDM** | Día de la Madre | 24 abr – 07 may | 14 |
+| **FFPP** | Fiestas Patrias | 17 jul – 30 jul | 14 |
+| **DDN** | Día del Niño | 31 jul – 24 ago | 25 |
+| **ANIVERSARIO** | Aniversario Tottus | 09 oct – 05 nov | 28 |
+| **NAVIDAD** | Navidad | 20 nov – 24 dic | 35 |
+
+Resultados 2025 (venta sin impuesto): Aniversario S/304.0 MM (+4.1%, 45.4% del total core) · Navidad S/186.2 MM (**+10.2%**, 27.8%) · DDM S/67.1 MM (+3.9%) · DDN S/63.4 MM (+6.8%) · FFPP S/48.8 MM (**−1.8%**, la única que cayó, ventana más corta y compitiendo con el arranque de DDN al día siguiente). Total core: S/669.5 MM, **+5.5%**.
+**Benchmark para cualquier campaña core nueva:** +5.5% promedio 2025, rango de −1.8% a +10.2%. Las ventanas van de 14 a 35 días: normalizar por días o declarar que no se hace.
+
+**Categoría campañera / `CAMPAÑERO`** `[F13]` `[F14]`
+No toda la venta de la ventana de una campaña cuenta como venta de esa campaña: cada una define su propio conjunto de categorías participantes, y **cada una lo hace a un nivel de jerarquía distinto**.
+
+| Campaña | Nivel de definición | Nº de reglas |
+|---|---|---|
+| DDM | División, Subdepartamento, Clase | 14 |
+| FFPP | División, Departamento, Subdepartamento, Clase, Subclase | 18 |
+| DDN | Departamento | 1 |
+| NAVIDAD | Subclase | 230 |
+| **ANIVERSARIO** | **ninguna** | — |
+
+⚠️ **Aniversario no filtra categorías: participa toda la tienda.** Verificado recalculando desde la base: su cifra coincide con la venta total de la ventana a bandera Tottus y canal piso, mientras las otras cuatro quedan muy por debajo de su total de ventana. Decir "Aniversario es más grande que Navidad" sin esta aclaración es incorrecto: no es que venda más, **es que mide más**. Navidad define 230 subclases una por una — la definición más trabajada y la más frágil; cada subclase nueva que nadie agrega subestima la campaña.
+
+El campo binario **`CAMPAÑERO`** (la categoría es de la campaña / es del resto) habilita la lectura "campañeros vs. resto", replicable a cualquier campaña: responde si creció a costa del resto de la tienda. Ejemplo Navidad `[F14]`: venta campañera S/204.7 MM sobre venta de ventana S/738.5 MM = **27.7%** de lo vendido esos días fue de categorías navideñas; dentro de esa venta campañera, **Panetón es el 48.8%** (ver Anexo C, caso Panetón, para la lectura por marca).
+
+⚠️ **Navidad tiene dos definiciones de ventana conviviendo, sin reconciliar.** El archivo core (F13) la define 20 nov – 24 dic, solo bandera Tottus, canal piso de venta. El archivo de Navidad (F14) la define 26 nov – 24 dic, con Tottus, Precio Uno y Online. Declarar siempre cuál se usa antes de citar una cifra de Navidad.
 
 **CDA** `[F4]`
 Campaña comercial de Tottus con ediciones numeradas en el año (CDA I en marzo, CDA II en agosto de 2026). Se monta sobre un HS: en F4 aparece como "HS17 + CDA II".
@@ -451,6 +533,7 @@ Clasificación de los SKUs participantes según su desempeño en campaña frente
 
 Referencia CTY II: 34 Estrella / 20 Tráfico TRX / 27 Sin Engage / 3 Bajo Impacto / 10 Sin Comparable (94 SKUs).
 ⚠️ El "Sin Engage" es el cuadrante que se suele omitir del titular y es el que sostiene la decisión de depuración de surtido.
+También vista, en versión más temprana y con otro nombre, en una lámina de HS17+CDA II `[F10]`: "Matriz de Efectividad — Campaña vs AP", eje **Var% de Transacciones (TRX)**, con solo 3 de sus cuadrantes nombrados (**Estrellas**, **Baja Efectividad**, **Venta sin Engagement**) y el cuarto sin definir. Estaba **en construcción**. Probablemente la misma matriz de arriba en un estado anterior — pedirla terminada.
 
 **Descomposición Mantiene / Nuevo / Salieron / No Promo** `[F4]`
 Método para saber si una campaña generó incremental real, comparando el estado promocional de cada SKU contra el año anterior:
@@ -472,8 +555,11 @@ Venta adicional atribuible a la promoción, por encima de lo que el producto hab
 
 ### 6.4 Vigencias y política de cambios
 
-**Vigencia** `[F2]` `[F4]`
-Período durante el cual una oferta está activa. El ciclo base del HS es catorcenal.
+**Vigencia** `[F2]` `[F4]` `[F10]`
+Período durante el cual una oferta está activa. El ciclo base del HS es catorcenal, partido en **Salida A** (días 1–7) y **Salida B** (días 8–14).
+En el consolidado, la vigencia se codifica en el campo **`Tipo (14, A, B)`**: `14` corre las dos semanas completas, `A` solo la primera, `B` solo la segunda.
+⚠️ **El vacío en `Tipo` es un riesgo, no una ausencia de dato.** En HS18-A eran 5,181 de 8,770 filas, concentradas en Autoliquidables y Punto Precio. Si vacío significa "los 14 días", el universo MMPP de esa campaña es 693 SKU; si significa "sin definir", es 300. Primera pregunta a Planificación Promocional.
+⚠️ **El archivo "B" no es "la campaña de la semana 2":** es el incremento sobre el A (en HS18, 21 filas / 2 llamados). Los deals `Tipo=14` ya corren las dos semanas y viven en el archivo A. El universo de la Salida B es A + B, no B solo.
 
 **Golpe A / Golpe B** `[F2]`
 Los dos cambios de precio dentro de un mismo HS: **Golpe A** es la semana con cambio fuerte (~75% de los SKUs cambian de fleje), **Golpe B** la segunda (~7%). En promedio semanal, el **40%** de los SKUs presentaba cambio de fleje respecto del HS anterior.
@@ -519,14 +605,16 @@ Seguimiento del porcentaje de cartelería que efectivamente llegó al piso, abie
 Referencia F4 (T31–T35): implementación estancada en **~84%**, con "Sin Stock" entre 10% y 16%.
 ⚠️ La causa dominante de no-implementación no es ejecución, es **quiebre**. Conecta directamente con el bloque de Logística del mismo comité.
 
-**Arriendo** `[F2]`
+**Arriendo** `[F2]` `[F10]`
 Espacio de exhibición en tienda que el proveedor paga para destacar su producto. Es una fuente de **recaudación** además de una palanca de venta.
 Referencia F2: **11,272 arriendos** en la cadena, promedio **194 por tienda**; rango de 25 (Próceres) a 487 (Trujillo 1). El **90.3%** de los SKUs de un HS tenía presencia en algún tipo de arriendo.
+**Los arriendos se comprometen a través de varias campañas** `[F10]`, no dentro de una sola: el campo `Nombre de arriendo` del consolidado trae textos como "COMPENSADO CABECERAS PORTUGAL DESDE HS15 HASTA HS20". Un análisis de rentabilidad de espacio no puede mirar una sola campaña.
 
-**Arriendos prioritarios (MV, R y C)** `[F2]`
+**Arriendos prioritarios (MV, R y C)** `[F2]` `[F10]`
 Los arriendos de mayor visibilidad: **MV**, **Rumas** y **Cabeceras**. ~6,065 arriendos, ~105 por tienda, 28.5% de los SKUs.
 ⚠️ *por confirmar:* la expansión de la sigla **MV** no aparece en F2.
 **Hallazgo de F2:** los arriendos prioritarios tenían **menos promocionalidad** (65% vs 79% del HS) y **mayor efectividad** (60.6% vs 55.4%). El espacio rinde más que el descuento.
+**Probable equivalencia con los códigos de espacio del consolidado** `[F10]`: el consolidado trae 62 columnas, una por tienda, con códigos (`C`, `R`, `RC`, `CM`, `CSL`, `CMY`, `RL`, `HC1`, `AL2`, `CPC`, `CSF`, `CME`) en vez de sí/no. `C` y `R` calzan con **Cabeceras** y **Rumas** de esta entrada — el resto del diccionario sigue sin confirmar. Solo 3,913 de 8,770 filas de HS18-A tenían espacio asignado en alguna tienda. Habilita medir efectividad de deal controlando por exhibición física: un llamado con cabecera en 40 tiendas y otro sin espacio hoy se evalúan con la misma vara.
 
 **Arriendos chicos** `[F2]`
 Arriendos de menor visibilidad: gancheras, laterales y similares.
@@ -611,6 +699,7 @@ Porcentaje de tiendas de la red en las que un SKU **registró facturación** en 
 
 **% variación de puntos de venta** `[F1]`
 Cambio en la cantidad de locales entre los dos períodos comparados. Explica variaciones de venta que no son de performance sino de expansión de red (ej. la apertura de Izaguirre).
+⚠️ **Esa misma tienda, Izaguirre, está excluida del Especial MMPP** `[F12]` por un motivo que ninguna fuente documenta. No confundir con la apertura: son dos hechos distintos sobre la misma tienda. Confirmar el motivo y desde cuándo aplica la exclusión.
 
 **Bandera / Formato** `[F1]` `[F4]`
 Formato o marca comercial dentro del mismo grupo. En Tottus: **Tottus**, **Precio Uno / Hiperbodega (HB)**, **Ecommerce**. Filtrar mal la bandera contamina el `% PDV` y el share, porque cuenta locales donde ese surtido nunca se comercializa.
@@ -772,6 +861,10 @@ Hitos de la ruta crítica de **Táctico** `[F4]`, con días de anticipación:
 
 Hitos de la ruta crítica de **HS** `[F4]`: Checklist Confirmación (−52), Briefing Comercial (−27), Carga Apuestas (−27), Alerta mercadería (−21), Compra mercadería (−21/−16), Validación precios (−10), Cumplimiento de mercadería (−3). Responsables: Trade Marketing, Planificación Promocional, Comercial y Planning.
 
+⚠️ **Versión más granular y con otros plazos, sin reconciliar** `[F11]`. `RUTA CRITICA 2025.xlsx` (hoja `HS CONCEPTUAL`) trae 13 hitos con día en rojo cuando hay corrimiento por feriado o facturación: Confirmación y definición (−52) · Briefing comercial + plantilla arriendos (**−50**) · Convocatoria CO+AL (−45) · Deadline postulaciones CO+AL, Comercial→Trade (−41) y Trade→Planificación (−38) · 1er envío plantilla arriendos + apuestas Salida A (−34) · Confirmación espacios en medios (−31) · Envío primer reporte de arriendos (−29) · Selección de medios/rumas/MV/cabecera/QR (−27) · Definición de espacios comerciales (−24) · Envío consolidado preliminar (−22) · Carga de selección de medios (−20) · Alerta de quiebres o sobre stock (−17) · **fecha máxima de cambios por alertas y excepciones (−16)**.
+El "Briefing Comercial" difiere en **23 días** entre esta fuente (−50) y la del Comité (−27, arriba). Lectura más probable: son calendarios de años distintos — este archivo es de 2025 y antecede al rediseño de proceso que propone F2 ("Impulso+"); el del Comité ya sería el proceso rediseñado de 2026. No confirmado.
+**Lo que sí es estable en ambas versiones:** la campaña se cierra comercialmente entre 16 y 10 días antes de salir. Un hallazgo post-campaña ya no cambia nada de esa edición — alimenta el ciclo de la siguiente.
+
 **Retro Gantt** `[F2]`
 Planificación hacia atrás desde la fecha de salida de la campaña, que fija cuándo debe ocurrir cada hito. Es el instrumento sobre el que se monta la ruta crítica.
 En el proyecto regional `[F2]` el objetivo era incorporar la **efectividad promocional** como input formal del Retro Gantt.
@@ -828,6 +921,21 @@ Ejecutivo responsable de una cuenta clave. Paolo Gaspar es el KAM de Scanntech p
 **Monetización de data** `[F1]`
 Modelo por el cual el retailer comparte, de forma controlada, data de venta con sus proveedores a cambio de inversión comercial. El retailer define **con quién**, **por cuánto tiempo** y **qué información** se comparte.
 
+**Personas del área** `[F6]`
+Contactos operativos del puesto y para qué se les busca:
+
+| Quién | Rol | Para qué |
+|---|---|---|
+| **Mirella Gómez Montufar** | Predecesora, de vacaciones | Traspaso; dueña de las carpetas compartidas heredadas |
+| **Dani** | Provee las bases de venta | Insumo de los dos entregables recurrentes (sección 17) |
+| **Denisse** | Arma el Boletín de Marketing | Destinataria del bloque de resultados de campañas |
+| **Daniela Montoya / Carla Flores** | Planificación Promocional | Tácticos (T##) y las preguntas abiertas del consolidado (sección 6) |
+| **María Alejandra Balarezo** | Responsable de lanzamientos | Contexto de lanzamientos y relanzamientos (caso Xplend, Anexo C) |
+| **Yami** | Lidera el área | Priorización y validación de criterios |
+| **Finanzas / Control de Gestión** | — | Que las cifras cuadren antes de presentar |
+
+⚠️ *por confirmar:* si "Daniela Astep" (Brand Manager, que valida el objetivo de campaña del boletín) es la misma persona que "Dani".
+
 ---
 
 ## 15. Analítica y plataforma
@@ -871,6 +979,11 @@ Navegación de lo agregado a lo detallado dentro de una jerarquía, haciendo cli
 
 **Vista macro vs. vista micro** `[F1]`
 Macro = compañía / mundo / división. Micro = subclase / SKU / tienda. La recomendación explícita de la capacitación es no analizar la propia categoría sin haber mirado antes la macro: una caída propia puede estar respaldada por una contracción del negocio.
+
+**Archivos y herramientas del área** `[F6]`
+Plataforma: GCP · BigQuery · Looker Studio · Databricks. Herramientas de uso frecuente: Huaycos, CRONO, CYBERS, SPF, Medios, Cronogramas, Google Cloud Console, Enterprise Data Platform, Sharepoint Salesrun.
+Archivos fuente citados en este documento: `Data_Resultados (Categorías) Marcas Propias.xlsx` (F7), `Data_Resultados Marcas Propias.xlsx` / bases de lanzamiento (F8), `RUTA CRITICA 2025.xlsx` (F11), `Campañas Core '25.xlsx` (F13), `Campaña Navideña.xlsx` (F14), consolidados `CONSOLIDADO_FINAL_AREAS_HS##-A/B.xlsx` (F10).
+⚠️ Las carpetas compartidas heredadas de Mirella son enlaces de invitado sobre su OneDrive personal — pedir copia propia o mover a ubicación de equipo antes de que caduquen a mitad de campaña.
 
 ---
 
@@ -963,6 +1076,54 @@ Casi todos se repiten hoja a hoja.
 
 ---
 
+## 17. Entregables del puesto `[F6]` `[F12]`
+
+Los dos entregables recurrentes que produce Inteligencia Comercial. En ambos, la base de venta la entrega **Dani** (ver sección 14); el trabajo propio es estructurar, calcular, interpretar y redactar.
+
+**Especial de Marcas Propias** `[F12]`
+Lámina de resultados de marca propia, copiada como **imagen** al chat del equipo comercial. Cadencia: **tres cortes por campaña**, dos los lunes y el cierre el jueves posterior al fin de la ventana.
+Filtro declarado en la plantilla: **Tottus + Online, sin Izaguirre**, corte **SSS**, fechas según el corte. Pie de página fijo: *"Considera las Banderas de Tottus y Online | Total Tottus de J1 a J11 | Total Food de J1 a J7 | Campaña Especial MMPP abarca solo los productos participantes."*
+
+Los seis cortes de la lámina, de lo general a lo estratégico:
+
+| # | Corte | Definición |
+|---|---|---|
+| 1 | Total Tottus (Food + Non-Food) | J1 a J11 |
+| 2 | Total Food | J1 a J7 |
+| 3 | Total MMPP Food | Marca propia de J1, J2, J5 |
+| 4 | Campaña "Especial MMPP" | SKU de marca propia que participan en el HS y los tácticos de la ventana |
+| 5 | Resto MMPP Food | Marca propia que no está en campaña |
+| 6 | Otras Marcas Food | Terceros de J1, J2, J5 |
+
+⚠️ **El corte 5 es el que da la lectura de valor.** Si "Campaña MMPP" crece y "Resto MMPP" no, el crecimiento es atribuible al impulso promocional, no a una tendencia de la marca.
+⚠️ **El corte 6 solo es comparable dentro de las mismas divisiones.** Comparar MMPP contra el total de marcas de proveedor de toda la cadena es comparar peras con manzanas.
+
+Cinco métricas por corte, con variación vs. mismos días AP: Venta Soles (abierta en Piso y Online), Venta UND, TRX, Ticket Promedio, UND × TRX.
+
+Segunda lámina de la plantilla: el **Cheat Sheet** — el cronograma de la campaña en formato calendario de 14 días, con la mecánica que corre cada día. Mantenerlo actualizado corte a corte es lo que evita que el tercer envío compare contra una ventana distinta del primero.
+
+⚠️ **Errores conocidos de la plantilla:** el Cheat Sheet arrastra el número de campaña de la edición anterior si no se actualiza a mano · el desfase del ticket promedio ya documentado en *Venta SI* (sección 2) también aparece aquí · la exclusión de Izaguirre no está justificada en ninguna fuente (ver *% variación de puntos de venta*, sección 9) · la definición de MMPP cubre solo J1, J2 y J5 pero hay marca propia participando en J6 y J7 (ver *Marca propia / MMPP*, sección 1).
+
+**Boletín de Marketing — bloque de campañas** `[F12]`
+Resumen mensual de acciones promocionales con foco en cuánto incremental generó cada campaña. Denisse arma el boletín; Inteligencia Comercial aporta el bloque de resultados. **El entregable es un correo con bullets**, no un Excel ni una presentación — sube al CEO.
+
+Universo por campaña, hoja `Detalle Deals` de la plantilla `Boletín MKT [Mes] - Campañas Especiales.xlsx` (ejemplo agosto):
+
+| Campaña | Vigencia | Cómo se define el universo | Días |
+|---|---|---|---|
+| Especial Café | 20 ago – 02 set | Por código de clase (`J01010702`) | 14 |
+| Especial Belleza | 20 ago – 02 set | Por lista de SKU asociados a cada deal | 14 |
+| Multimarca | 23 ago – 30 ago | Por códigos de división, J1 a J6 completas | 8 |
+
+⚠️ **Las tres no son comparables entre sí.** Multimarca abarca seis divisiones completas — su "venta de campaña" es casi la venta de la tienda —, mientras Café y Belleza tienen surtido acotado; y las vigencias difieren, 14 días contra 8. La plantilla lo advierte en la fila `Nota surtido`; conviene subir esa advertencia al cuerpo del correo.
+
+Once filas de KPI por campaña, siempre vs. mismos días AP: Venta SI, Var% vs AP, Dif. AP, UND, Var% UND, TRX, Var% TRX, Dif. TRX, Ticket Promedio, Var% Ticket, UND × TRX.
+⚠️ Las tres bases del boletín (`BD_Compacta`, `BD_División`, `BD_Marca`) traen **`GPE`** y la hoja de KPIs no lo usa. El boletín va al CEO y no dice cuánto margen dejó la campaña — agregar la fila no cuesta nada porque el dato ya está (ver *GP%*, sección 5).
+
+Estructura del correo: **Objetivo de la campaña** (validar con la brand manager) → **Resultados resaltantes** → **Impacto en el negocio**. Nivel de desagregación esperado: no basta el total por campaña — ejemplo real, *"el flujo de clientes creció en Multimarca, pero al abrir por división la J5 fue la que más aportó"*.
+
+---
+
 ## Anexo A — Cifras de referencia
 
 Valores puntuales recogidos de las fuentes. **Sirven como orden de magnitud, no como dato vigente**: cada uno lleva su corte temporal.
@@ -1018,6 +1179,22 @@ Crecimiento Ene→Set 2025: SKUs **+53%** · Llamados **+68%** · Cartelería **
 
 IPC físico SKVI Food: **U6S 98.5% / US 98.0%**. Distribución de la venta SKVI: 48% con IPC <99% · 15% entre 99–100% · 21% >100% · **16% >105%**.
 
+### Lanzamientos MMPP — rendimiento y cruce con campaña — Ago 2026 `[F7]` `[F8]` `[F10]`
+
+| Indicador | Con panetón | Sin panetón |
+|---|---|---|
+| Share Venta SI de MMPP | 14.2% (−2.1 p.p.) | 13.7% (−2.0 p.p.) |
+| Share en Precio Uno | **23.5% (+0.5 p.p.)** | 23.0% (+0.6 p.p.) |
+| Share en Tottus | 11.8% (−2.8 p.p.) | 11.2% (−2.7 p.p.) |
+| Lanzamientos últimos 2 años / Total MMPP | 15.3% | 16.0% |
+| — en Online | **10.5%** | 10.5% |
+| — en Piso (Tottus) | 15.3% | 16.3% |
+
+⚠️ **Precio Uno es la única bandera que gana share de marca propia** (+0.5 p.p.) mientras Tottus cae (−2.8 p.p.): la caída de MMPP a nivel compañía es un fenómeno de la bandera Tottus, no del formato de descuento — abrir siempre por bandera antes de concluir a nivel total.
+⚠️ **Los lanzamientos rinden ~5 p.p. menos en Online que en piso**, y es el único indicador que no mejora al quitar panetón. Sin explicación confirmada.
+
+Cruce lanzamientos × campaña, HS18-A `[F8]` `[F10]`: de los 693 SKU de marca propia en campaña, **170 (24.5%) son lanzamientos recientes** — 101 lanzados en 2026, 69 en 2024–2025 (incluye 17 SKU de Xplend). **Uno de cada cuatro SKU de marca propia en campaña es un lanzamiento reciente:** el hard sell no es solo palanca de volumen, es vehículo de soporte de lanzamientos. Separar "MMPP lanzamiento reciente" de "MMPP portafolio establecido" en el reporte de campaña responde si la promoción empuja lo nuevo o defiende lo viejo.
+
 ---
 
 ## Anexo B — Trampas de lectura conocidas
@@ -1040,6 +1217,44 @@ Errores recurrentes detectados al revisar F2, F3 y F4. Checklist antes de firmar
 14. **Nombrar bien la categoría en crisis.** Antes de titular sobre una categoría, abrir por clase: en el caso Colchones, colchones crecía +10% y lo que caía −21% era Juego de Dormitorio.
 15. **Purgar notas al pie heredadas.** Las fuentes revisadas arrastraban notas de campañas anteriores ("Lucas I", "AP Jarana", fechas de otra edición) que invalidan la metodología declarada.
 16. **Vigilar el efecto base.** Un crecimiento de +11,735% sobre una base de S/5,988 no es un crecimiento; es un arranque.
+17. **"Medir más" no es "vender más".** Una campaña sin filtro de categoría (Aniversario) siempre se ve más grande que una con surtido acotado (Navidad, Café, Belleza) aunque el negocio real sea comparable — declarar el universo antes de comparar el tamaño de dos campañas.
+18. **Ejecutar el surtido completo no garantiza recuperar el share.** Un relanzamiento puede completar todas sus tandas de SKU y aun así no volver al nivel de participación previo — ver Anexo C, caso Xplend.
+19. **No dar por perdida una categoría de identidad de marca sin revisar ejecución.** La marca propia puede ganar incluso en categorías de tradición y regalo si precio, exhibición masiva y confianza en la marca del retailer se alinean — ver Anexo C, caso Panetón.
+20. **Una tabla de SKU por segmentación puede sumar más que el total de SKU únicos.** Si un mismo SKU vive en más de un llamado o más de una segmentación dentro de la campaña, la suma por categoría no es el universo — usar el total de SKU únicos declarado aparte, nunca la suma de la tabla abierta.
+
+---
+
+## Anexo C — Casos de referencia `[F7]`
+
+Cinco casos de marca propia que conviene tener en la cabeza. Vienen de láminas del deck, no de recálculo propio: se marcan 🟡 salvo donde se indique lo contrario.
+
+### Huevos Frescos — dominancia con margen negativo 🟡
+MMPP tiene **69.8%** de la categoría, la participación más alta de todo el portafolio, con **GP% de −5.7%**. El tercero se queda con 30.2% a **37.7%** de GP%. Y MMPP cae −16.1% mientras el tercero crece +29.8%. Tottus domina la categoría con marca propia y pierde dinero haciéndolo — el caso más extremo del portafolio, sin lámina propia en el deck.
+
+### Higiene Personal — la rentabilidad donde no hay presencia 🟡
+Único subdepartamento donde MMPP **gana** en GP%: 46.0% contra 36.6% del tercero. Y es donde menos presencia tiene: 6.6% de la categoría, cayendo −18.8%. La categoría donde la marca propia es más rentable es donde menos está — es una oportunidad, no un problema.
+
+### Panetón — el contraejemplo a la tesis estructural ✅
+Navidad 2025, categoría Panetón (48.8% de toda la campaña navideña — ver *Categoría campañera*, sección 6):
+
+| Marca | Venta '25 | %Pp | Var% vs AP |
+|---|---|---|---|
+| **TOTTUS** | S/66.1 MM | **66.1%** | **+20.5%** |
+| Donofrio | S/9.8 MM | 9.8% | +18.5% |
+| **PRECIO UNO** | S/7.3 MM | 7.3% | **−8.7%** |
+| Blanca Flor | S/3.8 MM | 3.8% | +52.5% |
+| Gloria | S/3.7 MM | 3.7% | +20.6% |
+
+Marca propia tiene el **73.4%** de panetón (Tottus + Precio Uno), y Tottus crece por encima de Donofrio. Hipótesis: categoría estacional de compra múltiple donde el precio pesa, el retailer controla la exhibición masiva (rumas) y la marca del retailer transfiere confianza en un producto de calidad verificable — si es la explicación correcta, es replicable a otras categorías.
+⚠️ **Punto ciego:** Precio Uno es la única marca de la tabla que cae, −8.7%. Canibalización de Tottus o problema de surtido en Hiperbodega, sin resolver. Llega a tiempo para Navidad '26.
+
+### Xplend — un relanzamiento que perdió share 🟡
+Detergentes y Suavizante Tottus, semanas 9 a 34 de 2026. La venta semanal sube de 7 a un pico de 180 según entran las tandas de SKU (polvo → líquido botella floral → líquido Ultra → suavizante floral → polvo 8kg → doypacks): la sustitución de portafolio funcionó. **El share no:** estable en 12–13% en 2025, arrancó en 7–8% en 2026 y después de 26 semanas y ocho tandas de SKU sigue en 9–11%. Nunca recuperó el nivel previo. Ver Anexo B #18.
+
+### Papas Fritas — quiebre estructural sin recuperación 🟡
+Caída de ~10 p.p. de share MMPP en la semana 15 que nunca se recuperó, mientras el perímetro MMPP+Proveedor se mantuvo estable: el proveedor absorbió la pérdida de MMPP por sustitución dentro de la misma góndola.
+
+**La tesis y sus límites:** la marca propia funciona en categorías commodity de bajo riesgo percibido (arroz, aceite, leche, enlatados) y sufre en categorías de alta identidad de marca — con **Panetón como contraejemplo directo**. Antes de declarar una categoría estructuralmente inadecuada para marca propia, diagnosticar disponibilidad, ejecución en tienda y propuesta de valor: Xplend demuestra que se puede perder share con el surtido completo ejecutado.
 
 ---
 
@@ -1058,7 +1273,19 @@ Espacio de trabajo para el próximo aporte:
 - [ ] Metodología **A&M** de medición de quiebre — definición y alcance
 - [ ] Definición operativa de **capacity operativo** de tienda (declarada "en definición" en F2)
 - [ ] Umbrales oficiales de la matriz de efectividad (qué separa Estrella de Bajo Impacto)
+- [ ] Fórmula exacta de `PROFIT` — de mayor consecuencia analítica: define si la brecha GPE→GP de marca propia es de negociación o de merma
+- [ ] Cuánto aporte comercial se deja de cobrar por cada punto de share ganado con marca propia
+- [ ] Conteo exacto de SKU de `FRESH` y si hay lista maestra oficial de marca propia que lo resuelva
+- [ ] Diccionario completo de códigos de espacio en tienda del consolidado (`RC`, `CM`, `CSL`, `CMY`, `RL`, `HC1`, `AL2`, `CPC`, `CSF`, `CME` — `C` y `R` ya se identifican como Cabecera y Ruma)
+- [ ] Significado del `Tipo (14, A, B)` vacío en el consolidado de campaña
+- [ ] Motivo y fecha de la exclusión de Izaguirre del Especial MMPP
+- [ ] Si J6 y J7 entran o no a la medición oficial de marca propia (hoy fuera del universo J1/J2/J5)
+- [ ] Qué distingue `REEMPLAZO FÓRMULA` de `REEMPLAZO OTROS` en lanzamientos, y quién es dueño del pipeline
+- [ ] Cuántas semanas definen cada etapa Pre-Lanzamiento / Lanzamiento / Post
+- [ ] Por qué los lanzamientos rinden ~5 p.p. menos en Online que en piso
+- [ ] Reconciliar los dos calendarios de ruta crítica de HS (F4 vs. F11, `RUTA CRITICA 2025.xlsx`) — confirmar si son años distintos del proceso o una discrepancia real
+- [ ] Si "Daniela Astep" es la misma persona que "Dani" (sección 15)
 
 ---
 
-*Última actualización: fuentes F1–F5 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView, que antes vivía en un documento aparte.*
+*Última actualización: fuentes F1–F14 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView. F6–F14 (traspaso de Mirella, bases y deck de marca propia, bases y deck de lanzamientos, deck regional de lanzamientos, consolidados de campaña HS18+T36, ruta crítica 2025, plantillas de los dos entregables, y los archivos de Campañas Core y Navideña) enriquecieron la sección 1 (marca propia y lanzamientos), la sección 5 (GP% y PROFIT), la sección 6 (vigencias, arriendos, campañas core y Navidad), la sección 13 (segunda versión de la ruta crítica) y las secciones 14 y 15 (personas, archivos y herramientas); aportaron la sección 17 (entregables del puesto) y el Anexo C (cinco casos de marca propia). El rastreador de pendientes con fecha vive aparte, en `PENDIENTES.md` — no es contenido de glosario y se reemplaza en cada ciclo.*

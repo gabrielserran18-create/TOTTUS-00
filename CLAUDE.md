@@ -15,11 +15,17 @@ TOTTUS-00/
 ├── CLAUDE.md                  ← este archivo (instrucciones para IAs)
 ├── README.md                  ← orientación rápida para humanos
 ├── glosario-retail.md         ← ⭐ DOCUMENTO MAESTRO
+├── PENDIENTES.md              ← ⏱ rastreador de tareas — única excepción, ver abajo
 └── scripts/
     └── validar-glosario.py    ← chequeo estructural del documento maestro
 ```
 
 **`glosario-retail.md` es el único documento de contenido.** Todo lo que se aprenda de una fuente nueva entra ahí. No crear documentos paralelos salvo que el usuario lo pida explícitamente.
+
+**Excepción sancionada: `PENDIENTES.md`.** El usuario pidió explícitamente (Set-2026) sacar del glosario el rastreador de tareas con fecha — es un checklist con nombres y vencimientos de esta semana, no conocimiento de referencia; mezclarlo con el glosario contaminaría un documento pensado para seguir siendo válido meses después. Reglas de este archivo:
+- Se **reemplaza en cada ciclo**, entero. No se versiona con fecha en el nombre ni se acumulan pendientes resueltos — lo que resulte durable (una definición, una cifra con corte, una trampa) migra al glosario antes de sobrescribir.
+- No sigue la estructura del validador (sin secciones numeradas, sin registro de fuentes `[Fx]`) y **no se corre `validar-glosario.py` sobre él**.
+- Si aparece una necesidad de un TERCER documento paralelo para otro propósito, no crearlo por iniciativa propia: proponérselo al usuario primero.
 
 ---
 
@@ -28,17 +34,9 @@ TOTTUS-00/
 ### Registro de fuentes
 Encabeza el documento. Cada fuente tiene un ID (`F1`, `F2`, …) con su nombre, tipo, fecha y una nota. **Toda fuente nueva se registra ahí antes de incorporar sus términos.**
 
-Fuentes actuales:
+**El registro vivo está en la cabecera de `glosario-retail.md`** — no se duplica aquí para no tener dos listas que sincronizar. A Set-2026 van 14 fuentes (F1–F14): capacitaciones, decks de campaña y de marca propia, comités, consolidados, plantillas de entregables y bases de datos.
 
-| ID | Fuente | Fecha |
-|---|---|---|
-| F1 | Capacitación Scanntech — plataforma ScanView | Sep 2026 |
-| F2 | *Impulso+: Análisis y Estrategia de HS* | Oct–Nov 2025 |
-| F3 | *Chapa Tu Yapa II — Julio* | Jul 2026 |
-| F4 | *Comité Comercial S36-2026* | Set 2026 |
-| F5 | Correcciones directas de Gabriel Serrano (fuente continua) | desde Set 2026 |
-
-**`[F5]` tiene prioridad sobre F1–F4.** Cuando el usuario corrige algo extraído de un documento, gana su corrección: él conoce la operación, los documentos tienen erratas. Aplicar el cambio, etiquetarlo `[F5]` y — si el documento decía otra cosa — dejar constancia de la discrepancia en vez de borrarla (ver regla 8).
+**`[F5]` tiene prioridad sobre las demás salvo que otra fuente más reciente y más específica la corrija a su vez.** Es la fuente continua de Gabriel Serrano. Cuando el usuario corrige algo extraído de un documento, gana su corrección: él conoce la operación, los documentos tienen erratas. Aplicar el cambio, etiquetarlo `[F5]` y — si el documento decía otra cosa — dejar constancia de la discrepancia en vez de borrarla (ver regla 8).
 
 ### Convenciones de marcado
 
@@ -52,9 +50,10 @@ Fuentes actuales:
 
 ### Estructura
 
-- **Secciones 1–16**, numeradas y temáticas (surtido, venta, ticket, precio, margen, promociones, ejecución, abastecimiento, tiendas, resultados, calendario, loyalty, procesos, actores, analítica, y el manual operativo de ScanView).
+- **Secciones 1–17**, numeradas y temáticas (surtido y lanzamientos, venta, ticket, precio, margen, promociones, ejecución, abastecimiento, tiendas, resultados, calendario, loyalty, procesos, actores, analítica, el manual operativo de ScanView, y los entregables recurrentes del puesto).
 - **Anexo A — Cifras de referencia:** valores puntuales, **cada bloque con su corte temporal explícito**.
 - **Anexo B — Trampas de lectura:** checklist de errores metodológicos detectados en las fuentes.
+- **Anexo C — Casos de referencia:** episodios concretos (más ricos que una cifra suelta o una trampa aislada) que ilustran un patrón o su excepción. Úsalo cuando un hallazgo tenga cifra **y** narrativa **y** interpretación juntas — si solo es una cifra con fecha, va al Anexo A; si solo es un error metodológico, al Anexo B.
 - **Términos por incorporar:** lista viva de lo que falta.
 
 ---
