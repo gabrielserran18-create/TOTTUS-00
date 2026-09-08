@@ -15,17 +15,26 @@ TOTTUS-00/
 ├── CLAUDE.md                  ← este archivo (instrucciones para IAs)
 ├── README.md                  ← orientación rápida para humanos
 ├── glosario-retail.md         ← ⭐ DOCUMENTO MAESTRO
-├── PENDIENTES.md              ← ⏱ rastreador de tareas — única excepción, ver abajo
+├── PENDIENTES.md              ← ⏱ rastreador de tareas — excepción sancionada, ver abajo
+├── fuentes/                   ← 📎 bases de datos crudas citadas por el glosario — segunda excepción, ver abajo
+│   └── lanzamientos/
 └── scripts/
     └── validar-glosario.py    ← chequeo estructural del documento maestro
 ```
 
-**`glosario-retail.md` es el único documento de contenido.** Todo lo que se aprenda de una fuente nueva entra ahí. No crear documentos paralelos salvo que el usuario lo pida explícitamente.
+**`glosario-retail.md` es el único documento de contenido/prosa.** Todo lo que se aprenda de una fuente nueva entra ahí como terminología. No crear documentos paralelos de contenido salvo que el usuario lo pida explícitamente.
 
 **Excepción sancionada: `PENDIENTES.md`.** El usuario pidió explícitamente (Set-2026) sacar del glosario el rastreador de tareas con fecha — es un checklist con nombres y vencimientos de esta semana, no conocimiento de referencia; mezclarlo con el glosario contaminaría un documento pensado para seguir siendo válido meses después. Reglas de este archivo:
 - Se **reemplaza en cada ciclo**, entero. No se versiona con fecha en el nombre ni se acumulan pendientes resueltos — lo que resulte durable (una definición, una cifra con corte, una trampa) migra al glosario antes de sobrescribir.
 - No sigue la estructura del validador (sin secciones numeradas, sin registro de fuentes `[Fx]`) y **no se corre `validar-glosario.py` sobre él**.
-- Si aparece una necesidad de un TERCER documento paralelo para otro propósito, no crearlo por iniciativa propia: proponérselo al usuario primero.
+
+**Excepción sancionada: `fuentes/`.** El usuario pidió explícitamente (Set-2026) guardar en el repo las bases de datos originales de una fuente ya registrada (Excel de lanzamientos, F8), para poder consultar el detalle SKU a SKU (qué se lanzó y cuándo) en cualquier chat conectado al repo — el glosario extrae *terminología* de una base, no la reproduce fila por fila, así que ese detalle no vive ahí. Reglas de esta carpeta:
+- Cada archivo dentro de `fuentes/` corresponde a una fuente **ya registrada** en la tabla de `glosario-retail.md` (`[Fx]`); la nota de esa fila enlaza a la carpeta. No se agregan archivos sin registrar primero la fuente.
+- Son datos crudos para consulta puntual, no contenido a validar: **no** siguen la estructura del validador y **no** se corre `validar-glosario.py` sobre ellos.
+- Un subdirectorio por tema (ej. `fuentes/lanzamientos/`), con los archivos tal como los compartió el usuario (mismo nombre de archivo, sin el histórico de versiones).
+- Si una fuente nueva viene acompañada de su base y el usuario no dice qué hacer con el archivo en sí, preguntar si quiere guardarlo en `fuentes/` — no asumir.
+
+Si aparece la necesidad de un TERCER tipo de excepción para otro propósito, no crearla por iniciativa propia: proponérsela al usuario primero.
 
 ---
 
