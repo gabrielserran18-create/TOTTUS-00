@@ -14,9 +14,11 @@ Repositorio vivo: se alimenta de capacitaciones, comités, presentaciones de cam
 - **Anexo C** — casos de referencia: episodios concretos de marca propia que ilustran un patrón (o su excepción).
 - Cada término indica de qué fuente proviene (`[F1]`, `[F2]`, …), registradas en la tabla que encabeza el documento.
 
-## La única excepción: `PENDIENTES.md`
+## Las dos excepciones
 
 ⏱ **[`PENDIENTES.md`](PENDIENTES.md)** — rastreador de tareas de esta semana, con fechas y nombres. No es conocimiento de referencia: se **reemplaza en cada ciclo**, no acumula versiones. El "por qué" de cada pendiente vive en el glosario; este archivo solo trackea el "qué falta y para cuándo".
+
+📎 **[`fuentes/`](fuentes/)** — bases de datos originales de fuentes ya registradas en el glosario (Excel, principalmente), guardadas tal cual para poder consultar el detalle fila por fila (ej. qué SKU se lanzó y en qué fecha) que el glosario no reproduce, porque extrae terminología, no data cruda. Cada archivo corresponde a una fuente `[Fx]` registrada en la tabla del glosario.
 
 ## Cómo se alimenta
 
@@ -38,6 +40,8 @@ TOTTUS-00/
 ├── README.md                  este archivo
 ├── glosario-retail.md         ⭐ documento maestro
 ├── PENDIENTES.md              ⏱ rastreador de tareas, se reemplaza cada ciclo
+├── fuentes/                   📎 bases originales de fuentes registradas, para consulta de detalle
+│   └── lanzamientos/          F8: histórico y pipeline de lanzamientos de marca propia
 └── scripts/
     └── validar-glosario.py    chequeo estructural del documento maestro
 ```
