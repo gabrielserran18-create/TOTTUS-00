@@ -32,6 +32,7 @@ Se construye por acumulación: cada capacitación, reunión o documento que apor
 | **F12** | Plantillas de los entregables recurrentes: `Especial de Marcas Propias - HS##.pptx` y `Boletín MKT [Mes] - Campañas Especiales.xlsx` | Plantillas + procedimiento | Vigentes Set 2026 | Las dos piezas que produce Inteligencia Comercial cada campaña / cada mes |
 | **F13** | *Campañas Core '25.xlsx* | Histórico de campañas core | 2025 | Las cinco campañas estacionales del año, calendario y mapeo de categorías campañeras |
 | **F14** | *Campaña Navideña.xlsx* | Detalle de Navidad | 2025 | Venta por categoría y por marca dentro de la campaña navideña de 2025 |
+| **F15** | *Market Share PE* — dashboard de participación de mercado | Reporte semanal, capturas de pantalla | S35 2026 (24–30 ago) | Probable fuente L&A (ver *Share de mercado*, sección 10): Tottus/Precio Uno vs. Resto Mercado, por canal, bandera, mundo, categoría y geografía. Primera fuente de mercado externo revisada con este nivel de detalle |
 
 ---
 
@@ -713,9 +714,13 @@ Agrupación geográfica o comercial de tiendas.
 - Clusters de Precio Uno `[F3]`: **P**, **M**, **G** y **Oriente** (agrupación por tamaño/perfil de tienda).
 - Regiones de reporte `[F3]`: Lima, Norte, Sur, Oriente, Iquitos.
 
-**Peso Mercado vs. Peso TT** `[F4]`
+**Peso Mercado vs. Peso TT** `[F4]` `[F15]`
 Participación de una plaza en el mercado total frente a su participación en la venta de Tottus. La brecha mide **sobre o sub-exposición**.
 ⚠️ Ejemplo F4: Arequipa pesa 3.5% del mercado y 7.3% de Tottus (2.1x sobre-indexado); Lima 64.5% vs 60.1% (sub-indexada). Un problema en una plaza sobre-indexada golpea más de lo que su tamaño de mercado sugiere.
+
+⚠️ **Lima sin reconciliar entre fuentes.** F15 (S35 2026, piso de venta) muestra Lima con **53.8%** de peso en Resto Mercado contra **71.4%** de peso en Tottus — sobre-indexada, lo opuesto a la lectura de F4 arriba. Puede ser que las bases difieran (mercado total vs. Resto Mercado = mercado menos Tottus, ver *Resto Mercado*, arriba) o que sean semanas con composición real distinta. ⚠️ *por confirmar.*
+
+Referencia F15 (S35 2026, piso de venta): **Lima Norte** es la plaza con mayor ganancia semanal de share (+2.7 p.p., +3.4 p.p. YTD); **Lima Moderna** la de mayor pérdida (−1.3 p.p. semanal). En provincias, Arequipa y Trujillo concentran el mayor peso de Tottus fuera de Lima. **Resto Provincias** muestra un salto raro entre su share semanal (65.7%) y su YTD (36.1%) en la misma fila — revisar antes de citarlo, probablemente base semanal chica.
 
 **Cajas por tienda** `[F1]`
 Número de cajas registradoras. Proxy del tamaño y capacidad de la tienda (promedio Tottus ≈ 16). Permite comparar tiendas equivalentes y segmentarlas en grandes / medianas / chicas.
@@ -736,11 +741,16 @@ Peso de una unidad (SKU, marca, proveedor, categoría) dentro de un total defini
 **Representatividad** `[F1]`
 Sinónimo de participación usado en la plataforma: cuánto pesa una división, subdepartamento o tienda dentro del total seleccionado. Es el criterio de ordenamiento más útil (por encima del alfabético) porque prioriza dónde hay dinero en juego.
 
-**Share de mercado** `[F1]` `[F4]`
-Participación frente al total del mercado o de la competencia. En ScanView aún no disponible; se habilita al conectarse otros retailers. En el Comité se reporta con fuente externa (L&A) `[F4]`.
+**Share de mercado / Mshare** `[F1]` `[F4]` `[F15]`
+Participación frente al total del mercado o de la competencia. En ScanView aún no disponible; se habilita al conectarse otros retailers. En el Comité se reporta con fuente externa (L&A) `[F4]`. **`Mshare`** es la abreviatura usada en el reporte semanal *Market Share PE* (F15), sobre todo en el bloque de Ecommerce.
+El reporte *Market Share PE* abre esta lectura por **canal** (Piso de Venta / E-Commerce), **bandera** (Tottus / Precio Uno), **mundo** (PGC / Perecibles / Non Food), **categoría** y **geografía**, siempre con el mismo par TSS/SSS — ver Anexo A para el detalle S35 2026.
+⚠️ **La taxonomía de categorías de este reporte no es la de las divisiones J internas.** Usa nombres de mercado (Comestibles, Cuidado del Hogar, Carnes y Pescados…) que no calzan uno a uno con J1–J12. No cruzar por nombre sin mapear primero.
 
-**Dif Share (p.p.)** `[F4]`
-Ganancia o pérdida de participación de mercado en puntos porcentuales. Se calcula comparando el crecimiento propio contra el del mercado: crecer por debajo del mercado = perder share aunque la venta suba.
+**Resto Mercado / Resto M.** `[F15]`
+El complemento de Tottus dentro del mercado total: mercado menos Tottus (TT+PU). Es el término que usa el reporte *Market Share PE* para lo que en la sección 10 ya se llama simplemente "el mercado" en *Dif Share*, abajo — mismo concepto, otro nombre.
+
+**Dif Share (p.p.)** `[F4]` `[F15]`
+Ganancia o pérdida de participación de mercado en puntos porcentuales. Se calcula comparando el crecimiento propio contra el del mercado (o **Resto Mercado**, arriba): crecer por debajo del mercado = perder share aunque la venta suba.
 Ejemplo F4 (Chiclayo): mercado +11.3%, Tottus +7.3% → **−0.8 p.p.**; Precio Uno +14.1% → **+0.4 p.p.**
 
 **#Sem Caída** `[F4]`
@@ -1195,6 +1205,35 @@ IPC físico SKVI Food: **U6S 98.5% / US 98.0%**. Distribución de la venta SKVI:
 
 Cruce lanzamientos × campaña, HS18-A `[F8]` `[F10]`: de los 693 SKU de marca propia en campaña, **170 (24.5%) son lanzamientos recientes** — 101 lanzados en 2026, 69 en 2024–2025 (incluye 17 SKU de Xplend). **Uno de cada cuatro SKU de marca propia en campaña es un lanzamiento reciente:** el hard sell no es solo palanca de volumen, es vehículo de soporte de lanzamientos. Separar "MMPP lanzamiento reciente" de "MMPP portafolio establecido" en el reporte de campaña responde si la promoción empuja lo nuevo o defiende lo viejo.
 
+### Market Share PE — Semana 35, 2026 (24–30 ago) `[F15]`
+
+**Piso de venta, Negocio (Tottus + Precio Uno) vs. Resto Mercado:**
+
+| | TSS | SSS |
+|---|---|---|
+| Crecimiento semanal | +1.3% (−3.7 p.p. vs Resto Mercado) | −0.3% (−3.1 p.p. vs Resto Mercado) |
+| Share semanal | 32.1% (−0.8 p.p. vs AP) | 32.2% (−0.7 p.p. vs AP) |
+| Crecimiento YTD | +9.9% (+3.2 p.p. vs Resto Mercado, que creció +6.7%) | +8.5% (+2.8 p.p. vs Resto Mercado, que creció +5.7%) |
+| Share YTD | 32.8% (+0.6 p.p. vs AP) | 32.9% (+0.6 p.p. vs AP) |
+
+Por bandera (TSS semanal): **Tottus** +0.4% vs AP (−4.6 p.p. vs Resto Mercado) · **Precio Uno** +5.1% vs AP (+0.1 p.p. vs Resto Mercado) — la misma lectura que en marca propia (Anexo A, arriba): **Precio Uno gana terreno frente al mercado; Tottus lo pierde.**
+
+**E-Commerce:** Mshare 26.2% (−2.0 p.p. vs AP), creciendo +17% (−12.3 p.p. vs Resto Mercado). Abierto en Tottus Internet (8.6%, −0.9 p.p.) y Tottus App (17.6%, −1.1 p.p.). Por mundo: Food 25.7% share (+10% crecimiento, −5.3 p.p. vs Resto Mercado) · Non Food 27.1% share (+29.2% crecimiento, −31.2 p.p. vs Resto Mercado — la brecha más grande de todo el reporte).
+
+**Por mundo (piso de venta, TSS), semanal → YTD:**
+
+| Mundo | Peso en Tottus | Share semanal | vs AP | Share YTD | vs AP |
+|---|---|---|---|---|---|
+| PGC | 49.4% | 31.2% | −1.5 p.p. | 31.8% | +0.6 p.p. |
+| Perecibles | 22.7% | 26.8% | +0.4 p.p. | 26.6% | +0.9 p.p. |
+| Non Food | 27.9% | 40.5% | −0.2 p.p. | 41.6% | +0.7 p.p. |
+
+⚠️ Consistente con la caída de PGC arriba: PGC es el único mundo que cae vs AP tanto semanal como (menos) en YTD, y el que más pesa en el negocio (49.4%) — es el que más explica la caída de share total.
+
+**Categorías destacadas (piso de venta, semanal, vs AP en p.p.):** suben con fuerza *Cepillos Dentales* (+7.3 p.p.), *Cremas y Lociones* (+5.3 p.p.), *Azúcar* (+3.7 p.p.), *Yogurt* (+1.6 p.p.), *Línea Blanca* (+3.4 p.p.). Caen con fuerza *Whisky* (−24.4 p.p.), *Aceites Vegetales* (−12.1 p.p.), *Carnes Otras Aves* (−30.8 p.p.), *Decoración del Hogar* (−12.1 p.p.), *Gaseosas* (−4.1 p.p.).
+
+⚠️ **La taxonomía de este reporte no es la de las divisiones J** (ver *Share de mercado / Mshare*, sección 10) — antes de cruzar una de estas categorías con una división J propia, mapear a mano.
+
 ---
 
 ## Anexo B — Trampas de lectura conocidas
@@ -1285,7 +1324,10 @@ Espacio de trabajo para el próximo aporte:
 - [ ] Por qué los lanzamientos rinden ~5 p.p. menos en Online que en piso
 - [ ] Reconciliar los dos calendarios de ruta crítica de HS (F4 vs. F11, `RUTA CRITICA 2025.xlsx`) — confirmar si son años distintos del proceso o una discrepancia real
 - [ ] Si "Daniela Astep" es la misma persona que "Dani" (sección 15)
+- [ ] Confirmar si *Market Share PE* (F15) es en efecto el reporte de L&A citado en F4, o una fuente distinta
+- [ ] Reconciliar el peso de Lima en la geografía de mercado: F4 la muestra sub-indexada (64.5% mercado vs 60.1% Tottus), F15 sobre-indexada (53.8% vs 71.4%) — confirmar si son bases distintas (mercado total vs. Resto Mercado) o semanas con composición real distinta
+- [ ] Diccionario de nombres: mapeo entre la taxonomía de categorías de *Market Share PE* (Comestibles, Cuidado del Hogar…) y las divisiones J internas
 
 ---
 
-*Última actualización: fuentes F1–F14 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView. F6–F14 (traspaso de Mirella, bases y deck de marca propia, bases y deck de lanzamientos, deck regional de lanzamientos, consolidados de campaña HS18+T36, ruta crítica 2025, plantillas de los dos entregables, y los archivos de Campañas Core y Navideña) enriquecieron la sección 1 (marca propia y lanzamientos), la sección 5 (GP% y PROFIT), la sección 6 (vigencias, arriendos, campañas core y Navidad), la sección 13 (segunda versión de la ruta crítica) y las secciones 14 y 15 (personas, archivos y herramientas); aportaron la sección 17 (entregables del puesto) y el Anexo C (cinco casos de marca propia). El rastreador de pendientes con fecha vive aparte, en `PENDIENTES.md` — no es contenido de glosario y se reemplaza en cada ciclo.*
+*Última actualización: fuentes F1–F15 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView. F6–F14 (traspaso de Mirella, bases y deck de marca propia, bases y deck de lanzamientos, deck regional de lanzamientos, consolidados de campaña HS18+T36, ruta crítica 2025, plantillas de los dos entregables, y los archivos de Campañas Core y Navideña) enriquecieron la sección 1 (marca propia y lanzamientos), la sección 5 (GP% y PROFIT), la sección 6 (vigencias, arriendos, campañas core y Navidad), la sección 13 (segunda versión de la ruta crítica) y las secciones 14 y 15 (personas, archivos y herramientas); aportaron la sección 17 (entregables del puesto) y el Anexo C (cinco casos de marca propia). F15 (*Market Share PE*, S35 2026) aportó el primer detalle de mercado externo con este nivel de apertura: enriqueció "Share de mercado" y "Peso Mercado vs. Peso TT" (sección 9-10) y sumó un bloque nuevo al Anexo A. El rastreador de pendientes con fecha vive aparte, en `PENDIENTES.md` — no es contenido de glosario y se reemplaza en cada ciclo.*
