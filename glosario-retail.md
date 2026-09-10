@@ -33,6 +33,7 @@ Se construye por acumulación: cada capacitación, reunión o documento que apor
 | **F13** | *Campañas Core '25.xlsx* | Histórico de campañas core | 2025 | Las cinco campañas estacionales del año, calendario y mapeo de categorías campañeras |
 | **F14** | *Campaña Navideña.xlsx* | Detalle de Navidad | 2025 | Venta por categoría y por marca dentro de la campaña navideña de 2025 |
 | **F15** | *Market Share PE* — dashboard de participación de mercado | Reporte semanal, capturas de pantalla | S35 2026 (24–30 ago) | Probable fuente L&A (ver *Share de mercado*, sección 10): Tottus/Precio Uno vs. Resto Mercado, por canal, bandera, mundo, categoría y geografía. Primera fuente de mercado externo revisada con este nivel de detalle |
+| **F16** | Grabación de capacitación de Gabriel Serrano — panorama de proveedores de data de mercado y fórmula de Market Share | Transcripción automática de audio (VTT), ~20 min | Set 2026 | ⚠️ Transcripción con errores de reconocimiento frecuentes en nombres propios (empresas y personas) — marcados individualmente donde la lectura no es segura. Cubre Kantar, Nielsen, GfK y otros proveedores, sus metodologías, las herramientas Discover/Radar y la fórmula de Market Share |
 
 ---
 
@@ -746,6 +747,12 @@ Participación frente al total del mercado o de la competencia. En ScanView aún
 El reporte *Market Share PE* abre esta lectura por **canal** (Piso de Venta / E-Commerce), **bandera** (Tottus / Precio Uno), **mundo** (PGC / Perecibles / Non Food), **categoría** y **geografía**, siempre con el mismo par TSS/SSS — ver Anexo A para el detalle S35 2026.
 ⚠️ **La taxonomía de categorías de este reporte no es la de las divisiones J internas.** Usa nombres de mercado (Comestibles, Cuidado del Hogar, Carnes y Pescados…) que no calzan uno a uno con J1–J12. No cruzar por nombre sin mapear primero.
 
+⚠️ **Trampa señalada en `[F16]` — qué es "mercado":** un error de lectura frecuente es asumir que mercado = competencia + Tottus, dejando fuera a Precio Uno. La fórmula correcta:
+> `Mercado = Grupo Tottus (Tottus + Precio Uno) + Competencia`
+> `Market Share (de un jugador) = ese jugador / Mercado`
+
+Así se puede leer indistintamente la participación de Tottus, de Precio Uno o de cualquier competidor, siempre sobre el mismo denominador. La fuente insiste en anotarla sin ambigüedad porque genera dudas recurrentes al equipo nuevo. Hoy la apertura completa (participación de cada competidor por separado, no solo la de Grupo Tottus) no está disponible en el **Excel semanal** que recibe el puesto — ver *Excel semanal*, sección 15 — y es parte de lo que se busca resolver migrando a la plataforma nueva.
+
 **Resto Mercado / Resto M.** `[F15]`
 El complemento de Tottus dentro del mercado total: mercado menos Tottus (TT+PU). Es el término que usa el reporte *Market Share PE* para lo que en la sección 10 ya se llama simplemente "el mercado" en *Dif Share*, abajo — mismo concepto, otro nombre.
 
@@ -931,7 +938,47 @@ Ejecutivo responsable de una cuenta clave. Paolo Gaspar es el KAM de Scanntech p
 **Monetización de data** `[F1]`
 Modelo por el cual el retailer comparte, de forma controlada, data de venta con sus proveedores a cambio de inversión comercial. El retailer define **con quién**, **por cuánto tiempo** y **qué información** se comparte.
 
-**Personas del área** `[F6]`
+### Proveedores de data de mercado `[F16]`
+
+Panorama de los proveedores externos que miden el mercado retail, con quién los conecta el puesto y cómo cobran. Se dividen en dos lógicas de captura muy distintas — confundirlas al comparar cifras entre proveedores es el error más común señalado en la fuente:
+- **Panel de hogares** — el proveedor recluta hogares "representativos" y registra lo que compran, sin depender de que el retailer entregue nada (Kantar).
+- **Auditoría de punto de venta / venta del propio retailer** — el número viene de las cadenas, vía scanner o entrega directa (Nielsen, GfK, y los proveedores con modelo de monetización de data).
+
+⚠️ Varios nombres de proveedores y de personas en esta subsección vienen de una transcripción automática de audio con errores de reconocimiento frecuentes en nombres propios — se marcan individualmente donde la lectura es insegura, y no deben usarse en un entregable sin confirmar contra el área.
+
+**Kantar** `[F16]`
+Proveedor de data de mercado con metodología de **panel de hogares**. Entró **recientemente** al mercado peruano frente a otros proveedores con más historia local (ver *Lock*, abajo).
+⚠️ **Trampa señalada en la fuente:** Kantar es fuerte en Lima; en provincia su número "no conversa" tanto con la venta real de Tottus. A nivel Tottus general sí es representativo, pero sigue siendo **muestra muestral** — tomar con pinzas cualquier cifra abierta a un nivel muy granular (la fuente menciona un caso donde el ticket promedio que reportaba Kantar no cuadraba con el propio).
+Contacto: **Paolo** (sin apellido confirmado). ⚠️ *por confirmar:* si es la misma persona que **Paolo Gaspar**, KAM de Scanntech (`[F1]`, ver *KAM* arriba) — la fuente no lo aclara y sería una coincidencia relevante de confirmar antes de asumir que es la misma persona.
+
+**Kantar Panel / Numerator** `[F16]`
+Producto de panel de hogares de Kantar. La fuente señala que **"hoy día ha cambiado [a] Numerator"** — Kantar Worldpanel operaría/reportaría hoy bajo la marca **Numerator**. ⚠️ *por confirmar:* alcance exacto del cambio (solo de marca, o de operador).
+
+**Kantar Insights** `[F16]`
+El otro producto de Kantar mencionado en la fuente, **basado en encuestas** en vez del panel de compras: preguntas directas a hogares, no registro de transacciones.
+
+**Nielsen** `[F16]`
+Proveedor de **auditoría de punto de venta**, con metodología similar a *Lock* (abajo): mide supermercado, mercado moderno y también mercado tradicional — cobertura más amplia que el panel de Kantar. Muchos años operando en Perú.
+Nielsen y GfK se mencionan conjuntamente para categorías especializadas (colchones, TV, audio, video) en canales especializados (tiendas tipo La Curacao/Mall, Samsung) que Nielsen no cubre por sí solo.
+Contacto: **Mauricio**, quien lidera la cuenta; trabaja con un analista de soporte que **rota con frecuencia**.
+Es la misma casa Nielsen de *Nielsen Pricetrack* (sección 4).
+
+**GfK** `[F16]`
+Proveedor de auditoría de punto de venta especializado en categorías de electro/hogar (colchones, TV, audio, video) y canales especializados que Nielsen no cubre por sí solo. Aparece también nombrado como "Pro GFK" sin que se aclare si es un producto distinto. ⚠️ *por confirmar.*
+Contactos: **Helen** (apellido no confirmado) y **Jacob**.
+
+**Lock** ⚠️ *por confirmar* `[F16]`
+Nombre de proveedor tal como quedó en la transcripción automática — **la lectura fonética es insegura y no se pudo confirmar contra la fuente documental; no asumir cuál es la empresa real.** Según el audio: trabaja "muy similar" a Nielsen (auditoría de punto de venta) y tiene **muchos años de historia en el mercado peruano** (más que Kantar, entrante reciente). Contacto mencionado, también con lectura insegura ("Swan", posiblemente "Juan"). ⚠️ *por confirmar* si coincide con **L&A** (sección 4, `[F4]`), la fuente de mercado del Comité cuya razón social tampoco está confirmada.
+
+**Escatec** ⚠️ *por confirmar — posible Scanntech* `[F16]`
+Proveedor descrito como recién ingresado, con metodología de trabajo distinta a Nielsen/GfK/Kantar: Tottus le entrega su información de venta y este proveedor la usa para **vender data de mercado a fabricantes y proveedores**, pagándole a Tottus por ello (a diferencia de Nielsen, que da "servicios" a cambio, no dinero).
+Esta descripción coincide de cerca con el modelo de **monetización de data** ya documentado para **Scanntech** (`[F1]`, arriba) — es probable que "Escatec" sea una transcripción defectuosa de "Scanntech", pero **no se puede confirmar con certeza** desde el audio. Si se confirma, fusionar esta entrada con Scanntech.
+
+**Scarpe** ⚠️ *por confirmar* `[F16]`
+Proveedor con modelo de negocio distinto al resto: pone una herramienta **en el centro** entre el fabricante/proveedor y el retailer, habilitando que negocien directamente entre ellos con esa data de por medio (hay negociación y puede haber pago, con un fee mínimo). A diferencia de Nielsen/Kantar, aquí el retailer no negocia — solo da soporte a la herramienta.
+⚠️ Nombre transcrito de forma insegura; no se pudo identificar con certeza qué empresa es.
+
+**Personas del área** `[F6]` `[F16]`
 Contactos operativos del puesto y para qué se les busca:
 
 | Quién | Rol | Para qué |
@@ -943,6 +990,8 @@ Contactos operativos del puesto y para qué se les busca:
 | **María Alejandra Balarezo** | Responsable de lanzamientos | Contexto de lanzamientos y relanzamientos (caso Xplend, Anexo C) |
 | **Yami** | Lidera el área | Priorización y validación de criterios |
 | **Finanzas / Control de Gestión** | — | Que las cifras cuadren antes de presentar |
+| **Joan** `[F16]` | Envía el Excel semanal de mercado (cerrado, sin tiendas nuevas) | Fuente del corte que alimenta *Share de mercado* mientras se migra a la plataforma nueva (ver sección 15) |
+| **Daniel** `[F16]` ⚠️ *por confirmar* | Rol exacto sin confirmar — la fuente solo dice "el tema pasó Daniel" sobre el mismo archivo | — |
 
 ⚠️ *por confirmar:* si "Daniela Astep" (Brand Manager, que valida el objetivo de campaña del boletín) es la misma persona que "Dani".
 
@@ -989,6 +1038,21 @@ Navegación de lo agregado a lo detallado dentro de una jerarquía, haciendo cli
 
 **Vista macro vs. vista micro** `[F1]`
 Macro = compañía / mundo / división. Micro = subclase / SKU / tienda. La recomendación explícita de la capacitación es no analizar la propia categoría sin haber mirado antes la macro: una caída propia puede estar respaldada por una contracción del negocio.
+
+**Discover** `[F16]`
+Plataforma donde Nielsen y *Lock* (sección 14, ⚠️ nombre por confirmar) cargan su data de auditoría de punto de venta en modo autoservicio, en lugar de entregarla en bruto — Nielsen ya tiene toda su información migrada ahí.
+⚠️ *por confirmar:* si Tottus tiene acceso hoy a Discover, o si sigue dependiendo del **Excel semanal** (abajo) mientras otros retailers ya lo usan — la fuente lo deja ambiguo ("nosotros somos los que nos estamos quedando en el Excel").
+
+**Radar / Active** `[F16]`
+Herramienta mencionada junto a Discover para seguimiento de la evolución, con data semanal cerrada (semana 34, semana 35, semana 36…) y apertura diaria más reciente. En la fuente el nombre queda ambiguo entre "Radar" y "Active" — pueden ser la misma herramienta o herramientas emparentadas.
+⚠️ *por confirmar:* nombre exacto y si Tottus tiene acceso ("este no lo tenemos, fíjate si lo tenemos").
+
+**Excel semanal (mercado)** `[F16]`
+Archivo que recibe hoy el puesto con el corte de mercado, en lugar de acceso directo a Discover. Llega **cerrado, sin tiendas nuevas** — lo manda **Joan** (sección 14); hay un ajuste puntual pendiente a cargo de **Daniel** (sección 14, rol sin confirmar).
+A diferencia de la plataforma nueva, **no tiene apertura completa de mercado**: no permite ver la participación de cada competidor por separado (solo la de Grupo Tottus, ver *Share de mercado*, sección 10), ni filtrar por formato (ver abajo). Migrar de este Excel a la plataforma nueva es tarea declarada pendiente ("hay que evangelizar las próximas semanas").
+
+**Filtro por formato (cluster / discounter / cash & carry)** `[F16]`
+En la plataforma nueva, el mercado puede abrirse por **cluster**, por **discounter** y por **cash & carry**, además de por supermercado — aperturas que el *Excel semanal* (arriba) todavía no ofrece.
 
 **Archivos y herramientas del área** `[F6]`
 Plataforma: GCP · BigQuery · Looker Studio · Databricks. Herramientas de uso frecuente: Huaycos, CRONO, CYBERS, SPF, Medios, Cronogramas, Google Cloud Console, Enterprise Data Platform, Sharepoint Salesrun.
@@ -1327,7 +1391,15 @@ Espacio de trabajo para el próximo aporte:
 - [ ] Confirmar si *Market Share PE* (F15) es en efecto el reporte de L&A citado en F4, o una fuente distinta
 - [ ] Reconciliar el peso de Lima en la geografía de mercado: F4 la muestra sub-indexada (64.5% mercado vs 60.1% Tottus), F15 sobre-indexada (53.8% vs 71.4%) — confirmar si son bases distintas (mercado total vs. Resto Mercado) o semanas con composición real distinta
 - [ ] Diccionario de nombres: mapeo entre la taxonomía de categorías de *Market Share PE* (Comestibles, Cuidado del Hogar…) y las divisiones J internas
+- [ ] Nombre real del proveedor transcrito como **"Lock"** (sección 14) y de su contacto ("Swan"/"Juan") — confirmar si coincide con **L&A** (F4, sección 4)
+- [ ] Confirmar si **"Escatec"** (sección 14) es Scanntech (F1) mal transcrito, y fusionar la entrada si se confirma
+- [ ] Nombre real del proveedor transcrito como **"Scarpe"** (sección 14)
+- [ ] Apellidos de **Helen** y **Jacob**, contactos de GfK (sección 14)
+- [ ] Confirmar si **"Paolo"** (contacto de Kantar, F16) es la misma persona que Paolo Gaspar, KAM de Scanntech (F1)
+- [ ] Alcance exacto del paso de Kantar Panel a **Numerator** (sección 14)
+- [ ] Si Tottus tiene acceso hoy a **Discover** y a **Radar/Active** (sección 15), o si sigue dependiendo del Excel semanal
+- [ ] Rol exacto de **Daniel** en el Excel semanal de mercado (sección 14)
 
 ---
 
-*Última actualización: fuentes F1–F15 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView. F6–F14 (traspaso de Mirella, bases y deck de marca propia, bases y deck de lanzamientos, deck regional de lanzamientos, consolidados de campaña HS18+T36, ruta crítica 2025, plantillas de los dos entregables, y los archivos de Campañas Core y Navideña) enriquecieron la sección 1 (marca propia y lanzamientos), la sección 5 (GP% y PROFIT), la sección 6 (vigencias, arriendos, campañas core y Navidad), la sección 13 (segunda versión de la ruta crítica) y las secciones 14 y 15 (personas, archivos y herramientas); aportaron la sección 17 (entregables del puesto) y el Anexo C (cinco casos de marca propia). F15 (*Market Share PE*, S35 2026) aportó el primer detalle de mercado externo con este nivel de apertura: enriqueció "Share de mercado" y "Peso Mercado vs. Peso TT" (sección 9-10) y sumó un bloque nuevo al Anexo A. El rastreador de pendientes con fecha vive aparte, en `PENDIENTES.md` — no es contenido de glosario y se reemplaza en cada ciclo.*
+*Última actualización: fuentes F1–F15 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView. F6–F14 (traspaso de Mirella, bases y deck de marca propia, bases y deck de lanzamientos, deck regional de lanzamientos, consolidados de campaña HS18+T36, ruta crítica 2025, plantillas de los dos entregables, y los archivos de Campañas Core y Navideña) enriquecieron la sección 1 (marca propia y lanzamientos), la sección 5 (GP% y PROFIT), la sección 6 (vigencias, arriendos, campañas core y Navidad), la sección 13 (segunda versión de la ruta crítica) y las secciones 14 y 15 (personas, archivos y herramientas); aportaron la sección 17 (entregables del puesto) y el Anexo C (cinco casos de marca propia). F15 (*Market Share PE*, S35 2026) aportó el primer detalle de mercado externo con este nivel de apertura: enriqueció "Share de mercado" y "Peso Mercado vs. Peso TT" (sección 9-10) y sumó un bloque nuevo al Anexo A. F16 (grabación de capacitación, transcripción automática con ruido en nombres propios) sumó la subsección "Proveedores de data de mercado" en la sección 14 (Kantar, Nielsen, GfK y otros, varios marcados por confirmar), las herramientas Discover/Radar/Excel semanal en la sección 15, y precisó la fórmula de Market Share (Grupo Tottus = Tottus + Precio Uno) en la sección 10. El rastreador de pendientes con fecha vive aparte, en `PENDIENTES.md` — no es contenido de glosario y se reemplaza en cada ciclo.*
