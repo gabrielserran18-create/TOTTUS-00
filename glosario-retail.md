@@ -32,7 +32,7 @@ Se construye por acumulación: cada capacitación, reunión o documento que apor
 | **F12** | Plantillas de los entregables recurrentes: `Especial de Marcas Propias - HS##.pptx` y `Boletín MKT [Mes] - Campañas Especiales.xlsx` | Plantillas + procedimiento | Vigentes Set 2026 | Las dos piezas que produce Inteligencia Comercial cada campaña / cada mes |
 | **F13** | *Campañas Core '25.xlsx* | Histórico de campañas core | 2025 | Las cinco campañas estacionales del año, calendario y mapeo de categorías campañeras |
 | **F14** | *Campaña Navideña.xlsx* | Detalle de Navidad | 2025 | Venta por categoría y por marca dentro de la campaña navideña de 2025 |
-| **F15** | *Market Share PE* — dashboard de participación de mercado | Reporte semanal, capturas de pantalla | S35 2026 (24–30 ago) | Probable fuente L&A (ver *Share de mercado*, sección 10): Tottus/Precio Uno vs. Resto Mercado, por canal, bandera, mundo, categoría y geografía. Primera fuente de mercado externo revisada con este nivel de detalle |
+| **F15** | *Market Share PE* — dashboard de participación de mercado | Reporte semanal, capturas de pantalla | S35 2026 (24–30 ago) | `[F5]` Confirmado: es el reporte de la fuente **L&A** (ver *L&A*, sección 4, y *Share de mercado*, sección 10): Tottus/Precio Uno vs. Resto Mercado, por canal, bandera, mundo, categoría y geografía. Primera fuente de mercado externo revisada con este nivel de detalle |
 | **F16** | Grabación de capacitación de Gabriel Serrano — panorama de proveedores de data de mercado y fórmula de Market Share | Transcripción automática de audio (VTT), ~20 min | Set 2026 | ⚠️ Transcripción con errores de reconocimiento frecuentes en nombres propios (empresas y personas) — marcados individualmente donde la lectura no es segura. Cubre Kantar, Nielsen, GfK y otros proveedores, sus metodologías, las herramientas Discover/Radar y la fórmula de Market Share |
 | **F17** | Grabación de capacitación de Gabriel Serrano — recorrido en vivo de la plataforma de mercado y metodología de revisión de categoría | Transcripción automática de audio (VTT), ~50 min | Set 2026 | ⚠️ Misma advertencia que F16: transcripción automática con errores frecuentes en nombres propios. Sesión práctica: diagnóstico de una caída (aceite vegetal soya) drill-down por el árbol mercadológico, la metodología Nuevo/Existe/Deslistado de surtido vs. competencia, la lógica de negocio por mundo (Abarrotes/Perecibles/No Food) y el framework en diseño para la revisión profunda de categoría |
 
@@ -158,7 +158,8 @@ Marca del propio retailer. En Tottus: **Marca Tottus** (con sub-marcas **Bebé, 
 
 ⚠️ **Trampa — `FRESH`** `[F10]`: entre 19 y 31 SKU de gaseosas (el conteo varía según el corte revisado) cuya `Descripcion` dice "COLA AMARILLA FRESH **TOTTUS** 500ML" pero cuyo campo `Marca` dice solo `FRESH` (proveedor: Inversiones y Representaciones La Fábrica). Ningún filtro por marca ni por prefijo lo captura. ⚠️ *por confirmar* si es marca propia.
 
-El universo de medición de MMPP en el deck mensual y en el Especial MMPP son las divisiones **J1, J2 y J5** — el mundo **PGC y FLC** completo (ver *Mundo*, arriba). Hay SKU de MMPP participando también en **J6 y J7** (Panadería, Comidas Preparadas) que ese universo no mide: en la campaña HS18-A eran 65 de 693 SKU MMPP en campaña `[F10]`. Decidir si entran y ser consistente en todos los cortes.
+El deck mensual y el Especial MMPP miden hoy solo las divisiones **J1, J2 y J5** — el mundo **PGC y FLC** completo (ver *Mundo*, arriba). Hay SKU de MMPP participando también en **J6 y J7** (Panadería, Comidas Preparadas) que ese universo no mide: en la campaña HS18-A eran 65 de 693 SKU MMPP en campaña `[F10]`.
+`[F5]` **Aclaración del usuario: esto es el alcance de ese entregable puntual, no un límite oficial de dónde existe marca propia.** Marca propia puede tener presencia en **cualquier división** — el corte J1/J2/J5 de los decks de F7/F8 fue probablemente un análisis aislado, no una regla del negocio. Al reportar cobertura de MMPP en otra categoría (fuera de J1/J2/J5), no asumir que "no aplica" solo porque los entregables recurrentes no la miden.
 
 **MMTT** `[F7]`
 Marcas Terceras: la contraparte de MMPP, marca de proveedor. Es el corte contra el que se mide participación y margen de la marca propia — ver *GPE / GPE%* y *Rebate / Sellout*, sección 5.
@@ -371,9 +372,9 @@ Toma de precios de la competencia. Modalidades:
 **Nielsen Pricetrack** `[F4]`
 Fuente externa de seguimiento de precios de competencia usada para el IPC físico.
 
-**L&A** `[F4]`
-Fuente externa de data de mercado usada para el reporte de crecimiento y share del Comité.
-⚠️ *por confirmar:* razón social completa del proveedor.
+**L&A** `[F4]` `[F5]`
+Fuente externa de data de mercado usada para el reporte de crecimiento y share del Comité. Confirmado por el usuario: es la misma fuente detrás de *Market Share PE* (F15, ver sección 10) — mismo proveedor, dos nombres para el mismo reporte.
+⚠️ *por confirmar:* razón social completa del proveedor (el nombre "L&A" sigue siendo una sigla, no una razón social).
 
 **Congelamiento de precios** `[F4]`
 Decisión de mantener precios fijos durante un período. Aparece anotado sobre la serie de IPC ("CONGELAMOS PRECIOS PVEA"), lo que rompe la comparabilidad de la serie a partir de ese punto.
@@ -404,9 +405,9 @@ Referencia F4 (Agosto 2026, Tottus): GPE S/62.0 MM sobre venta S/369.0 MM = **16
 Margen porcentual **después** de aportes comerciales y de merma — a diferencia del GPE%, que es antes. Se calcula desde la columna `PROFIT` (ver abajo).
 Referencia F7 (Ene–Jul 2026, `BD_Profit`): Marca Propia GPE 16.5% → **GP% 15.7%** (−0.8 p.p.); Marca Proveedor (MMTT) GPE 9.4% → **GP% 27.9%** (+18.5 p.p.). La marca propia gana el margen frontal y lo pierde todo al pasar a GP% — ver *Rebate / Sellout*.
 
-**PROFIT** `[F7]`
-Columna de `BD_Profit` que alimenta el GP%. Convive con `COSTO_RECIBO` y `MERMA_CONOCIDA`; no es el GPE más un delta simple.
-⚠️ **Fórmula exacta sin confirmar — es la pregunta de mayor consecuencia de este material.** Si MMPP no recibe rebates, su GP% debería igualar su GPE%, y aun así cae 0.8 p.p. Esa diferencia tiene que ser merma u otro cargo, y es la única parte de la brecha de margen de marca propia que es gestionable. ⚠️ *por confirmar.*
+**PROFIT** `[F7]` `[F5]`
+Columna de `BD_Profit` que alimenta el GP%. Convive con `COSTO_RECIBO` y `MERMA_CONOCIDA`.
+Confirmado por el usuario: **PROFIT es, en esencia, el margen — no existe una fórmula más granular o documentada más allá de eso.** No hay un desglose oficial que perseguir. La observación de que MMPP cae 0.8 p.p. de GPE% a GP% sin recibir rebates (ver *GP%*, arriba) sigue siendo real, pero no se puede atribuir a un componente específico de `PROFIT` porque ese nivel de detalle no existe — queda como una diferencia observada, no como una ecuación por resolver.
 
 **GM%** (*Gross Margin*) `[F4]`
 Margen bruto porcentual, usado en los reportes de categoría de Non-Food. Se reporta **GM% Act** (actual) contra **GM% AP** (año pasado).
@@ -424,7 +425,8 @@ Referencia F2 (Ago-2025, J1/J2/J5): **16.6%** de las combinaciones SKU-promoció
 
 **Rebate / Sellout** `[F2]` `[F7]`
 Ingreso que el proveedor paga al retailer, vinculado a la venta efectiva del producto en promoción. En el proyecto regional se trabajó la "disponibilización de rebate sell out por SKU" para poder calcular rentabilidad promocional a nivel producto.
-**La marca propia no lo recibe** `[F7]`: es el origen estructural de la brecha entre su GPE% y su GP% (ver *GP%*, arriba) — no es una brecha de negociación, es estructural al modelo. Pregunta abierta de alto valor: ¿cuánto aporte comercial se deja de cobrar por cada punto de share que gana la marca propia? Decide si la estrategia de MMPP crea o destruye valor a nivel compañía.
+**La marca propia no lo recibe** `[F7]`: es el origen estructural de la brecha entre su GPE% y su GP% (ver *GP%*, arriba) — no es una brecha de negociación, es estructural al modelo.
+`[F5]` El usuario confirma que **no existe una cifra ni una regla formal** de cuánto aporte comercial se deja de cobrar por cada punto de share ganado con marca propia — lo que aparecía como pregunta abierta era probablemente parte de un insight puntual, no una métrica que se calcule de forma recurrente. No perseguir esta cifra como si tuviera una respuesta pendiente de encontrar.
 
 **Fondos promocionales** `[F2]`
 Inversión aportada por el proveedor para financiar una promoción. En la política de HS se contrapone a los **arriendos** como dos formas distintas de monetizar el espacio y la comunicación.
@@ -594,7 +596,7 @@ Venta adicional atribuible a la promoción, por encima de lo que el producto hab
 **Vigencia** `[F2]` `[F4]` `[F10]`
 Período durante el cual una oferta está activa. El ciclo base del HS es catorcenal, partido en **Salida A** (días 1–7) y **Salida B** (días 8–14).
 En el consolidado, la vigencia se codifica en el campo **`Tipo (14, A, B)`**: `14` corre las dos semanas completas, `A` solo la primera, `B` solo la segunda.
-⚠️ **El vacío en `Tipo` es un riesgo, no una ausencia de dato.** En HS18-A eran 5,181 de 8,770 filas, concentradas en Autoliquidables y Punto Precio. Si vacío significa "los 14 días", el universo MMPP de esa campaña es 693 SKU; si significa "sin definir", es 300. Primera pregunta a Planificación Promocional.
+`[F5]` El usuario confirma que el vacío en `Tipo` (5,181 de 8,770 filas en HS18-A) **no tiene una definición específica que buscar** — no vale la pena tratarlo como una regla oculta por descubrir.
 ⚠️ **El archivo "B" no es "la campaña de la semana 2":** es el incremento sobre el A (en HS18, 21 filas / 2 llamados). Los deals `Tipo=14` ya corren las dos semanas y viven en el archivo A. El universo de la Salida B es A + B, no B solo.
 
 **Golpe A / Golpe B** `[F2]`
@@ -735,7 +737,7 @@ Porcentaje de tiendas de la red en las que un SKU **registró facturación** en 
 
 **% variación de puntos de venta** `[F1]`
 Cambio en la cantidad de locales entre los dos períodos comparados. Explica variaciones de venta que no son de performance sino de expansión de red (ej. la apertura de Izaguirre).
-⚠️ **Esa misma tienda, Izaguirre, está excluida del Especial MMPP** `[F12]` por un motivo que ninguna fuente documenta. No confundir con la apertura: son dos hechos distintos sobre la misma tienda. Confirmar el motivo y desde cuándo aplica la exclusión.
+`[F5]` **Izaguirre es una tienda de pruebas** — el usuario confirma que este tipo de tiendas piloto se descarta de los análisis por convención, lo que explica su exclusión del Especial MMPP (`[F12]`, ver sección 17). No es una exclusión sin justificar: es la regla general para tiendas de prueba.
 
 **Bandera / Formato** `[F1]` `[F4]`
 Formato o marca comercial dentro del mismo grupo. En Tottus: **Tottus**, **Precio Uno / Hiperbodega (HB)**, **Ecommerce**. Filtrar mal la bandera contamina el `% PDV` y el share, porque cuenta locales donde ese surtido nunca se comercializa.
@@ -753,7 +755,8 @@ Agrupación geográfica o comercial de tiendas.
 Participación de una plaza en el mercado total frente a su participación en la venta de Tottus. La brecha mide **sobre o sub-exposición**.
 ⚠️ Ejemplo F4: Arequipa pesa 3.5% del mercado y 7.3% de Tottus (2.1x sobre-indexado); Lima 64.5% vs 60.1% (sub-indexada). Un problema en una plaza sobre-indexada golpea más de lo que su tamaño de mercado sugiere.
 
-⚠️ **Lima sin reconciliar entre fuentes.** F15 (S35 2026, piso de venta) muestra Lima con **53.8%** de peso en Resto Mercado contra **71.4%** de peso en Tottus — sobre-indexada, lo opuesto a la lectura de F4 arriba. Puede ser que las bases difieran (mercado total vs. Resto Mercado = mercado menos Tottus, ver *Resto Mercado*, arriba) o que sean semanas con composición real distinta. ⚠️ *por confirmar.*
+⚠️ **Lima difiere entre fuentes.** F15 (S35 2026, piso de venta) muestra Lima con **53.8%** de peso en Resto Mercado contra **71.4%** de peso en Tottus — sobre-indexada, lo opuesto a la lectura de F4 arriba.
+`[F5]` El usuario indica darle más peso a **F4** cuando las dos fuentes no coinciden — es la lectura de referencia por defecto ante esta discrepancia, aunque la causa exacta (bases distintas o semanas con composición real distinta) sigue sin aislarse.
 
 Referencia F15 (S35 2026, piso de venta): **Lima Norte** es la plaza con mayor ganancia semanal de share (+2.7 p.p., +3.4 p.p. YTD); **Lima Moderna** la de mayor pérdida (−1.3 p.p. semanal). En provincias, Arequipa y Trujillo concentran el mayor peso de Tottus fuera de Lima. **Resto Provincias** muestra un salto raro entre su share semanal (65.7%) y su YTD (36.1%) en la misma fila — revisar antes de citarlo, probablemente base semanal chica.
 
@@ -920,7 +923,8 @@ Hitos de la ruta crítica de **Táctico** `[F4]`, con días de anticipación:
 Hitos de la ruta crítica de **HS** `[F4]`: Checklist Confirmación (−52), Briefing Comercial (−27), Carga Apuestas (−27), Alerta mercadería (−21), Compra mercadería (−21/−16), Validación precios (−10), Cumplimiento de mercadería (−3). Responsables: Trade Marketing, Planificación Promocional, Comercial y Planning.
 
 ⚠️ **Versión más granular y con otros plazos, sin reconciliar** `[F11]`. `RUTA CRITICA 2025.xlsx` (hoja `HS CONCEPTUAL`) trae 13 hitos con día en rojo cuando hay corrimiento por feriado o facturación: Confirmación y definición (−52) · Briefing comercial + plantilla arriendos (**−50**) · Convocatoria CO+AL (−45) · Deadline postulaciones CO+AL, Comercial→Trade (−41) y Trade→Planificación (−38) · 1er envío plantilla arriendos + apuestas Salida A (−34) · Confirmación espacios en medios (−31) · Envío primer reporte de arriendos (−29) · Selección de medios/rumas/MV/cabecera/QR (−27) · Definición de espacios comerciales (−24) · Envío consolidado preliminar (−22) · Carga de selección de medios (−20) · Alerta de quiebres o sobre stock (−17) · **fecha máxima de cambios por alertas y excepciones (−16)**.
-El "Briefing Comercial" difiere en **23 días** entre esta fuente (−50) y la del Comité (−27, arriba). Lectura más probable: son calendarios de años distintos — este archivo es de 2025 y antecede al rediseño de proceso que propone F2 ("Impulso+"); el del Comité ya sería el proceso rediseñado de 2026. No confirmado.
+El "Briefing Comercial" difiere en **23 días** entre esta fuente (−50) y la del Comité (−27, arriba).
+`[F5]` **Regla confirmada por el usuario: el vigente siempre es el calendario más reciente.** Entre F11 (`RUTA CRITICA 2025.xlsx`, 2025) y F4 (Comité S36-2026), el que manda es **F4** — no hace falta reconciliar ambos como si compitieran; F11 queda como referencia histórica del proceso anterior a "Impulso+" (F2).
 **Lo que sí es estable en ambas versiones:** la campaña se cierra comercialmente entre 16 y 10 días antes de salir. Un hallazgo post-campaña ya no cambia nada de esa edición — alimenta el ciclo de la siguiente.
 
 **Retro Gantt** `[F2]`
@@ -1006,7 +1010,7 @@ Panorama de los proveedores externos que miden el mercado retail, con quién los
 **Kantar** `[F16]`
 Proveedor de data de mercado con metodología de **panel de hogares**. Entró **recientemente** al mercado peruano frente a otros proveedores con más historia local (ver *Lock*, abajo).
 ⚠️ **Trampa señalada en la fuente:** Kantar es fuerte en Lima; en provincia su número "no conversa" tanto con la venta real de Tottus. A nivel Tottus general sí es representativo, pero sigue siendo **muestra muestral** — tomar con pinzas cualquier cifra abierta a un nivel muy granular (la fuente menciona un caso donde el ticket promedio que reportaba Kantar no cuadraba con el propio).
-Contacto: **Paolo** (sin apellido confirmado). ⚠️ *por confirmar:* si es la misma persona que **Paolo Gaspar**, KAM de Scanntech (`[F1]`, ver *KAM* arriba) — la fuente no lo aclara y sería una coincidencia relevante de confirmar antes de asumir que es la misma persona.
+`[F5]` **Corrección del usuario: el contacto "Paolo" no es de Kantar.** Paolo Gaspar es el KAM de **Scanntech** (`[F1]`, ver *KAM* arriba) — la transcripción atribuyó mal el nombre a Kantar. El contacto real de Kantar queda sin identificar.
 
 **Kantar Panel / Numerator** `[F16]`
 Producto de panel de hogares de Kantar. La fuente señala que **"hoy día ha cambiado [a] Numerator"** — Kantar Worldpanel operaría/reportaría hoy bajo la marca **Numerator**. ⚠️ *por confirmar:* alcance exacto del cambio (solo de marca, o de operador).
@@ -1024,16 +1028,13 @@ Es la misma casa Nielsen de *Nielsen Pricetrack* (sección 4).
 Proveedor de auditoría de punto de venta especializado en categorías de electro/hogar (colchones, TV, audio, video) y canales especializados que Nielsen no cubre por sí solo. Aparece también nombrado como "Pro GFK" sin que se aclare si es un producto distinto. ⚠️ *por confirmar.*
 Contactos: **Helen** (apellido no confirmado) y **Jacob**.
 
-**Lock** ⚠️ *por confirmar* `[F16]`
-Nombre de proveedor tal como quedó en la transcripción automática — **la lectura fonética es insegura y no se pudo confirmar contra la fuente documental; no asumir cuál es la empresa real.** Según el audio: trabaja "muy similar" a Nielsen (auditoría de punto de venta) y tiene **muchos años de historia en el mercado peruano** (más que Kantar, entrante reciente). Contacto mencionado, también con lectura insegura ("Swan", posiblemente "Juan").
-`[F5]` Confirmado por el usuario: **"Lock" es un proveedor distinto de L&A** (sección 4, `[F4]`) — no fusionar ni usar uno para inferir el otro. Ambas identidades reales siguen sin confirmar por separado.
+**Lock** ⚠️ *nombre por confirmar* `[F16]` `[F5]`
+Nombre de proveedor tal como quedó en la transcripción automática — la lectura fonética es insegura. Según el audio: trabaja "muy similar" a Nielsen (auditoría de punto de venta) y tiene **muchos años de historia en el mercado peruano** (más que Kantar, entrante reciente). Contacto mencionado, también con lectura insegura ("Swan", posiblemente "Juan").
+Confirmado por el usuario: **es un proveedor de información de terceros** (no Nielsen, Kantar o GfK bajo otro nombre) y **es distinto de L&A** (sección 4, `[F4]`) — no fusionar ni usar uno para inferir el otro. Su nombre real y el de su contacto siguen sin identificar.
 
-**"Escatec" = Scanntech** `[F16]` `[F5]`
-Confirmado por el usuario: "Escatec" es una transcripción defectuosa de **Scanntech** (`[F1]`, ver *KAM* y *Monetización de data*, arriba, y la sección 16 completa) — no es un proveedor distinto. Se conserva la variante transcrita como referencia, siguiendo la regla de no borrar una discrepancia (ver §8 de CLAUDE.md): si al revisar esta grabación en el futuro aparece "Escatec", es Scanntech.
-
-**Scarpe** ⚠️ *por confirmar* `[F16]`
-Proveedor con modelo de negocio distinto al resto: pone una herramienta **en el centro** entre el fabricante/proveedor y el retailer, habilitando que negocien directamente entre ellos con esa data de por medio (hay negociación y puede haber pago, con un fee mínimo). A diferencia de Nielsen/Kantar, aquí el retailer no negocia — solo da soporte a la herramienta.
-⚠️ Nombre transcrito de forma insegura; no se pudo identificar con certeza qué empresa es.
+**"Escatec" y "Scarpe" = Scanntech** `[F16]` `[F5]`
+Confirmado por el usuario: tanto "Escatec" como "Scarpe" son transcripciones defectuosas de **Scanntech** (escritura correcta) — no son dos proveedores adicionales, son el mismo Scanntech ya documentado (`[F1]`, ver *KAM* y *Monetización de data*, arriba, y la sección 16 completa), mencionado dos veces en la grabación con lecturas distintas del reconocimiento de voz. La descripción de "Scarpe" (una herramienta que pone en el centro al fabricante/proveedor y al retailer para que negocien con esa data de por medio, con un fee mínimo) es probablemente uno de los otros servicios de Scanntech además de ScanView — Scanntech tiene 6 soluciones y Tottus usa hoy solo una (ver 16.1).
+Se conservan ambas variantes transcritas como referencia, siguiendo la regla de no borrar una discrepancia (§8 de CLAUDE.md): si en el futuro aparece "Escatec" o "Scarpe" en esta u otra grabación, es Scanntech.
 
 **Personas del área** `[F6]` `[F16]`
 Contactos operativos del puesto y para qué se les busca:
@@ -1041,14 +1042,13 @@ Contactos operativos del puesto y para qué se les busca:
 | Quién | Rol | Para qué |
 |---|---|---|
 | **Mirella Gómez Montufar** | Predecesora, de vacaciones | Traspaso; dueña de las carpetas compartidas heredadas |
-| **Dani** | Provee las bases de venta | Insumo de los dos entregables recurrentes (sección 17) |
+| **Dani (Daniel)** `[F6]` `[F16]` `[F17]` `[F5]` | Miembro del equipo de Gabriel. Provee las bases de venta, ajusta el Excel semanal de mercado y da soporte de Data en la revisión de categoría | Insumo de los dos entregables recurrentes (sección 17), del Excel semanal (sección 15) y de la revisión de categoría (sección 13) |
 | **Denisse** | Arma el Boletín de Marketing | Destinataria del bloque de resultados de campañas |
 | **Daniela Montoya / Carla Flores** | Planificación Promocional | Tácticos (T##) y las preguntas abiertas del consolidado (sección 6). `[F17]` `[F5]` También trabaja con Gabriel en la *Matriz de surtido en mix* (sección 1) |
 | **María Alejandra Balarezo** | Responsable de lanzamientos | Contexto de lanzamientos y relanzamientos (caso Xplend, Anexo C) |
 | **Yami** (Yamile) | Lidera el área | Priorización y validación de criterios. `[F17]` `[F5]` "Yani" (F17) es la misma persona — variante del nombre |
 | **Finanzas / Control de Gestión** | — | Que las cifras cuadren antes de presentar |
 | **Joan** `[F16]` | Envía el Excel semanal de mercado (cerrado, sin tiendas nuevas) | Fuente del corte que alimenta *Share de mercado* mientras se migra a la plataforma nueva (ver sección 15) |
-| **Daniel** `[F16]` `[F17]` ⚠️ *por confirmar* | Rol exacto sin confirmar — ajusta el Excel semanal de mercado (F16) y aparece también dando soporte de Data para la revisión de categoría (F17) | — |
 | **Isabel Aliaga** `[F17]` | Category Management (Catman) | Cruzar hallazgos de surtido/mix con Catman antes de presentarlos |
 | **Marisabel** `[F17]` | Lidera el equipo de Clientes | Vista de cliente dentro de la revisión profunda de categoría (sección 13) |
 | **Williams** `[F17]` | Soporte para llevar la *Matriz de surtido en mix* (sección 1) a un dashboard | — |
@@ -1056,8 +1056,7 @@ Contactos operativos del puesto y para qué se les busca:
 | **Hans** `[F17]` ⚠️ *por confirmar* | Contacto para temas de "carga" (rol impreciso) | — |
 | **Mire** `[F17]` ⚠️ *por confirmar* | Contacto para promociones (rol impreciso) | — |
 | **Alan** `[F17]` ⚠️ *por confirmar* | Contacto de inventarios | — |
-
-⚠️ *por confirmar:* si "Daniela Astep" (Brand Manager, que valida el objetivo de campaña del boletín) es la misma persona que "Dani".
+| **Daniela Aste** `[F5]` | Brand Manager — valida el objetivo de campaña del boletín | Boletín de Marketing (sección 17). Confirmado: es una persona **distinta** de Dani/Daniel (arriba) |
 
 ---
 
@@ -1241,7 +1240,7 @@ Cinco métricas por corte, con variación vs. mismos días AP: Venta Soles (abie
 
 Segunda lámina de la plantilla: el **Cheat Sheet** — el cronograma de la campaña en formato calendario de 14 días, con la mecánica que corre cada día. Mantenerlo actualizado corte a corte es lo que evita que el tercer envío compare contra una ventana distinta del primero.
 
-⚠️ **Errores conocidos de la plantilla:** el Cheat Sheet arrastra el número de campaña de la edición anterior si no se actualiza a mano · el desfase del ticket promedio ya documentado en *Venta SI* (sección 2) también aparece aquí · la exclusión de Izaguirre no está justificada en ninguna fuente (ver *% variación de puntos de venta*, sección 9) · la definición de MMPP cubre solo J1, J2 y J5 pero hay marca propia participando en J6 y J7 (ver *Marca propia / MMPP*, sección 1).
+⚠️ **Errores conocidos de la plantilla:** el Cheat Sheet arrastra el número de campaña de la edición anterior si no se actualiza a mano · el desfase del ticket promedio ya documentado en *Venta SI* (sección 2) también aparece aquí · la exclusión de Izaguirre es la convención estándar para tiendas de prueba, no un error (ver *% variación de puntos de venta*, sección 9) · el corte de MMPP en J1/J2/J5 es el universo de este entregable puntual — no un límite oficial de dónde existe marca propia (ver *Marca propia / MMPP*, sección 1).
 
 **Boletín de Marketing — bloque de campañas** `[F12]`
 Resumen mensual de acciones promocionales con foco en cuánto incremental generó cada campaña. Denisse arma el boletín; Inteligencia Comercial aporta el bloque de resultados. **El entregable es un correo con bullets**, no un Excel ni una presentación — sube al CEO.
@@ -1432,7 +1431,7 @@ Espacio de trabajo para el próximo aporte:
 
 - [ ] Definiciones oficiales Tottus de cada J (mapeo completo J1–J12, más J99 y JSJ)
 - [ ] Ejemplos de **Departamento** (nivel 3) por división — el nivel está confirmado, faltan casos concretos
-- [ ] Expansión confirmada de siglas: **MV** (arriendo prioritario), **FQ** (quiebre), **MDV** y **RT** (POP), **Fcom**, **KVC**, **H-E-L** (semaforización IPC), **LW** (logística de proveedor), **L&A** (fuente de mercado)
+- [ ] Expansión confirmada de siglas: **MV** (arriendo prioritario), **FQ** (quiebre), **MDV** y **RT** (POP), **Fcom**, **KVC**, **H-E-L** (semaforización IPC), **LW** (logística de proveedor) — origen no identificado por el usuario; confirmar contra quien mantenga cada documento fuente (F2/F4), no es conocimiento que dependa de Gabriel
 - [ ] Definición formal de **Básico 1 / Básico 2** y de **surtido troncal**
 - [ ] Criterio de selección de **Focals**
 - [ ] Métricas de rentabilidad complementarias: margen de contribución formal, GMROI
@@ -1441,29 +1440,16 @@ Espacio de trabajo para el próximo aporte:
 - [ ] Metodología **A&M** de medición de quiebre — definición y alcance
 - [ ] Definición operativa de **capacity operativo** de tienda (declarada "en definición" en F2)
 - [ ] Umbrales oficiales de la matriz de efectividad (qué separa Estrella de Bajo Impacto)
-- [ ] Fórmula exacta de `PROFIT` — de mayor consecuencia analítica: define si la brecha GPE→GP de marca propia es de negociación o de merma
-- [ ] Cuánto aporte comercial se deja de cobrar por cada punto de share ganado con marca propia
 - [ ] Conteo exacto de SKU de `FRESH` y si hay lista maestra oficial de marca propia que lo resuelva
 - [ ] Diccionario completo de códigos de espacio en tienda del consolidado (`RC`, `CM`, `CSL`, `CMY`, `RL`, `HC1`, `AL2`, `CPC`, `CSF`, `CME` — `C` y `R` ya se identifican como Cabecera y Ruma)
-- [ ] Significado del `Tipo (14, A, B)` vacío en el consolidado de campaña
-- [ ] Motivo y fecha de la exclusión de Izaguirre del Especial MMPP
-- [ ] Si J6 y J7 entran o no a la medición oficial de marca propia (hoy fuera del universo J1/J2/J5)
 - [ ] Qué distingue `REEMPLAZO FÓRMULA` de `REEMPLAZO OTROS` en lanzamientos, y quién es dueño del pipeline
 - [ ] Cuántas semanas definen cada etapa Pre-Lanzamiento / Lanzamiento / Post
 - [ ] Por qué los lanzamientos rinden ~5 p.p. menos en Online que en piso
-- [ ] Reconciliar los dos calendarios de ruta crítica de HS (F4 vs. F11, `RUTA CRITICA 2025.xlsx`) — confirmar si son años distintos del proceso o una discrepancia real
-- [ ] Si "Daniela Astep" es la misma persona que "Dani" (sección 15)
-- [ ] Confirmar si *Market Share PE* (F15) es en efecto el reporte de L&A citado en F4, o una fuente distinta
-- [ ] Reconciliar el peso de Lima en la geografía de mercado: F4 la muestra sub-indexada (64.5% mercado vs 60.1% Tottus), F15 sobre-indexada (53.8% vs 71.4%) — confirmar si son bases distintas (mercado total vs. Resto Mercado) o semanas con composición real distinta
 - [ ] Diccionario de nombres: mapeo entre la taxonomía de categorías de *Market Share PE* (Comestibles, Cuidado del Hogar…) y las divisiones J internas
-- [ ] Nombre real del proveedor transcrito como **"Lock"** (sección 14) y de su contacto ("Swan"/"Juan") — confirmado que **no** es L&A (F4, sección 4); sigue sin identidad real
-- [ ] Nombre real del proveedor transcrito como **"Scarpe"** (sección 14)
+- [ ] Nombre real del proveedor transcrito como **"Lock"** (sección 14) y de su contacto ("Swan"/"Juan") — confirmado que es un proveedor de terceros distinto de L&A; sigue sin identidad real
 - [ ] Apellidos de **Helen** y **Jacob**, contactos de GfK (sección 14)
-- [ ] Confirmar si **"Paolo"** (contacto de Kantar, F16) es la misma persona que Paolo Gaspar, KAM de Scanntech (F1)
 - [ ] Alcance exacto del paso de Kantar Panel a **Numerator** (sección 14)
 - [ ] Si Tottus tiene acceso hoy a **Discover** y a **Radar/Active** (sección 15), o si sigue dependiendo del Excel semanal
-- [ ] Rol exacto de **Daniel** en el Excel semanal de mercado y en la revisión de categoría (sección 14)
-- [ ] Extender la metodología **Nuevo/Existe/Deslistado** (sección 1) a marca propia — hoy solo cubre marca fabricante
 - [ ] Set completo de KPIs que cruza la **Matriz de surtido en mix** (sección 1) — confirmado su alcance general, falta el detalle
 - [ ] Confirmar condiciones de pago a proveedor por categoría (sección 1) contra la política oficial de Finanzas
 - [ ] Roles exactos de **Hugo**, **Hans**, **Mire** y **Alan** (sección 14) — leídos del contexto, no confirmados
@@ -1472,4 +1458,4 @@ Espacio de trabajo para el próximo aporte:
 
 ---
 
-*Última actualización: fuentes F1–F15 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView. F6–F14 (traspaso de Mirella, bases y deck de marca propia, bases y deck de lanzamientos, deck regional de lanzamientos, consolidados de campaña HS18+T36, ruta crítica 2025, plantillas de los dos entregables, y los archivos de Campañas Core y Navideña) enriquecieron la sección 1 (marca propia y lanzamientos), la sección 5 (GP% y PROFIT), la sección 6 (vigencias, arriendos, campañas core y Navidad), la sección 13 (segunda versión de la ruta crítica) y las secciones 14 y 15 (personas, archivos y herramientas); aportaron la sección 17 (entregables del puesto) y el Anexo C (cinco casos de marca propia). F15 (*Market Share PE*, S35 2026) aportó el primer detalle de mercado externo con este nivel de apertura: enriqueció "Share de mercado" y "Peso Mercado vs. Peso TT" (sección 9-10) y sumó un bloque nuevo al Anexo A. F16 (grabación de capacitación, transcripción automática con ruido en nombres propios) sumó la subsección "Proveedores de data de mercado" en la sección 14 (Kantar, Nielsen, GfK y otros, varios marcados por confirmar), las herramientas Discover/Radar/Excel semanal en la sección 15, y precisó la fórmula de Market Share (Grupo Tottus = Tottus + Precio Uno) en la sección 10. F17 (segunda grabación, mismo tipo de fuente) aportó la metodología Nuevo/Existe/Deslistado y la Matriz de surtido en mix (sección 1), la distinción de agregabilidad transacción vs. cliente (sección 3), las dos causas de variación del precio medio y los tiers de precio (sección 4), la lógica de negocio por mundo Abarrotes/Perecibles/No Food (sección 1), el chequeo de coherencia Supermarket-vs-Excel y la apertura zonal del mercado (sección 10), el framework en diseño de revisión profunda de categoría (sección 13), varios contactos nuevos (sección 14) y una nota de correspondencia con la hoja Ejecutivo de ScanView (sección 16). Corrección directa del usuario sobre F16/F17 (`[F5]`): "Escatec" es Scanntech mal transcrito (se fusionó la entrada); "Lock" es distinto de L&A; los tiers de precio quedaron confirmados, especialmente útiles en Abarrotes; la Matriz de surtido en mix cruza varios KPIs (no solo Nuevo/Existe/Deslistado) comparando mercado/competencia contra el surtido propio; y Daniela/Yani quedaron identificadas como Daniela Montoya y Yami (Yamile), respectivamente. El rastreador de pendientes con fecha vive aparte, en `PENDIENTES.md` — no es contenido de glosario y se reemplaza en cada ciclo.*
+*Última actualización: fuentes F1–F15 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView. F6–F14 (traspaso de Mirella, bases y deck de marca propia, bases y deck de lanzamientos, deck regional de lanzamientos, consolidados de campaña HS18+T36, ruta crítica 2025, plantillas de los dos entregables, y los archivos de Campañas Core y Navideña) enriquecieron la sección 1 (marca propia y lanzamientos), la sección 5 (GP% y PROFIT), la sección 6 (vigencias, arriendos, campañas core y Navidad), la sección 13 (segunda versión de la ruta crítica) y las secciones 14 y 15 (personas, archivos y herramientas); aportaron la sección 17 (entregables del puesto) y el Anexo C (cinco casos de marca propia). F15 (*Market Share PE*, S35 2026) aportó el primer detalle de mercado externo con este nivel de apertura: enriqueció "Share de mercado" y "Peso Mercado vs. Peso TT" (sección 9-10) y sumó un bloque nuevo al Anexo A. F16 (grabación de capacitación, transcripción automática con ruido en nombres propios) sumó la subsección "Proveedores de data de mercado" en la sección 14 (Kantar, Nielsen, GfK y otros, varios marcados por confirmar), las herramientas Discover/Radar/Excel semanal en la sección 15, y precisó la fórmula de Market Share (Grupo Tottus = Tottus + Precio Uno) en la sección 10. F17 (segunda grabación, mismo tipo de fuente) aportó la metodología Nuevo/Existe/Deslistado y la Matriz de surtido en mix (sección 1), la distinción de agregabilidad transacción vs. cliente (sección 3), las dos causas de variación del precio medio y los tiers de precio (sección 4), la lógica de negocio por mundo Abarrotes/Perecibles/No Food (sección 1), el chequeo de coherencia Supermarket-vs-Excel y la apertura zonal del mercado (sección 10), el framework en diseño de revisión profunda de categoría (sección 13), varios contactos nuevos (sección 14) y una nota de correspondencia con la hoja Ejecutivo de ScanView (sección 16). Segunda ronda de correcciones directas del usuario (`[F5]`) sobre F16/F17 y sobre fuentes previas: "Escatec" y "Scarpe" son ambas Scanntech mal transcrito (se fusionaron); "Lock" es un proveedor de terceros distinto de L&A, con nombre real aún sin identificar; el contacto "Paolo" es de Scanntech, no de Kantar; los tiers de precio quedaron confirmados, especialmente útiles en Abarrotes; la Matriz de surtido en mix cruza varios KPIs (no solo Nuevo/Existe/Deslistado) comparando mercado/competencia contra el surtido propio; Daniela/Yani quedaron identificadas como Daniela Montoya y Yami (Yamile); "Dani" es Daniel, del equipo de Gabriel, y es una persona distinta de Daniela Aste (Brand Manager, antes mal escrita "Astep"); `PROFIT` (sección 5) se confirma que es simplemente el margen, sin fórmula más granular; el vacío en `Tipo` (sección 6) y el aporte comercial por punto de share de MMPP (sección 5) no tienen una regla oficial que perseguir; Izaguirre (sección 9) es una tienda de pruebas, excluida por convención; marca propia puede existir en cualquier división, no solo J1/J2/J5 (sección 1); el calendario de Ruta Crítica vigente es siempre el más reciente (F4 sobre F11, sección 13); *Market Share PE* (F15) se confirma como el reporte de L&A (sección 4); y ante una discrepancia de Lima entre F4 y F15, se le da más peso a F4 (sección 9-10). El rastreador de pendientes con fecha vive aparte, en `PENDIENTES.md` — no es contenido de glosario y se reemplaza en cada ciclo.*
