@@ -982,7 +982,20 @@ Alineamiento del proceso promocional entre países del grupo (PE / CL).
 - Cruzar cada arista con **comercial** y con **operaciones**: un hallazgo puede ser transversal a toda la red (tema comercial) o concentrado en una zona/tienda (tema operativo) — no asumir cuál es sin revisar ambas.
 - Herramienta personal sugerida: un Excel propio donde solo se pega la data actualizada cada semana y los indicadores/histórico se recalculan solos, en vez de rearmar el análisis desde cero en cada corte.
 
-**Flujo de aprobación declarado:** coordinación con las áreas involucradas por categoría → revisión de **Yami** (líder del área, sección 14) → validación con **Comercial** → presentación en el **Comité Comercial**.
+**Flujo de aprobación declarado — levantamiento con las áreas dueñas del dato:**
+1. **Definir la categoría** a revisar (piloto observado: Galletas).
+2. **Levantamiento por área**, cada una entrega su arista por separado (Inteligencia Comercial consolida, no arma cada pieza desde cero):
+   - **Inventarios** (Alan, sección 14) — disponibilidad y quiebre.
+   - **Catman** (Isabel Aliaga, sección 14) — surtido, mix y espacio de góndola (qué productos, si el espacio subió o bajó).
+   - **Promociones** (Mire, sección 14) — mecánica y calendario promocional vigente.
+   - **Carga / Data** (Hans para carga, Daniel para soporte de data, sección 14) — armado de la base que alimenta el análisis.
+   - **Clientes** (Marisabel, sección 14) — comportamiento del shopper de esa categoría.
+3. **Consolidación** por Inteligencia Comercial: se arma el framework y la lámina de mercado con lo que entregó cada área, cuidando que **todo tenga coherencia narrativa** — si un bloque no calza con el resto, se explica, no se esconde.
+4. **Revisión de Yami** (líder del área, sección 14) — primera pasada rápida.
+5. **Validación con Comercial** — gerente de categorías/Planificación Comercial y Hugo (sección 14).
+6. **Presentación en el Comité Comercial.**
+
+⚠️ **Pricing no aparece en este levantamiento** — la relación confirmada en otra parte de esta sección es reactiva: Inteligencia Comercial detecta un desfase de precio y **lo escala a Pricing** (ver arriba, *Pricing*), un flujo distinto al ciclo fijo de revisión por categoría. *Por confirmar* si en la práctica también participa del levantamiento.
 ⚠️ *por confirmar:* nombre final de este entregable y si termina viviendo en la sección 17 (Entregables del puesto) una vez formalizado.
 
 ---
