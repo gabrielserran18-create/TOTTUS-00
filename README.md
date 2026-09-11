@@ -14,9 +14,11 @@ Repositorio vivo: se alimenta de capacitaciones, comités, presentaciones de cam
 - **Anexo C** — casos de referencia: episodios concretos de marca propia que ilustran un patrón (o su excepción).
 - Cada término indica de qué fuente proviene (`[F1]`, `[F2]`, …), registradas en la tabla que encabeza el documento.
 
-## La única excepción: `PENDIENTES.md`
+## Las excepciones sancionadas
 
 ⏱ **[`PENDIENTES.md`](PENDIENTES.md)** — rastreador de tareas de esta semana, con fechas y nombres. No es conocimiento de referencia: se **reemplaza en cada ciclo**, no acumula versiones. El "por qué" de cada pendiente vive en el glosario; este archivo solo trackea el "qué falta y para cuándo".
+
+🎨 **[`ESTANDAR-FORMATO.md`](ESTANDAR-FORMATO.md)** — estándar de formato visual (colores, tipografía, semáforo, layout) para todo entregable que se genere en este contexto: presentaciones, Excel, dashboards HTML, Power BI y gráficos en Python. No es terminología de retail: es la guía de estilo que se aplica al construir un entregable, y solo se reemplaza cuando cambia la plantilla oficial de marca de Tottus.
 
 ## Cómo se alimenta
 
@@ -38,6 +40,7 @@ TOTTUS-00/
 ├── README.md                  este archivo
 ├── glosario-retail.md         ⭐ documento maestro
 ├── PENDIENTES.md              ⏱ rastreador de tareas, se reemplaza cada ciclo
+├── ESTANDAR-FORMATO.md         🎨 estándar de formato visual para entregables
 └── scripts/
     └── validar-glosario.py    chequeo estructural del documento maestro
 ```
