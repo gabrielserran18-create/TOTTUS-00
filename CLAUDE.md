@@ -15,17 +15,24 @@ TOTTUS-00/
 ├── CLAUDE.md                  ← este archivo (instrucciones para IAs)
 ├── README.md                  ← orientación rápida para humanos
 ├── glosario-retail.md         ← ⭐ DOCUMENTO MAESTRO
-├── PENDIENTES.md              ← ⏱ rastreador de tareas — única excepción, ver abajo
+├── PENDIENTES.md              ← ⏱ rastreador de tareas — excepción sancionada, ver abajo
+├── ESTANDAR-FORMATO.md         ← 🎨 estándar de formato visual — excepción sancionada, ver abajo
 └── scripts/
     └── validar-glosario.py    ← chequeo estructural del documento maestro
 ```
 
-**`glosario-retail.md` es el único documento de contenido.** Todo lo que se aprenda de una fuente nueva entra ahí. No crear documentos paralelos salvo que el usuario lo pida explícitamente.
+**`glosario-retail.md` es el único documento de contenido de retail/Tottus.** Todo lo que se aprenda de una fuente nueva sobre el negocio entra ahí. No crear documentos paralelos salvo que el usuario lo pida explícitamente.
 
-**Excepción sancionada: `PENDIENTES.md`.** El usuario pidió explícitamente (Set-2026) sacar del glosario el rastreador de tareas con fecha — es un checklist con nombres y vencimientos de esta semana, no conocimiento de referencia; mezclarlo con el glosario contaminaría un documento pensado para seguir siendo válido meses después. Reglas de este archivo:
+**Excepción sancionada 1: `PENDIENTES.md`.** El usuario pidió explícitamente (Set-2026) sacar del glosario el rastreador de tareas con fecha — es un checklist con nombres y vencimientos de esta semana, no conocimiento de referencia; mezclarlo con el glosario contaminaría un documento pensado para seguir siendo válido meses después. Reglas de este archivo:
 - Se **reemplaza en cada ciclo**, entero. No se versiona con fecha en el nombre ni se acumulan pendientes resueltos — lo que resulte durable (una definición, una cifra con corte, una trampa) migra al glosario antes de sobrescribir.
 - No sigue la estructura del validador (sin secciones numeradas, sin registro de fuentes `[Fx]`) y **no se corre `validar-glosario.py` sobre él**.
-- Si aparece una necesidad de un TERCER documento paralelo para otro propósito, no crearlo por iniciativa propia: proponérselo al usuario primero.
+
+**Excepción sancionada 2: `ESTANDAR-FORMATO.md`.** El usuario subió y pidió incorporar tal cual (Set-2026) el estándar de formato visual de marca — colores, tipografía, semáforo, formatos numéricos y reglas de layout para todo entregable (.pptx, .xlsx, dashboards HTML, Power BI, gráficos en Python). No es terminología de retail ni un pendiente con fecha: es una **guía de estilo que Claude debe aplicar sin preguntar** al construir cualquier entregable visual para Tottus. Reglas de este archivo:
+- Es de **contenido propio**, no de fuentes documentales de negocio — no lleva registro de fuentes `[Fx]` ni se corre `validar-glosario.py` sobre él.
+- Se **reemplaza entero** (no se versiona) solo cuando cambie la plantilla oficial de marca de Tottus — no en cada ciclo como PENDIENTES.md.
+- Ante una instrucción puntual del usuario que lo contradiga, gana la instrucción puntual; en todo lo demás, gana este documento.
+
+**Si aparece la necesidad de un CUARTO documento paralelo para otro propósito, no crearlo por iniciativa propia: proponérselo al usuario primero.**
 
 ---
 

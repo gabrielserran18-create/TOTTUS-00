@@ -32,7 +32,10 @@ Se construye por acumulación: cada capacitación, reunión o documento que apor
 | **F12** | Plantillas de los entregables recurrentes: `Especial de Marcas Propias - HS##.pptx` y `Boletín MKT [Mes] - Campañas Especiales.xlsx` | Plantillas + procedimiento | Vigentes Set 2026 | Las dos piezas que produce Inteligencia Comercial cada campaña / cada mes |
 | **F13** | *Campañas Core '25.xlsx* | Histórico de campañas core | 2025 | Las cinco campañas estacionales del año, calendario y mapeo de categorías campañeras |
 | **F14** | *Campaña Navideña.xlsx* | Detalle de Navidad | 2025 | Venta por categoría y por marca dentro de la campaña navideña de 2025 |
-| **F15** | *Market Share PE* — dashboard de participación de mercado | Reporte semanal, capturas de pantalla | S35 2026 (24–30 ago) | Probable fuente L&A (ver *Share de mercado*, sección 10): Tottus/Precio Uno vs. Resto Mercado, por canal, bandera, mundo, categoría y geografía. Primera fuente de mercado externo revisada con este nivel de detalle |
+| **F15** | *Market Share PE* — dashboard de participación de mercado | Reporte semanal, capturas de pantalla | S35 2026 (24–30 ago) | `[F5]` Confirmado: es el reporte de la fuente **L&A** (ver *L&A*, sección 4, y *Share de mercado*, sección 10): Tottus/Precio Uno vs. Resto Mercado, por canal, bandera, mundo, categoría y geografía. Primera fuente de mercado externo revisada con este nivel de detalle |
+| **F16** | Grabación de capacitación de Gabriel Serrano — panorama de proveedores de data de mercado y fórmula de Market Share | Transcripción automática de audio (VTT), ~20 min | Set 2026 | ⚠️ Transcripción con errores de reconocimiento frecuentes en nombres propios (empresas y personas) — marcados individualmente donde la lectura no es segura. Cubre Kantar, Nielsen, GfK y otros proveedores, sus metodologías, las herramientas Discover/Radar y la fórmula de Market Share |
+| **F17** | Grabación de capacitación de Gabriel Serrano — recorrido en vivo de la plataforma de mercado y metodología de revisión de categoría | Transcripción automática de audio (VTT), ~50 min | Set 2026 | ⚠️ Misma advertencia que F16: transcripción automática con errores frecuentes en nombres propios. Sesión práctica: diagnóstico de una caída (aceite vegetal soya) drill-down por el árbol mercadológico, la metodología Nuevo/Existe/Deslistado de surtido vs. competencia, la lógica de negocio por mundo (Abarrotes/Perecibles/No Food) y el framework en diseño para la revisión profunda de categoría |
+| **F18** | Reunión de Gabriel Serrano con Carla Teresa Flores Otoya (Planificación Promocional) — ruta crítica del Táctico 37 y Excel operativo | Transcripción automática de audio (VTT), ~13 min | 10-Set-2026 | ⚠️ Transcripción automática, con el mismo tipo de ruido que F16/F17. Recorrido de la fuente dueña del proceso (Planificación Promocional) sobre el Excel de ruta crítica, la relación Táctico↔HS, los golpes de Táctico, el sistema Mi Portal/SPF y mecánicas de campaña |
 
 ---
 
@@ -126,8 +129,24 @@ Referencia F2: **65.2%** del surtido promocional de HS era NKVI y solo **7%** SK
 Función estratégica que se le asigna a una categoría dentro del negocio. Roles usados en Tottus: **Destino**, **Tráfico**, **Imagen**, **Complementaria** (abreviada "Complem."). Define cuánto se debe invertir en precio y espacio en esa categoría.
 Referencia F2: los focos de Categorías de Destino en Tottus son las de consumo de familias jóvenes con hijos pequeños y las principales de Perecibles, como fidelizador.
 
+⚠️ **Trampa: la columna "Categoría" de los consolidados de campaña no es un nivel del árbol mercadológico** `[F18]`. Confirmado por Planificación Promocional: es una **nomenclatura o nombre comercial**, distinta de la jerarquía formal (Mundo → **División (J)** → Departamento → Subdepartamento → Clase → Subclase, ver *Árbol mercadológico*, sección 1). La División (J1, J2, J5…) sí es un nivel de la jerarquía; "Categoría" en esos archivos no lo es — no cruzar una por la otra.
+
 **Estado de producto** `[F2]`
 Ciclo de vida del SKU en el maestro: **Activo → Inactivo → Descontinuado → Purgado**. Es uno de los cinco ejes de calidad de una selección promocional: F2 detectó que ~22% de los SKUs de un HS no estaban en estado Activo.
+
+**Nuevo / Existe / Deslistado (surtido vs. competencia)** `[F17]`
+Metodología distinta de *Estado de producto* (arriba): no clasifica el ciclo de vida interno del SKU, sino su **comportamiento de venta frente a una ventana histórica**, y se aplica igual a Tottus/bandera propia y a la competencia — es la base para detectar oportunidades de surtido. Definición usada en la fuente, con ventana desde enero 2025 hasta las últimas 4 semanas del corte vigente:
+- **Nuevo** — no vendió en su historia (antes de la ventana) pero **sí** vendió en las últimas 4 semanas.
+- **Existe** — vendió en las últimas 4 semanas **y** tiene historia de venta previa.
+- **Deslistado** — tiene historia de venta previa pero **no** vendió en las últimas 4 semanas.
+- Si nadie (ni Tottus ni la competencia) lo vendió nunca, no entra al análisis.
+
+Lectura de oportunidad: un producto que la competencia tiene como **nuevo** o **existente fuerte** y Tottus no tiene es una oportunidad de incorporar surtido. Al revés, revisar **por qué** se deslistó algo propio es igual de válido — puede ser una oportunidad perdida si el producto venía creciendo antes de salir.
+⚠️ **Limitaciones declaradas:** (1) hoy solo se aplica a **marca fabricante** (marca de proveedor) — la marca propia queda fuera porque "tiene otra forma de trabajo", pendiente de extender. (2) Funciona bien en categorías con código de barras estable (abarrotes); es más difícil en categorías donde el producto cambia de diseño o empaque con frecuencia (ej. prendas de vestir) porque el identificador no es estable en el tiempo — mismo problema declarado para No Food (ver *Lógica de negocio por mundo*, sección 1).
+
+**Matriz de surtido en mix (vs. competencia, por bandera)** `[F17]` `[F5]`
+Matriz en desarrollo (trabajada con **Daniela Montoya**, Planificación Promocional — sección 14 — y con soporte de Williams para llevarla a un dashboard). Corrección del usuario sobre el alcance: no es solo la lectura Nuevo/Existe/Deslistado abierta por bandera — es una matriz más amplia que **cruza distintos KPIs** (Nuevo/Existe/Deslistado es uno de los insumos, no el único) para **comparar mercado/competencia contra el surtido propio de Tottus** y, con ese cruce, **clasificar los productos**. Hoy es manual (se rearma desde cero cada semana con la data actualizada); el objetivo declarado es automatizarla.
+⚠️ *por confirmar:* el set completo de KPIs que cruza la matriz — la fuente aún no lo detalla.
 
 **Producto pesable / a granel** `[F1]`
 Producto que se vende por peso y no por unidad empaquetada (carnes, frutas, panadería a granel). Hoy en la plataforma no registra marca ni proveedor y aparece como **genérico** — limitación declarada, en desarrollo.
@@ -142,7 +161,8 @@ Marca del propio retailer. En Tottus: **Marca Tottus** (con sub-marcas **Bebé, 
 
 ⚠️ **Trampa — `FRESH`** `[F10]`: entre 19 y 31 SKU de gaseosas (el conteo varía según el corte revisado) cuya `Descripcion` dice "COLA AMARILLA FRESH **TOTTUS** 500ML" pero cuyo campo `Marca` dice solo `FRESH` (proveedor: Inversiones y Representaciones La Fábrica). Ningún filtro por marca ni por prefijo lo captura. ⚠️ *por confirmar* si es marca propia.
 
-El universo de medición de MMPP en el deck mensual y en el Especial MMPP son las divisiones **J1, J2 y J5** — el mundo **PGC y FLC** completo (ver *Mundo*, arriba). Hay SKU de MMPP participando también en **J6 y J7** (Panadería, Comidas Preparadas) que ese universo no mide: en la campaña HS18-A eran 65 de 693 SKU MMPP en campaña `[F10]`. Decidir si entran y ser consistente en todos los cortes.
+El deck mensual y el Especial MMPP miden hoy solo las divisiones **J1, J2 y J5** — el mundo **PGC y FLC** completo (ver *Mundo*, arriba). Hay SKU de MMPP participando también en **J6 y J7** (Panadería, Comidas Preparadas) que ese universo no mide: en la campaña HS18-A eran 65 de 693 SKU MMPP en campaña `[F10]`.
+`[F5]` **Aclaración del usuario: esto es el alcance de ese entregable puntual, no un límite oficial de dónde existe marca propia.** Marca propia puede tener presencia en **cualquier división** — el corte J1/J2/J5 de los decks de F7/F8 fue probablemente un análisis aislado, no una regla del negocio. Al reportar cobertura de MMPP en otra categoría (fuera de J1/J2/J5), no asumir que "no aplica" solo porque los entregables recurrentes no la miden.
 
 **MMTT** `[F7]`
 Marcas Terceras: la contraparte de MMPP, marca de proveedor. Es el corte contra el que se mide participación y margen de la marca propia — ver *GPE / GPE%* y *Rebate / Sellout*, sección 5.
@@ -184,6 +204,14 @@ Mundo de productos de vida útil corta: carnes y pescados, frutas y verduras, pa
 
 **Non-Food** `[F1]`
 Mundo de productos no alimentarios.
+
+**Lógica de negocio por mundo (Abarrotes / Perecibles / No Food)** `[F17]`
+Cada uno de los tres grandes negocios de un supermercado tiene una economía distinta — no se gestionan igual:
+- **Abarrotes** (J1, ver *División*, arriba) — "se gana al centavito": el margen unitario es bajo y el crecimiento se logra por **volumen/rotación**, no por margen.
+- **Perecibles** — impactado por **merma** (se pudre si no rota), **estacionalidad** (fruta según temporada — ej. mandarina/naranja, papa blanca vs. papa rosada según época) y por **tránsito de mercadería** (importación sujeta a clima: una tormenta que retrasa un barco impacta directamente la disponibilidad). El margen varía por subcategoría — frutas y verduras, por ejemplo, se reporta con margen mayor y ganan también por venta al mayoreo, ayudando a la **frecuencia de visita** del cliente.
+- **No Food** — complementario a los otros dos: aporta más a la **imagen** de la cadena que al margen directo. Particularidad sistémica señalada en la fuente: buena parte de la mercadería sale primero para otras unidades del grupo (Falabella, Sodimac) y llega después a Tottus; hoy se maneja en la plataforma como **pesable/genérico** (ver *Producto pesable / a granel*, arriba) porque el producto cambia de diseño o empaque con frecuencia y no tiene un identificador estable — es más difícil de medir que abarrotes, donde el código de barras es estable.
+
+⚠️ **Condiciones de pago a proveedor** (mencionadas en la fuente, sin cifra oficial): varían por categoría — perecibles ~30–45 días, otras hasta 60–90 días — y son parte de la negociación comercial: un proveedor puede ceder mejor precio o más promoción a cambio de un pago más rápido (liquidez). *Por confirmar contra la política oficial de Finanzas antes de citarlo en un entregable.*
 
 ---
 
@@ -269,6 +297,9 @@ Motivo con el que el shopper entra a la tienda (reposición de despensa, compra 
 **Shopper** `[F1]`
 La persona en su rol de comprador dentro de la tienda. Se distingue del *consumidor* (quien usa el producto), porque no siempre son la misma persona ni responden a los mismos estímulos.
 
+**Transacción vs. cliente (agregabilidad)** `[F17]`
+Distinción operativa al sumar cifras entre tiendas o banderas: las **transacciones (TRX)** se pueden sumar libremente entre tiendas o banderas (ej. sumar las transacciones de una tienda con las de Megaplaza) siempre que la data esté abierta por tienda. Los **clientes únicos no**: el mismo cliente puede transar en dos tiendas o dos banderas distintas y sumar sus transacciones por separado no lo duplica, pero sumar el conteo de "clientes" sí lo haría — un cliente que compró en dos banderas cuenta una vez en cada una, no dos veces en el total. Antes de sumar cualquier cifra de clientes entre unidades, declarar si se está deduplicando.
+
 **Clientes identificados** `[F3]`
 Transacciones en las que el cliente se identificó (típicamente con tarjeta de fidelidad). Es el universo sobre el que se puede hacer análisis de comportamiento individual y de recurrencia.
 
@@ -279,8 +310,16 @@ Recorte explícito de tickets sobre el que corre un estudio. Ejemplo de F3: "tic
 
 ## 4. Precio
 
-**Precio medio** `[F1]` `[F3]` `[F4]`
+**Precio medio** `[F1]` `[F3]` `[F4]` `[F17]`
 Precio promedio efectivamente cobrado por un SKU en el período (facturación ÷ unidades). Incorpora el efecto de promociones y descuentos, por lo que difiere del precio de lista.
+⚠️ **Dos causas distintas de que suba, y hay que distinguirlas antes de diagnosticar `[F17]`:**
+1. **Subida real de precio** — el índice de precio propio es mayor que el de la competencia y que el del año pasado (ver *Price index / IPC*, abajo).
+2. **Cambio de mix** — sin que haya subido el precio unitario de ningún producto, las compras del cliente se desplazan hacia productos de distinto **gramaje/tamaño** o **tier de precio** (ver abajo). Aplica en cualquier categoría donde convivan presentaciones o tiers distintos.
+Confundir ambas lleva a leer "estamos más caros" cuando en realidad el cliente cambió lo que compra.
+
+**Tier de precio (Low cost / Mainstream / Premium)** `[F17]` `[F5]`
+Segmentación de los SKU de una categoría por nivel de precio, usada para explicar cambios de mix (ver *Precio medio*, arriba): si el año pasado la promoción empujaba lo **low cost** y este año empuja **mainstream** o **premium** (o viceversa), el precio medio se mueve sin que cambie el precio de ningún SKU individual. La fuente menciona incorporar esta apertura, junto con **misión de compra** y **quiebre**, como dimensiones nuevas de análisis.
+Confirmado por el usuario: son los tres tiers correctos, **especialmente útiles en Abarrotes** (J1) — no necesariamente la apertura más relevante en todos los mundos por igual.
 
 **Precio moda** `[F1]`
 Precio al que el producto se vende con mayor frecuencia. Es el precio con el que el cliente realmente interactúa: si el precio moda está muy por debajo del precio de lista, el producto vive en promoción.
@@ -313,8 +352,8 @@ Dos formas de medir la profundidad de una promoción:
 
 Pueden divergir brutalmente. Ejemplo de F2: un cereal con −7.7% de descuento teórico tenía −49.7% percibido; un detergente con −20.8% teórico tenía solo −8.8% percibido. **El descuento percibido es el que mueve al cliente.**
 
-**Punto precio** `[F2]`
-Precio cerrado y comunicable (ej. S/9.90) que se fija como mecánica, en oposición a un porcentaje de descuento.
+**Punto precio** `[F2]` `[F18]`
+Precio cerrado y comunicable (ej. S/9.90) que se fija como mecánica, en oposición a un porcentaje de descuento. Ejemplo dado por Planificación Promocional: una Cusqueña a "S/22.90 / S/21.90 con CMR" — el precio directo que se comunica en tienda sin más cálculo.
 
 **Preciazo** `[F4]`
 Precio de ataque comunicado como el más agresivo de la oferta. Aparece como columna de comparación competitiva.
@@ -336,9 +375,9 @@ Toma de precios de la competencia. Modalidades:
 **Nielsen Pricetrack** `[F4]`
 Fuente externa de seguimiento de precios de competencia usada para el IPC físico.
 
-**L&A** `[F4]`
-Fuente externa de data de mercado usada para el reporte de crecimiento y share del Comité.
-⚠️ *por confirmar:* razón social completa del proveedor.
+**L&A** `[F4]` `[F5]`
+Fuente externa de data de mercado usada para el reporte de crecimiento y share del Comité. Confirmado por el usuario: es la misma fuente detrás de *Market Share PE* (F15, ver sección 10) — mismo proveedor, dos nombres para el mismo reporte.
+⚠️ *por confirmar:* razón social completa del proveedor (el nombre "L&A" sigue siendo una sigla, no una razón social).
 
 **Congelamiento de precios** `[F4]`
 Decisión de mantener precios fijos durante un período. Aparece anotado sobre la serie de IPC ("CONGELAMOS PRECIOS PVEA"), lo que rompe la comparabilidad de la serie a partir de ese punto.
@@ -369,9 +408,9 @@ Referencia F4 (Agosto 2026, Tottus): GPE S/62.0 MM sobre venta S/369.0 MM = **16
 Margen porcentual **después** de aportes comerciales y de merma — a diferencia del GPE%, que es antes. Se calcula desde la columna `PROFIT` (ver abajo).
 Referencia F7 (Ene–Jul 2026, `BD_Profit`): Marca Propia GPE 16.5% → **GP% 15.7%** (−0.8 p.p.); Marca Proveedor (MMTT) GPE 9.4% → **GP% 27.9%** (+18.5 p.p.). La marca propia gana el margen frontal y lo pierde todo al pasar a GP% — ver *Rebate / Sellout*.
 
-**PROFIT** `[F7]`
-Columna de `BD_Profit` que alimenta el GP%. Convive con `COSTO_RECIBO` y `MERMA_CONOCIDA`; no es el GPE más un delta simple.
-⚠️ **Fórmula exacta sin confirmar — es la pregunta de mayor consecuencia de este material.** Si MMPP no recibe rebates, su GP% debería igualar su GPE%, y aun así cae 0.8 p.p. Esa diferencia tiene que ser merma u otro cargo, y es la única parte de la brecha de margen de marca propia que es gestionable. ⚠️ *por confirmar.*
+**PROFIT** `[F7]` `[F5]`
+Columna de `BD_Profit` que alimenta el GP%. Convive con `COSTO_RECIBO` y `MERMA_CONOCIDA`.
+Confirmado por el usuario: **PROFIT es, en esencia, el margen — no existe una fórmula más granular o documentada más allá de eso.** No hay un desglose oficial que perseguir. La observación de que MMPP cae 0.8 p.p. de GPE% a GP% sin recibir rebates (ver *GP%*, arriba) sigue siendo real, pero no se puede atribuir a un componente específico de `PROFIT` porque ese nivel de detalle no existe — queda como una diferencia observada, no como una ecuación por resolver.
 
 **GM%** (*Gross Margin*) `[F4]`
 Margen bruto porcentual, usado en los reportes de categoría de Non-Food. Se reporta **GM% Act** (actual) contra **GM% AP** (año pasado).
@@ -389,7 +428,8 @@ Referencia F2 (Ago-2025, J1/J2/J5): **16.6%** de las combinaciones SKU-promoció
 
 **Rebate / Sellout** `[F2]` `[F7]`
 Ingreso que el proveedor paga al retailer, vinculado a la venta efectiva del producto en promoción. En el proyecto regional se trabajó la "disponibilización de rebate sell out por SKU" para poder calcular rentabilidad promocional a nivel producto.
-**La marca propia no lo recibe** `[F7]`: es el origen estructural de la brecha entre su GPE% y su GP% (ver *GP%*, arriba) — no es una brecha de negociación, es estructural al modelo. Pregunta abierta de alto valor: ¿cuánto aporte comercial se deja de cobrar por cada punto de share que gana la marca propia? Decide si la estrategia de MMPP crea o destruye valor a nivel compañía.
+**La marca propia no lo recibe** `[F7]`: es el origen estructural de la brecha entre su GPE% y su GP% (ver *GP%*, arriba) — no es una brecha de negociación, es estructural al modelo.
+`[F5]` El usuario confirma que **no existe una cifra ni una regla formal** de cuánto aporte comercial se deja de cobrar por cada punto de share ganado con marca propia — lo que aparecía como pregunta abierta era probablemente parte de un insight puntual, no una métrica que se calcule de forma recurrente. No perseguir esta cifra como si tuviera una respuesta pendiente de encontrar.
 
 **Fondos promocionales** `[F2]`
 Inversión aportada por el proveedor para financiar una promoción. En la política de HS se contrapone a los **arriendos** como dos formas distintas de monetizar el espacio y la comunicación.
@@ -424,11 +464,20 @@ Pendiente de fuente oficial Tottus. Ver *Términos por incorporar*.
 El vehículo promocional principal de Tottus: una campaña de vigencia **catorcenal** que agrupa toda la oferta del período. Se numera correlativamente (HS17, HS18, HS19, HS20, HS21) y puede abrirse en subperíodos (HS19A / HS19B).
 Escala de referencia `[F2]` (Set-2025): ~**5,700 SKUs**, ~**2,493 llamados**, ~**773 cartelerías** por HS.
 
-**Táctico (TC)** `[F2]` `[F4]`
-Campaña de menor escala y ciclo propio, numerada en paralelo al HS (T35, T36, T37, T38, T39). Tiene sus propios capacities, más reducidos que los del HS.
+**Táctico (TC)** `[F2]` `[F4]` `[F18]`
+Campaña de menor escala y ciclo propio, numerada en paralelo al HS (T35, T36, T37, T38, T39). Tiene sus propios capacities, más reducidos que los del HS. Es una campaña **sin arriendos**, de menor duración — ver *Clasificación de campañas: con/sin arriendos*, abajo.
+**Relación con el HS** `[F18]`, según Planificación Promocional: un HS (14 días) convive siempre con **dos Tácticos consecutivos**, uno por semana (ej. HS18 convive con T36 y T37; HS19 va acompañado de T38 y T39). Pero **no hay relación 1:1 de producto**: Hardsell y Táctico "viven a la par" en el calendario, pero el surtido no es el mismo — un Táctico puede tener productos nuevos que no están en el Hardsell de esa quincena.
+**Variante Perecibles** `[F18]`: además del ciclo Golpe A/Golpe B (ver abajo), existe un Táctico específico para **Perecibles** (divisiones J3, J4, J6 y J7 — Ultra Frescos incluido) que corre **lunes a miércoles**, en un ciclo distinto al de las demás categorías.
 
-**Campaña conceptual / Especial** `[F2]` `[F4]`
+**Flash** `[F18]`
+Campaña puntual estructurada como un Táctico (sin arriendos, corta), activada de forma ad-hoc para un evento específico — ejemplo dado: un partido importante de fútbol, con apuestas en categorías asociadas a la ocasión (carbón, cerveza, carnes).
+
+**Clasificación de campañas: con / sin arriendos** `[F18]`
+Principio general de Planificación Promocional para agrupar los vehículos de campaña: son **campañas con arriendos** (HS — ver *Vigencia*, abajo) o **campañas sin arriendos y de menor duración** (Táctico, Flash). Es el eje que explica por qué HS tiene su propio capacity de cartelería (sección 7) y los otros vehículos no.
+
+**Campaña conceptual / Especial** `[F2]` `[F4]` `[F18]`
 Campaña temática que se monta sobre o en paralelo al calendario regular (ej. *Especial MMPP*, *Especial Bucal*, *Especial Limpieza*, *Feria Abarrotera*). Queda **fuera** de los máximos de cambio definidos en la política de HS, y por eso es la excepción que hay que gobernar aparte.
+*Sinónimo:* **"Hardsell conceptual"** `[F18]` — término usado por Planificación Promocional para el mismo tipo de campaña cuando se monta sobre un HS: no es una campaña regular, tiene toda una comunicación propia detrás.
 
 **Campaña Core** `[F2]` `[F13]`
 Campaña estructural del calendario comercial. Es una de las cuatro fuentes de cartelería junto con Especiales, Mecánicas y Top Deals. Las cinco campañas core del año `[F13]`, con su ventana 2025:
@@ -478,8 +527,9 @@ Pieza de comunicación de la oferta de campaña. En la política propuesta, el "
 **Apuesta** `[F2]` `[F4]`
 Cada oferta individual cargada en una campaña. "Carga de apuestas" es el primer hito de la ruta crítica.
 
-**Llamado** `[F2]`
+**Llamado** `[F2]` `[F18]`
 Unidad de comunicación promocional: el mensaje de oferta que se comunica al cliente. Un llamado puede agrupar varios SKUs (**llamado multiproducto**) o uno solo (**llamado monoproducto**).
+⚠️ **Confirmado por Planificación Promocional:** el llamado (o "llamado de apuesta") es la nomenclatura comercial de cómo se comunica la promoción en tienda — **no es el nombre del SKU**. Ejemplo de multiproducto: el llamado "Yogures Gloria 1.6kg" agrupa 6 SKU (fresa, durazno, vainilla, lúcuma, guanana, etc.) bajo un mismo cartel.
 ⚠️ Es la unidad que consume **capacity de cartelería**, no el SKU. Referencia F2: ~5,700 SKUs generaban ~2,493 llamados.
 
 **Deal** `[F2]` `[F4]`
@@ -559,12 +609,13 @@ Venta adicional atribuible a la promoción, por encima de lo que el producto hab
 **Vigencia** `[F2]` `[F4]` `[F10]`
 Período durante el cual una oferta está activa. El ciclo base del HS es catorcenal, partido en **Salida A** (días 1–7) y **Salida B** (días 8–14).
 En el consolidado, la vigencia se codifica en el campo **`Tipo (14, A, B)`**: `14` corre las dos semanas completas, `A` solo la primera, `B` solo la segunda.
-⚠️ **El vacío en `Tipo` es un riesgo, no una ausencia de dato.** En HS18-A eran 5,181 de 8,770 filas, concentradas en Autoliquidables y Punto Precio. Si vacío significa "los 14 días", el universo MMPP de esa campaña es 693 SKU; si significa "sin definir", es 300. Primera pregunta a Planificación Promocional.
+`[F5]` El usuario confirma que el vacío en `Tipo` (5,181 de 8,770 filas en HS18-A) **no tiene una definición específica que buscar** — no vale la pena tratarlo como una regla oculta por descubrir.
 ⚠️ **El archivo "B" no es "la campaña de la semana 2":** es el incremento sobre el A (en HS18, 21 filas / 2 llamados). Los deals `Tipo=14` ya corren las dos semanas y viven en el archivo A. El universo de la Salida B es A + B, no B solo.
 
-**Golpe A / Golpe B** `[F2]`
-Los dos cambios de precio dentro de un mismo HS: **Golpe A** es la semana con cambio fuerte (~75% de los SKUs cambian de fleje), **Golpe B** la segunda (~7%). En promedio semanal, el **40%** de los SKUs presentaba cambio de fleje respecto del HS anterior.
-La política propuesta en F2 elimina los golpes semanales.
+**Golpe A / Golpe B** `[F2]` `[F18]`
+⚠️ **El significado depende del vehículo — no confundir los dos usos:**
+- **En HS** `[F2]`: los dos cambios de precio dentro de un mismo HS. **Golpe A** es la semana con cambio fuerte (~75% de los SKUs cambian de fleje), **Golpe B** la segunda (~7%). En promedio semanal, el **40%** de los SKUs presentaba cambio de fleje respecto del HS anterior. La política propuesta en F2 elimina los golpes semanales.
+- **En Táctico** `[F18]`: los dos sub-períodos de 2 días dentro del mismo Táctico. **Golpe A** = jueves y viernes, **Golpe B** = sábado y domingo. Ejemplo (Táctico 37): Golpe A corre 10–11 set, Golpe B corre 12–13 set. Es la unidad que se sube al Excel de ruta crítica por separado (el archivo de Golpe B llega aparte del de Golpe A, mismas columnas y lógica).
 
 **Máximo de cambios** `[F2]`
 Tope de SKUs cuyo precio puede cambiar por ciclo, definido para no exceder el capacity de tienda. Propuestas evaluadas en F2: máximos de 500, 600, 1,000 y 1,100 SKUs según el grupo.
@@ -700,7 +751,8 @@ Porcentaje de tiendas de la red en las que un SKU **registró facturación** en 
 
 **% variación de puntos de venta** `[F1]`
 Cambio en la cantidad de locales entre los dos períodos comparados. Explica variaciones de venta que no son de performance sino de expansión de red (ej. la apertura de Izaguirre).
-⚠️ **Esa misma tienda, Izaguirre, está excluida del Especial MMPP** `[F12]` por un motivo que ninguna fuente documenta. No confundir con la apertura: son dos hechos distintos sobre la misma tienda. Confirmar el motivo y desde cuándo aplica la exclusión.
+`[F5]` **Izaguirre es una tienda de pruebas** — el usuario confirma que este tipo de tiendas piloto se descarta de los análisis por convención, lo que explica su exclusión del Especial MMPP (`[F12]`, ver sección 17). No es una exclusión sin justificar: es la regla general para tiendas de prueba.
+`[F18]` Consistente con lo anterior: Planificación Promocional confirma que Izaguirre tiene su **propia campaña específica** — un vehículo dedicado, aparte de HS/Táctico/Flash — lo que refuerza que se trata de una tienda con tratamiento especial en todo el proceso comercial, no solo en el reporting.
 
 **Bandera / Formato** `[F1]` `[F4]`
 Formato o marca comercial dentro del mismo grupo. En Tottus: **Tottus**, **Precio Uno / Hiperbodega (HB)**, **Ecommerce**. Filtrar mal la bandera contamina el `% PDV` y el share, porque cuenta locales donde ese surtido nunca se comercializa.
@@ -718,7 +770,8 @@ Agrupación geográfica o comercial de tiendas.
 Participación de una plaza en el mercado total frente a su participación en la venta de Tottus. La brecha mide **sobre o sub-exposición**.
 ⚠️ Ejemplo F4: Arequipa pesa 3.5% del mercado y 7.3% de Tottus (2.1x sobre-indexado); Lima 64.5% vs 60.1% (sub-indexada). Un problema en una plaza sobre-indexada golpea más de lo que su tamaño de mercado sugiere.
 
-⚠️ **Lima sin reconciliar entre fuentes.** F15 (S35 2026, piso de venta) muestra Lima con **53.8%** de peso en Resto Mercado contra **71.4%** de peso en Tottus — sobre-indexada, lo opuesto a la lectura de F4 arriba. Puede ser que las bases difieran (mercado total vs. Resto Mercado = mercado menos Tottus, ver *Resto Mercado*, arriba) o que sean semanas con composición real distinta. ⚠️ *por confirmar.*
+⚠️ **Lima difiere entre fuentes.** F15 (S35 2026, piso de venta) muestra Lima con **53.8%** de peso en Resto Mercado contra **71.4%** de peso en Tottus — sobre-indexada, lo opuesto a la lectura de F4 arriba.
+`[F5]` El usuario indica darle más peso a **F4** cuando las dos fuentes no coinciden — es la lectura de referencia por defecto ante esta discrepancia, aunque la causa exacta (bases distintas o semanas con composición real distinta) sigue sin aislarse.
 
 Referencia F15 (S35 2026, piso de venta): **Lima Norte** es la plaza con mayor ganancia semanal de share (+2.7 p.p., +3.4 p.p. YTD); **Lima Moderna** la de mayor pérdida (−1.3 p.p. semanal). En provincias, Arequipa y Trujillo concentran el mayor peso de Tottus fuera de Lima. **Resto Provincias** muestra un salto raro entre su share semanal (65.7%) y su YTD (36.1%) en la misma fila — revisar antes de citarlo, probablemente base semanal chica.
 
@@ -745,6 +798,19 @@ Sinónimo de participación usado en la plataforma: cuánto pesa una división, 
 Participación frente al total del mercado o de la competencia. En ScanView aún no disponible; se habilita al conectarse otros retailers. En el Comité se reporta con fuente externa (L&A) `[F4]`. **`Mshare`** es la abreviatura usada en el reporte semanal *Market Share PE* (F15), sobre todo en el bloque de Ecommerce.
 El reporte *Market Share PE* abre esta lectura por **canal** (Piso de Venta / E-Commerce), **bandera** (Tottus / Precio Uno), **mundo** (PGC / Perecibles / Non Food), **categoría** y **geografía**, siempre con el mismo par TSS/SSS — ver Anexo A para el detalle S35 2026.
 ⚠️ **La taxonomía de categorías de este reporte no es la de las divisiones J internas.** Usa nombres de mercado (Comestibles, Cuidado del Hogar, Carnes y Pescados…) que no calzan uno a uno con J1–J12. No cruzar por nombre sin mapear primero.
+
+⚠️ **Trampa señalada en `[F16]` — qué es "mercado":** un error de lectura frecuente es asumir que mercado = competencia + Tottus, dejando fuera a Precio Uno. La fórmula correcta:
+> `Mercado = Grupo Tottus (Tottus + Precio Uno) + Competencia`
+> `Market Share (de un jugador) = ese jugador / Mercado`
+
+Así se puede leer indistintamente la participación de Tottus, de Precio Uno o de cualquier competidor, siempre sobre el mismo denominador. La fuente insiste en anotarla sin ambigüedad porque genera dudas recurrentes al equipo nuevo. Hoy la apertura completa (participación de cada competidor por separado, no solo la de Grupo Tottus) no está disponible en el **Excel semanal** que recibe el puesto — ver *Excel semanal*, sección 15 — y es parte de lo que se busca resolver migrando a la plataforma nueva.
+⚠️ Confirmado en una segunda sesión `[F17]`: la plataforma con estas aperturas (por bandera, por formato, por zona) es casi seguro la misma que alimenta *Market Share PE* (F15) — **no es ScanView**, que en Perú todavía no tiene el filtro de Mercado habilitado (ver *Mercado*, sección 16.4).
+
+**Chequeo de coherencia Supermarket vs. Excel propio** `[F17]`
+Prueba de sanidad recomendada al usar la plataforma de mercado: si se filtra **solo Supermarket** (sin Precio Uno), la cifra de Tottus debería cuadrar con el Excel interno propio. Si se agrega Precio Uno al filtro, puede haber una pequeña diferencia por definición de universo, pero el filtro de solo Supermarket es el que debería conciliar de forma más directa. Es la forma de detectar un filtro mal puesto antes de presentar un número.
+
+**Apertura zonal del mercado (Norte / Sur)** `[F17]`
+Recomendación explícita: no quedarse solo con la lectura de mercado a nivel compañía — abrir también por **zona geográfica**. Un share que se ve estable o "muy pegado" al agregado puede estar escondiendo un problema concentrado en una zona (ej. una categoría cayendo fuerte en el Norte y compensada por el Sur). Es la misma lógica de *Apalancamiento* (arriba) aplicada a geografía en vez de a jerarquía de producto — cruza siempre con el campo de geografía de *Market Share PE* (F15).
 
 **Resto Mercado / Resto M.** `[F15]`
 El complemento de Tottus dentro del mercado total: mercado menos Tottus (TT+PU). Es el término que usa el reporte *Market Share PE* para lo que en la sección 10 ya se llama simplemente "el mercado" en *Dif Share*, abajo — mismo concepto, otro nombre.
@@ -869,10 +935,13 @@ Hitos de la ruta crítica de **Táctico** `[F4]`, con días de anticipación:
 | 4 | Validación de precios | −10 | Analista Comercial |
 | 5 | Cumplimiento de mercadería | −3 | Planning |
 
+⚠️ **Tercera versión de la ruta crítica del Táctico, sin reconciliar con la tabla anterior** `[F18]`. Planificación Promocional (dueña del proceso) describe la ruta crítica del Táctico contada desde el **día cero = inicio de vigencia**, hacia atrás, arrancando en **−40 días** (con hitos intermedios en −1, −9, −15…) — no en −19 como muestra la tabla del Comité arriba. Aplica la misma regla que para HS (ver más abajo): **el vigente es siempre el calendario más reciente**, y esta versión viene directo del área dueña del proceso el 10-Set-2026, por lo que probablemente sea la más confiable de las tres. Pendiente conseguir el desglose completo de hitos intermedios de Planificación Promocional.
+
 Hitos de la ruta crítica de **HS** `[F4]`: Checklist Confirmación (−52), Briefing Comercial (−27), Carga Apuestas (−27), Alerta mercadería (−21), Compra mercadería (−21/−16), Validación precios (−10), Cumplimiento de mercadería (−3). Responsables: Trade Marketing, Planificación Promocional, Comercial y Planning.
 
 ⚠️ **Versión más granular y con otros plazos, sin reconciliar** `[F11]`. `RUTA CRITICA 2025.xlsx` (hoja `HS CONCEPTUAL`) trae 13 hitos con día en rojo cuando hay corrimiento por feriado o facturación: Confirmación y definición (−52) · Briefing comercial + plantilla arriendos (**−50**) · Convocatoria CO+AL (−45) · Deadline postulaciones CO+AL, Comercial→Trade (−41) y Trade→Planificación (−38) · 1er envío plantilla arriendos + apuestas Salida A (−34) · Confirmación espacios en medios (−31) · Envío primer reporte de arriendos (−29) · Selección de medios/rumas/MV/cabecera/QR (−27) · Definición de espacios comerciales (−24) · Envío consolidado preliminar (−22) · Carga de selección de medios (−20) · Alerta de quiebres o sobre stock (−17) · **fecha máxima de cambios por alertas y excepciones (−16)**.
-El "Briefing Comercial" difiere en **23 días** entre esta fuente (−50) y la del Comité (−27, arriba). Lectura más probable: son calendarios de años distintos — este archivo es de 2025 y antecede al rediseño de proceso que propone F2 ("Impulso+"); el del Comité ya sería el proceso rediseñado de 2026. No confirmado.
+El "Briefing Comercial" difiere en **23 días** entre esta fuente (−50) y la del Comité (−27, arriba).
+`[F5]` **Regla confirmada por el usuario: el vigente siempre es el calendario más reciente.** Entre F11 (`RUTA CRITICA 2025.xlsx`, 2025) y F4 (Comité S36-2026), el que manda es **F4** — no hace falta reconciliar ambos como si compitieran; F11 queda como referencia histórica del proceso anterior a "Impulso+" (F2).
 **Lo que sí es estable en ambas versiones:** la campaña se cierra comercialmente entre 16 y 10 días antes de salir. Un hallazgo post-campaña ya no cambia nada de esa edición — alimenta el ciclo de la siguiente.
 
 **Retro Gantt** `[F2]`
@@ -899,6 +968,35 @@ Devolución de una plantilla mal cargada para corrección. Reducirlo es uno de l
 
 **Homologación de procesos** `[F2]`
 Alineamiento del proceso promocional entre países del grupo (PE / CL).
+
+### Revisión profunda de categoría — framework en diseño `[F17]`
+
+⚠️ **En diseño al momento de la fuente — no es todavía un entregable formalizado.** Metodología que Gabriel está armando para revisar una categoría a fondo (piloto observado: Galletas), pensada para escalar de **una categoría cada dos semanas** a **una por semana**, y eventualmente automatizarse.
+
+**Estructura declarada, dos láminas por categoría:**
+1. **Lámina de framework/metodología** — un esquema en semáforo (positivo/negativo) por variable de diagnóstico, que permite ubicar de un vistazo dónde está el foco antes de entrar al detalle.
+2. **Lámina de mercado** — vista transversal por marca/fabricante-proveedor (no solo por categoría), con el comportamiento de las **últimas 3 semanas** y cuántas semanas consecutivas lleva cayendo el share de esa marca. Se apoya en las vistas satélite de **surtido** (qué productos, y si el espacio de góndola de esa categoría aumentó o disminuyó) y de **clientes** (a cargo del equipo de Clientes, sección 14).
+
+**Recomendaciones metodológicas explícitas:**
+- Abrir siempre por **zona geográfica** (Norte/Sur), no solo a nivel compañía — ver *Apertura zonal del mercado*, sección 10.
+- Cruzar cada arista con **comercial** y con **operaciones**: un hallazgo puede ser transversal a toda la red (tema comercial) o concentrado en una zona/tienda (tema operativo) — no asumir cuál es sin revisar ambas.
+- Herramienta personal sugerida: un Excel propio donde solo se pega la data actualizada cada semana y los indicadores/histórico se recalculan solos, en vez de rearmar el análisis desde cero en cada corte.
+
+**Flujo de aprobación declarado — levantamiento con las áreas dueñas del dato:**
+1. **Definir la categoría** a revisar (piloto observado: Galletas).
+2. **Levantamiento por área**, cada una entrega su arista por separado (Inteligencia Comercial consolida, no arma cada pieza desde cero):
+   - **Inventarios** (Alan, sección 14) — disponibilidad y quiebre.
+   - **Catman** (Isabel Aliaga, sección 14) — surtido, mix y espacio de góndola (qué productos, si el espacio subió o bajó).
+   - **Promociones** (Mire, sección 14) — mecánica y calendario promocional vigente.
+   - **Carga / Data** (Hans para carga, Daniel para soporte de data, sección 14) — armado de la base que alimenta el análisis.
+   - **Clientes** (Marisabel, sección 14) — comportamiento del shopper de esa categoría.
+3. **Consolidación** por Inteligencia Comercial: se arma el framework y la lámina de mercado con lo que entregó cada área, cuidando que **todo tenga coherencia narrativa** — si un bloque no calza con el resto, se explica, no se esconde.
+4. **Revisión de Yami** (líder del área, sección 14) — primera pasada rápida.
+5. **Validación con Comercial** — gerente de categorías/Planificación Comercial y Hugo (sección 14).
+6. **Presentación en el Comité Comercial.**
+
+⚠️ **Pricing no aparece en este levantamiento** — la relación confirmada en otra parte de esta sección es reactiva: Inteligencia Comercial detecta un desfase de precio y **lo escala a Pricing** (ver arriba, *Pricing*), un flujo distinto al ciclo fijo de revisión por categoría. *Por confirmar* si en la práctica también participa del levantamiento.
+⚠️ *por confirmar:* nombre final de este entregable y si termina viviendo en la sección 17 (Entregables del puesto) una vez formalizado.
 
 ---
 
@@ -931,20 +1029,65 @@ Ejecutivo responsable de una cuenta clave. Paolo Gaspar es el KAM de Scanntech p
 **Monetización de data** `[F1]`
 Modelo por el cual el retailer comparte, de forma controlada, data de venta con sus proveedores a cambio de inversión comercial. El retailer define **con quién**, **por cuánto tiempo** y **qué información** se comparte.
 
-**Personas del área** `[F6]`
+### Proveedores de data de mercado `[F16]`
+
+Panorama de los proveedores externos que miden el mercado retail, con quién los conecta el puesto y cómo cobran. Se dividen en dos lógicas de captura muy distintas — confundirlas al comparar cifras entre proveedores es el error más común señalado en la fuente:
+- **Panel de hogares** — el proveedor recluta hogares "representativos" y registra lo que compran, sin depender de que el retailer entregue nada (Kantar).
+- **Auditoría de punto de venta / venta del propio retailer** — el número viene de las cadenas, vía scanner o entrega directa (Nielsen, GfK, y los proveedores con modelo de monetización de data).
+
+⚠️ Varios nombres de proveedores y de personas en esta subsección vienen de una transcripción automática de audio con errores de reconocimiento frecuentes en nombres propios — se marcan individualmente donde la lectura es insegura, y no deben usarse en un entregable sin confirmar contra el área.
+
+**Kantar** `[F16]`
+Proveedor de data de mercado con metodología de **panel de hogares**. Entró **recientemente** al mercado peruano frente a otros proveedores con más historia local (ver *Lock*, abajo).
+⚠️ **Trampa señalada en la fuente:** Kantar es fuerte en Lima; en provincia su número "no conversa" tanto con la venta real de Tottus. A nivel Tottus general sí es representativo, pero sigue siendo **muestra muestral** — tomar con pinzas cualquier cifra abierta a un nivel muy granular (la fuente menciona un caso donde el ticket promedio que reportaba Kantar no cuadraba con el propio).
+`[F5]` **Corrección del usuario: el contacto "Paolo" no es de Kantar.** Paolo Gaspar es el KAM de **Scanntech** (`[F1]`, ver *KAM* arriba) — la transcripción atribuyó mal el nombre a Kantar. El contacto real de Kantar queda sin identificar.
+
+**Kantar Panel / Numerator** `[F16]`
+Producto de panel de hogares de Kantar. La fuente señala que **"hoy día ha cambiado [a] Numerator"** — Kantar Worldpanel operaría/reportaría hoy bajo la marca **Numerator**. ⚠️ *por confirmar:* alcance exacto del cambio (solo de marca, o de operador).
+
+**Kantar Insights** `[F16]`
+El otro producto de Kantar mencionado en la fuente, **basado en encuestas** en vez del panel de compras: preguntas directas a hogares, no registro de transacciones.
+
+**Nielsen** `[F16]`
+Proveedor de **auditoría de punto de venta**, con metodología similar a *Lock* (abajo): mide supermercado, mercado moderno y también mercado tradicional — cobertura más amplia que el panel de Kantar. Muchos años operando en Perú.
+Nielsen y GfK se mencionan conjuntamente para categorías especializadas (colchones, TV, audio, video) en canales especializados (tiendas tipo La Curacao/Mall, Samsung) que Nielsen no cubre por sí solo.
+Contacto: **Mauricio**, quien lidera la cuenta; trabaja con un analista de soporte que **rota con frecuencia**.
+Es la misma casa Nielsen de *Nielsen Pricetrack* (sección 4).
+
+**GfK** `[F16]`
+Proveedor de auditoría de punto de venta especializado en categorías de electro/hogar (colchones, TV, audio, video) y canales especializados que Nielsen no cubre por sí solo. Aparece también nombrado como "Pro GFK" sin que se aclare si es un producto distinto. ⚠️ *por confirmar.*
+Contactos: **Helen** (apellido no confirmado) y **Jacob**.
+
+**Lock** ⚠️ *nombre por confirmar* `[F16]` `[F5]`
+Nombre de proveedor tal como quedó en la transcripción automática — la lectura fonética es insegura. Según el audio: trabaja "muy similar" a Nielsen (auditoría de punto de venta) y tiene **muchos años de historia en el mercado peruano** (más que Kantar, entrante reciente). Contacto mencionado, también con lectura insegura ("Swan", posiblemente "Juan").
+Confirmado por el usuario: **es un proveedor de información de terceros** (no Nielsen, Kantar o GfK bajo otro nombre) y **es distinto de L&A** (sección 4, `[F4]`) — no fusionar ni usar uno para inferir el otro. Su nombre real y el de su contacto siguen sin identificar.
+
+**"Escatec" y "Scarpe" = Scanntech** `[F16]` `[F5]`
+Confirmado por el usuario: tanto "Escatec" como "Scarpe" son transcripciones defectuosas de **Scanntech** (escritura correcta) — no son dos proveedores adicionales, son el mismo Scanntech ya documentado (`[F1]`, ver *KAM* y *Monetización de data*, arriba, y la sección 16 completa), mencionado dos veces en la grabación con lecturas distintas del reconocimiento de voz. La descripción de "Scarpe" (una herramienta que pone en el centro al fabricante/proveedor y al retailer para que negocien con esa data de por medio, con un fee mínimo) es probablemente uno de los otros servicios de Scanntech además de ScanView — Scanntech tiene 6 soluciones y Tottus usa hoy solo una (ver 16.1).
+Se conservan ambas variantes transcritas como referencia, siguiendo la regla de no borrar una discrepancia (§8 de CLAUDE.md): si en el futuro aparece "Escatec" o "Scarpe" en esta u otra grabación, es Scanntech.
+
+**Personas del área** `[F6]` `[F16]`
 Contactos operativos del puesto y para qué se les busca:
 
 | Quién | Rol | Para qué |
 |---|---|---|
 | **Mirella Gómez Montufar** | Predecesora, de vacaciones | Traspaso; dueña de las carpetas compartidas heredadas |
-| **Dani** | Provee las bases de venta | Insumo de los dos entregables recurrentes (sección 17) |
+| **Dani (Daniel)** `[F6]` `[F16]` `[F17]` `[F5]` | Miembro del equipo de Gabriel. Provee las bases de venta, ajusta el Excel semanal de mercado y da soporte de Data en la revisión de categoría | Insumo de los dos entregables recurrentes (sección 17), del Excel semanal (sección 15) y de la revisión de categoría (sección 13) |
+| **"Dani" (Planificación Promocional)** ⚠️ *posible homónimo, no confirmado* `[F18]` | Carla Flores la nombra como parte de **su propio equipo** — sube los archivos de Táctico (ej. T37) al Excel de ruta crítica | ⚠️ **Discrepancia sin resolver:** el usuario confirmó que "Dani" es Daniel, de su propio equipo (fila de arriba, `[F5]`). Esta fuente nombra a un "Dani" distinto, del equipo de Carla. Probablemente sea un homónimo (persona distinta con el mismo apodo) y no el mismo Daniel — confirmar antes de asumir cualquiera de las dos opciones |
 | **Denisse** | Arma el Boletín de Marketing | Destinataria del bloque de resultados de campañas |
-| **Daniela Montoya / Carla Flores** | Planificación Promocional | Tácticos (T##) y las preguntas abiertas del consolidado (sección 6) |
+| **Daniela Montoya / Carla Flores** (Carla Teresa Flores Otoya) `[F18]` | Planificación Promocional | Tácticos (T##) y las preguntas abiertas del consolidado (sección 6). `[F17]` `[F5]` También trabaja con Gabriel en la *Matriz de surtido en mix* (sección 1). `[F18]` Es quien explicó la ruta crítica del Táctico 37 y el Excel operativo del área |
 | **María Alejandra Balarezo** | Responsable de lanzamientos | Contexto de lanzamientos y relanzamientos (caso Xplend, Anexo C) |
-| **Yami** | Lidera el área | Priorización y validación de criterios |
+| **Yami** (Yamile) | Lidera el área | Priorización y validación de criterios. `[F17]` `[F5]` "Yani" (F17) es la misma persona — variante del nombre |
 | **Finanzas / Control de Gestión** | — | Que las cifras cuadren antes de presentar |
-
-⚠️ *por confirmar:* si "Daniela Astep" (Brand Manager, que valida el objetivo de campaña del boletín) es la misma persona que "Dani".
+| **Joan** `[F16]` | Envía el Excel semanal de mercado (cerrado, sin tiendas nuevas) | Fuente del corte que alimenta *Share de mercado* mientras se migra a la plataforma nueva (ver sección 15) |
+| **Isabel Aliaga** `[F17]` | Category Management (Catman) | Cruzar hallazgos de surtido/mix con Catman antes de presentarlos |
+| **Marisabel** `[F17]` | Lidera el equipo de Clientes | Vista de cliente dentro de la revisión profunda de categoría (sección 13) |
+| **Williams** `[F17]` | Soporte para llevar la *Matriz de surtido en mix* (sección 1) a un dashboard | — |
+| **Hugo** `[F17]` ⚠️ *por confirmar* | Gerente de línea comercial que valida la revisión de categoría antes del Comité Comercial (rol leído del contexto, no confirmado) | — |
+| **Hans** `[F17]` ⚠️ *por confirmar* | Contacto para temas de "carga" (rol impreciso) | — |
+| **Mire** `[F17]` ⚠️ *por confirmar* | Contacto para promociones (rol impreciso) | — |
+| **Alan** `[F17]` ⚠️ *por confirmar* | Contacto de inventarios | — |
+| **Daniela Aste** `[F5]` | Brand Manager — valida el objetivo de campaña del boletín | Boletín de Marketing (sección 17). Confirmado: es una persona **distinta** de Dani/Daniel (arriba) |
 
 ---
 
@@ -990,8 +1133,31 @@ Navegación de lo agregado a lo detallado dentro de una jerarquía, haciendo cli
 **Vista macro vs. vista micro** `[F1]`
 Macro = compañía / mundo / división. Micro = subclase / SKU / tienda. La recomendación explícita de la capacitación es no analizar la propia categoría sin haber mirado antes la macro: una caída propia puede estar respaldada por una contracción del negocio.
 
+**Discover** `[F16]`
+Plataforma donde Nielsen y *Lock* (sección 14, ⚠️ nombre por confirmar) cargan su data de auditoría de punto de venta en modo autoservicio, en lugar de entregarla en bruto — Nielsen ya tiene toda su información migrada ahí.
+⚠️ *por confirmar:* si Tottus tiene acceso hoy a Discover, o si sigue dependiendo del **Excel semanal** (abajo) mientras otros retailers ya lo usan — la fuente lo deja ambiguo ("nosotros somos los que nos estamos quedando en el Excel").
+
+**Radar / Active** `[F16]`
+Herramienta mencionada junto a Discover para seguimiento de la evolución, con data semanal cerrada (semana 34, semana 35, semana 36…) y apertura diaria más reciente. En la fuente el nombre queda ambiguo entre "Radar" y "Active" — pueden ser la misma herramienta o herramientas emparentadas.
+⚠️ *por confirmar:* nombre exacto y si Tottus tiene acceso ("este no lo tenemos, fíjate si lo tenemos").
+
+**Excel semanal (mercado)** `[F16]`
+Archivo que recibe hoy el puesto con el corte de mercado, en lugar de acceso directo a Discover. Llega **cerrado, sin tiendas nuevas** — lo manda **Joan** (sección 14); hay un ajuste puntual pendiente a cargo de **Daniel** (sección 14, rol sin confirmar).
+A diferencia de la plataforma nueva, **no tiene apertura completa de mercado**: no permite ver la participación de cada competidor por separado (solo la de Grupo Tottus, ver *Share de mercado*, sección 10), ni filtrar por formato (ver abajo). Migrar de este Excel a la plataforma nueva es tarea declarada pendiente ("hay que evangelizar las próximas semanas").
+
+**Filtro por formato (cluster / discounter / cash & carry)** `[F16]`
+En la plataforma nueva, el mercado puede abrirse por **cluster**, por **discounter** y por **cash & carry**, además de por supermercado — aperturas que el *Excel semanal* (arriba) todavía no ofrece.
+
+**Mi Portal** `[F18]`
+Sistema de Planificación Promocional donde se cargan y gestionan las promociones — incluye la carga de precios. Genera un **número de solicitud** propio por cada proceso.
+⚠️ **No confundir número de solicitud con SPF** (ver abajo): son dos códigos distintos para la misma promoción, de dos sistemas distintos.
+
+**SPF** `[F6]` `[F18]`
+Código relacionado a la promoción que aparece en la data de GCP. Lo genera el equipo de **Precios / Ejecución Promocional** una vez que Mi Portal envía la promoción a programar — es un código de ejecución, no el número de solicitud de Mi Portal.
+
 **Archivos y herramientas del área** `[F6]`
 Plataforma: GCP · BigQuery · Looker Studio · Databricks. Herramientas de uso frecuente: Huaycos, CRONO, CYBERS, SPF, Medios, Cronogramas, Google Cloud Console, Enterprise Data Platform, Sharepoint Salesrun.
+Carpeta adicional identificada `[F18]`: Planificación Promocional mantiene su propia carpeta en **Teams**, donde archiva todos los consolidados y Excels ya enviados a Operaciones/tiendas — fuente directa de los archivos de ruta crítica de Táctico y HS.
 Archivos fuente citados en este documento: `Data_Resultados (Categorías) Marcas Propias.xlsx` (F7), `Data_Resultados Marcas Propias.xlsx` / bases de lanzamiento (F8), `RUTA CRITICA 2025.xlsx` (F11), `Campañas Core '25.xlsx` (F13), `Campaña Navideña.xlsx` (F14), consolidados `CONSOLIDADO_FINAL_AREAS_HS##-A/B.xlsx` (F10).
 ⚠️ Las carpetas compartidas heredadas de Mirella son enlaces de invitado sobre su OneDrive personal — pedir copia propia o mover a ubicación de equipo antes de que caduquen a mitad de campaña.
 
@@ -1060,6 +1226,7 @@ Casi todos se repiten hoja a hoja.
 **Tabla de Precios.** La única con corte **semanal**. Por SKU: proveedor, marca, ubicación en el árbol, **precio mínimo / medio / moda / máximo**, curva ABC como ordenamiento, rotación unitaria y % PDV. Sirve para detectar dispersión o desfase de precio y escalarlo a Pricing.
 
 **Ejecutivo.** Venta total en soles y unidades, con variación vs. mes anterior y vs. AP; apertura por bandera con la contribución de cada una; KPIs de compañía (flujo en tienda, ticket medio, unidades por ticket, venta media, price index); evolutivo de venta media por tienda.
+⚠️ Probablemente la misma hoja que una segunda fuente `[F17]` nombra **"Reporte Transaccional"**: describe el mismo set de variaciones (venta SI, GPE diferencial, unidades, precio medio, unidades por transacción, ticket promedio, transaccional), cargado a **cierre de mes** (a diferencia de otras vistas con corte diario), abierto por Tottus + Precio Uno. *Por confirmar* si es un nombre alternativo de Ejecutivo o una vista distinta.
 
 **Operacional.** Listado de tiendas catalogadas por bandera — solo puntos de venta, sin almacenes ni centros que no venden. Cajas por tienda como proxy de tamaño, mapa de calor de aperturas y cierres, y el cuadro de performance por tienda (variación en valor y unidades, importancia para el grupo, tickets, venta media por ticket, unidades por ticket). Ordenable por representatividad o por tamaño.
 
@@ -1112,7 +1279,7 @@ Cinco métricas por corte, con variación vs. mismos días AP: Venta Soles (abie
 
 Segunda lámina de la plantilla: el **Cheat Sheet** — el cronograma de la campaña en formato calendario de 14 días, con la mecánica que corre cada día. Mantenerlo actualizado corte a corte es lo que evita que el tercer envío compare contra una ventana distinta del primero.
 
-⚠️ **Errores conocidos de la plantilla:** el Cheat Sheet arrastra el número de campaña de la edición anterior si no se actualiza a mano · el desfase del ticket promedio ya documentado en *Venta SI* (sección 2) también aparece aquí · la exclusión de Izaguirre no está justificada en ninguna fuente (ver *% variación de puntos de venta*, sección 9) · la definición de MMPP cubre solo J1, J2 y J5 pero hay marca propia participando en J6 y J7 (ver *Marca propia / MMPP*, sección 1).
+⚠️ **Errores conocidos de la plantilla:** el Cheat Sheet arrastra el número de campaña de la edición anterior si no se actualiza a mano · el desfase del ticket promedio ya documentado en *Venta SI* (sección 2) también aparece aquí · la exclusión de Izaguirre es la convención estándar para tiendas de prueba, no un error (ver *% variación de puntos de venta*, sección 9) · el corte de MMPP en J1/J2/J5 es el universo de este entregable puntual — no un límite oficial de dónde existe marca propia (ver *Marca propia / MMPP*, sección 1).
 
 **Boletín de Marketing — bloque de campañas** `[F12]`
 Resumen mensual de acciones promocionales con foco en cuánto incremental generó cada campaña. Denisse arma el boletín; Inteligencia Comercial aporta el bloque de resultados. **El entregable es un correo con bullets**, no un Excel ni una presentación — sube al CEO.
@@ -1303,7 +1470,7 @@ Espacio de trabajo para el próximo aporte:
 
 - [ ] Definiciones oficiales Tottus de cada J (mapeo completo J1–J12, más J99 y JSJ)
 - [ ] Ejemplos de **Departamento** (nivel 3) por división — el nivel está confirmado, faltan casos concretos
-- [ ] Expansión confirmada de siglas: **MV** (arriendo prioritario), **FQ** (quiebre), **MDV** y **RT** (POP), **Fcom**, **KVC**, **H-E-L** (semaforización IPC), **LW** (logística de proveedor), **L&A** (fuente de mercado)
+- [ ] Expansión confirmada de siglas: **MV** (arriendo prioritario), **FQ** (quiebre), **MDV** y **RT** (POP), **Fcom**, **KVC**, **H-E-L** (semaforización IPC), **LW** (logística de proveedor) — origen no identificado por el usuario; confirmar contra quien mantenga cada documento fuente (F2/F4), no es conocimiento que dependa de Gabriel
 - [ ] Definición formal de **Básico 1 / Básico 2** y de **surtido troncal**
 - [ ] Criterio de selección de **Focals**
 - [ ] Métricas de rentabilidad complementarias: margen de contribución formal, GMROI
@@ -1312,22 +1479,24 @@ Espacio de trabajo para el próximo aporte:
 - [ ] Metodología **A&M** de medición de quiebre — definición y alcance
 - [ ] Definición operativa de **capacity operativo** de tienda (declarada "en definición" en F2)
 - [ ] Umbrales oficiales de la matriz de efectividad (qué separa Estrella de Bajo Impacto)
-- [ ] Fórmula exacta de `PROFIT` — de mayor consecuencia analítica: define si la brecha GPE→GP de marca propia es de negociación o de merma
-- [ ] Cuánto aporte comercial se deja de cobrar por cada punto de share ganado con marca propia
 - [ ] Conteo exacto de SKU de `FRESH` y si hay lista maestra oficial de marca propia que lo resuelva
 - [ ] Diccionario completo de códigos de espacio en tienda del consolidado (`RC`, `CM`, `CSL`, `CMY`, `RL`, `HC1`, `AL2`, `CPC`, `CSF`, `CME` — `C` y `R` ya se identifican como Cabecera y Ruma)
-- [ ] Significado del `Tipo (14, A, B)` vacío en el consolidado de campaña
-- [ ] Motivo y fecha de la exclusión de Izaguirre del Especial MMPP
-- [ ] Si J6 y J7 entran o no a la medición oficial de marca propia (hoy fuera del universo J1/J2/J5)
 - [ ] Qué distingue `REEMPLAZO FÓRMULA` de `REEMPLAZO OTROS` en lanzamientos, y quién es dueño del pipeline
 - [ ] Cuántas semanas definen cada etapa Pre-Lanzamiento / Lanzamiento / Post
 - [ ] Por qué los lanzamientos rinden ~5 p.p. menos en Online que en piso
-- [ ] Reconciliar los dos calendarios de ruta crítica de HS (F4 vs. F11, `RUTA CRITICA 2025.xlsx`) — confirmar si son años distintos del proceso o una discrepancia real
-- [ ] Si "Daniela Astep" es la misma persona que "Dani" (sección 15)
-- [ ] Confirmar si *Market Share PE* (F15) es en efecto el reporte de L&A citado en F4, o una fuente distinta
-- [ ] Reconciliar el peso de Lima en la geografía de mercado: F4 la muestra sub-indexada (64.5% mercado vs 60.1% Tottus), F15 sobre-indexada (53.8% vs 71.4%) — confirmar si son bases distintas (mercado total vs. Resto Mercado) o semanas con composición real distinta
 - [ ] Diccionario de nombres: mapeo entre la taxonomía de categorías de *Market Share PE* (Comestibles, Cuidado del Hogar…) y las divisiones J internas
+- [ ] Nombre real del proveedor transcrito como **"Lock"** (sección 14) y de su contacto ("Swan"/"Juan") — confirmado que es un proveedor de terceros distinto de L&A; sigue sin identidad real
+- [ ] Apellidos de **Helen** y **Jacob**, contactos de GfK (sección 14)
+- [ ] Alcance exacto del paso de Kantar Panel a **Numerator** (sección 14)
+- [ ] Si Tottus tiene acceso hoy a **Discover** y a **Radar/Active** (sección 15), o si sigue dependiendo del Excel semanal
+- [ ] Set completo de KPIs que cruza la **Matriz de surtido en mix** (sección 1) — confirmado su alcance general, falta el detalle
+- [ ] Confirmar condiciones de pago a proveedor por categoría (sección 1) contra la política oficial de Finanzas
+- [ ] Roles exactos de **Hugo**, **Hans**, **Mire** y **Alan** (sección 14) — leídos del contexto, no confirmados
+- [ ] Si "Reporte Transaccional" (sección 16, hoja Ejecutivo) es un nombre alternativo de esa hoja o una vista distinta
+- [ ] Nombre y alcance final del framework de "revisión profunda de categoría" (sección 13) una vez formalizado — y si migra a la sección 17
+- [ ] Si el "Dani" del equipo de Planificación Promocional (sección 14, `[F18]`) es un homónimo distinto de Daniel (equipo de Gabriel) o la misma persona — discrepancia sin resolver entre F5 y F18
+- [ ] Desglose completo de hitos intermedios de la ruta crítica de Táctico según Planificación Promocional (sección 13, `[F18]`) — hoy solo se tiene el rango −40 a día 0
 
 ---
 
-*Última actualización: fuentes F1–F15 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView. F6–F14 (traspaso de Mirella, bases y deck de marca propia, bases y deck de lanzamientos, deck regional de lanzamientos, consolidados de campaña HS18+T36, ruta crítica 2025, plantillas de los dos entregables, y los archivos de Campañas Core y Navideña) enriquecieron la sección 1 (marca propia y lanzamientos), la sección 5 (GP% y PROFIT), la sección 6 (vigencias, arriendos, campañas core y Navidad), la sección 13 (segunda versión de la ruta crítica) y las secciones 14 y 15 (personas, archivos y herramientas); aportaron la sección 17 (entregables del puesto) y el Anexo C (cinco casos de marca propia). F15 (*Market Share PE*, S35 2026) aportó el primer detalle de mercado externo con este nivel de apertura: enriqueció "Share de mercado" y "Peso Mercado vs. Peso TT" (sección 9-10) y sumó un bloque nuevo al Anexo A. El rastreador de pendientes con fecha vive aparte, en `PENDIENTES.md` — no es contenido de glosario y se reemplaza en cada ciclo.*
+*Última actualización: fuentes F1–F15 incorporadas. F2 (Estrategia HS), F3 (Chapa Tu Yapa II) y F4 (Comité Comercial S36) aportaron las secciones 5 a 13, los anexos A y B, y enriquecieron las secciones 1 a 4 y 9 a 11. F5 (correcciones del usuario) corrigió el árbol mercadológico a 6 niveles, con Departamento y Clase como niveles propios, y la notación de las divisiones sin cero a la izquierda. La sección 16 consolida el manual operativo de ScanView. F6–F14 (traspaso de Mirella, bases y deck de marca propia, bases y deck de lanzamientos, deck regional de lanzamientos, consolidados de campaña HS18+T36, ruta crítica 2025, plantillas de los dos entregables, y los archivos de Campañas Core y Navideña) enriquecieron la sección 1 (marca propia y lanzamientos), la sección 5 (GP% y PROFIT), la sección 6 (vigencias, arriendos, campañas core y Navidad), la sección 13 (segunda versión de la ruta crítica) y las secciones 14 y 15 (personas, archivos y herramientas); aportaron la sección 17 (entregables del puesto) y el Anexo C (cinco casos de marca propia). F15 (*Market Share PE*, S35 2026) aportó el primer detalle de mercado externo con este nivel de apertura: enriqueció "Share de mercado" y "Peso Mercado vs. Peso TT" (sección 9-10) y sumó un bloque nuevo al Anexo A. F16 (grabación de capacitación, transcripción automática con ruido en nombres propios) sumó la subsección "Proveedores de data de mercado" en la sección 14 (Kantar, Nielsen, GfK y otros, varios marcados por confirmar), las herramientas Discover/Radar/Excel semanal en la sección 15, y precisó la fórmula de Market Share (Grupo Tottus = Tottus + Precio Uno) en la sección 10. F17 (segunda grabación, mismo tipo de fuente) aportó la metodología Nuevo/Existe/Deslistado y la Matriz de surtido en mix (sección 1), la distinción de agregabilidad transacción vs. cliente (sección 3), las dos causas de variación del precio medio y los tiers de precio (sección 4), la lógica de negocio por mundo Abarrotes/Perecibles/No Food (sección 1), el chequeo de coherencia Supermarket-vs-Excel y la apertura zonal del mercado (sección 10), el framework en diseño de revisión profunda de categoría (sección 13), varios contactos nuevos (sección 14) y una nota de correspondencia con la hoja Ejecutivo de ScanView (sección 16). Segunda ronda de correcciones directas del usuario (`[F5]`) sobre F16/F17 y sobre fuentes previas: "Escatec" y "Scarpe" son ambas Scanntech mal transcrito (se fusionaron); "Lock" es un proveedor de terceros distinto de L&A, con nombre real aún sin identificar; el contacto "Paolo" es de Scanntech, no de Kantar; los tiers de precio quedaron confirmados, especialmente útiles en Abarrotes; la Matriz de surtido en mix cruza varios KPIs (no solo Nuevo/Existe/Deslistado) comparando mercado/competencia contra el surtido propio; Daniela/Yani quedaron identificadas como Daniela Montoya y Yami (Yamile); "Dani" es Daniel, del equipo de Gabriel, y es una persona distinta de Daniela Aste (Brand Manager, antes mal escrita "Astep"); `PROFIT` (sección 5) se confirma que es simplemente el margen, sin fórmula más granular; el vacío en `Tipo` (sección 6) y el aporte comercial por punto de share de MMPP (sección 5) no tienen una regla oficial que perseguir; Izaguirre (sección 9) es una tienda de pruebas, excluida por convención; marca propia puede existir en cualquier división, no solo J1/J2/J5 (sección 1); el calendario de Ruta Crítica vigente es siempre el más reciente (F4 sobre F11, sección 13); *Market Share PE* (F15) se confirma como el reporte de L&A (sección 4); y ante una discrepancia de Lima entre F4 y F15, se le da más peso a F4 (sección 9-10). F18 (reunión con Carla Teresa Flores Otoya, Planificación Promocional, 10-Set-2026) aportó la relación Táctico↔HS y la variante Perecibles del Táctico (sección 6.1), el vehículo Flash y el principio de campañas con/sin arriendos (sección 6.1), la desambiguación de Golpe A/Golpe B según vehículo (sección 6.4), ejemplos concretos de Llamado y Punto precio (sección 6.2), la trampa de la columna "Categoría" (nombre comercial, no jerarquía) en la sección 1, el sistema Mi Portal/SPF y la carpeta de Teams del área (sección 15), una tercera versión sin reconciliar de la ruta crítica del Táctico (sección 13), y una discrepancia sin resolver sobre si "Dani" es una sola persona o dos homónimos (sección 14). El rastreador de pendientes con fecha vive aparte, en `PENDIENTES.md` — no es contenido de glosario y se reemplaza en cada ciclo.*
